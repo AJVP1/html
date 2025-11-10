@@ -17,7 +17,7 @@
 
     <!-- Indice -->
 
-    <!-- Fundamentos -->
+    <!---------------------------------------------------- Fundamentos -->
     <h2>Fundamentos de HTML</h2>
     <hr />
 
@@ -83,14 +83,18 @@
 
     <div class="code-box">
       <div class="code-header">HTML</div>
-      <pre>
-        <span style="color: green">&lt;!-- Este es un comentario en HTML --&gt;</span>
+      <code>
+        <span style="color: green"
+          >&lt;!-- Este es un comentario en HTML --&gt;</span
+        >
+        <br />
+        <br />
 
-        <span style="color: green">&lt;!--</span>
-        <span style="color: green">Este es un comentario</span>
-        <span style="color: green">que abarca varias líneas</span>
+        <span style="color: green">&lt;!--</span> <br />
+        <span style="color: green">Este es un comentario</span> <br />
+        <span style="color: green">que abarca varias líneas</span> <br />
         <span style="color: green">--&gt;</span>
-      </pre>
+      </code>
     </div>
 
     <p>
@@ -98,7 +102,7 @@
       código y oprimiendo las teclas “control + /”
     </p>
 
-    <!-- Maquetacion -->
+    <!-------------------------------------------------- Maquetacion -->
     <h2>Maquetación</h2>
     <hr />
 
@@ -180,8 +184,487 @@
       <code>&lt;ul&gt;</code>.
     </p>
 
-    <!-- HTML Semantico -->
+    <!--------------------------------------- HTML Semantico -->
     <h2>HTML Semántico</h2>
     <hr />
+
+    <!-- Definicion -->
+    <h3><em>Definición</em></h3>
+    <p>
+      El HTML semántico consiste en que cada elemento tenga su propia etiqueta
+      que lo defina correctamente. Sin utilizar etiquetas muy generales, como
+      <code>&lt;div&gt;</code> o <code>&lt;span&gt;</code>.
+    </p>
+
+    <!-- Etiquetas de anatomía del HTML -->
+    <h3><em>Etiquetas de anatomía del HTML</em></h3>
+
+    <p>
+      La estructura básica de un documento HTML está configurada por las
+      siguientes etiquetas principales:
+    </p>
+
+    <h4>
+      <em><code>&lt;!DOCTYPE html&gt;</code></em>
+    </h4>
+    <p>
+      Define el tipo de documento y la versión de HTML que se está utilizando.
+    </p>
+
+    <h4>
+      <em><code>&lt;html lang="es-US"&gt; &lt;/html&gt;</code></em>
+    </h4>
+    <p>
+      Es la etiqueta raíz que envuelve todo el contenido del documento HTML.
+    </p>
+
+    <h4>
+      <em><code>&lt;head&gt; &lt;/head&gt;</code></em>
+    </h4>
+    <p>
+      Define la metainformación, es decir, toda información que no es contenido
+      como tal de la página web. Por ejemplo, los enlaces a archivos CSS y
+      JavaScript, el título y la imagen que aparecen en la pestaña del
+      navegador. Esto es importante para motores de búsqueda como Google.
+    </p>
+
+    <h4>
+      <em><code>&lt;body&gt; &lt;/body&gt;</code></em>
+    </h4>
+    <p>
+      Contiene todo el contenido visible de la página web, como texto, imágenes,
+      videos, enlaces, etc.
+    </p>
+
+    <img src="./imgs/Imagen5.png" alt="ejemplo de anatomía del html" />
+
+    <p>
+      <strong>Nota:</strong> con “! + tab” se coloca rápidamente la estructura
+      de html
+    </p>
+
+    <!-- Etiquetas dentro del head -->
+    <h3><em>Etiquetas dentro del head</em></h3>
+    <p>Algunas de las etiquetas más comunes dentro del head son:</p>
+
+    <h4>
+      <em><code>&lt;meta /&gt;</code></em>
+    </h4>
+    <p>
+      Define la semántica del navegador mediante el atributo “charset”, y
+      permite el uso de caracteres especiales mediante el valor “UFT-8”, por
+      ejemplo
+    </p>
+    <div class="code-box">
+      <div class="code-header">HTML</div>
+      <code>
+        &lt;meta <span style="color: red">charset="UTF-8"</span>/&gt;
+      </code>
+    </div>
+
+    <p>
+      Define el autor de la pagina web colocando el valor “author” en el
+      atributo name, y el nombre del autor en el atributo content, por ejemplo
+    </p>
+    <div class="code-box">
+      <div class="code-header">HTML</div>
+      <code>
+        &lt;meta
+        <span style="color: red">name="author" content="Juan Pérez"</span>/&gt;
+      </code>
+    </div>
+
+    <p>
+      Define el uso de la pagina web colocando el valor “description” en el
+      atributo name, y la descripción en el atributo content, por ejemplo
+    </p>
+    <div class="code-box">
+      <div class="code-header">HTML</div>
+      <code>
+        &lt;meta
+        <span style="color: red"
+          >name="description" content="Página web sobre HTML"</span
+        >/&gt;
+      </code>
+    </div>
+
+    <p>
+      Permite el responsive design colocando el valor “viewport” en el atributo
+      name, y el valor “width=device-width, initial-scale=1.0” en el atributo
+      content, por ejemplo
+    </p>
+    <div class="code-box">
+      <div class="code-header">HTML</div>
+      <code style="margin: 0">
+        &lt;meta
+        <span style="color: red"
+          >name="viewport" content="width=device-width, initial-scale=1.0"</span
+        >/&gt;
+      </code>
+    </div>
+
+    <p>
+      Define las palabras clave de la página web para motores de búsqueda
+      colocando el valor “keywords” en el atributo name, y las palabras clave
+      separadas por comas en el atributo content, por ejemplo
+    </p>
+    <div class="code-box">
+      <div class="code-header">HTML</div>
+      <code>
+        &lt;meta
+        <span style="color: red"
+          >name="keywords" content="HTML, etiquetas, meta"</span
+        >
+        /&gt;
+      </code>
+    </div>
+
+    <h4><em>&lt;title&gt; Titulo &lt;/title&gt;</em></h4>
+    <p>
+      Define el nombre de la ventana en el navegador colocando el valor entre
+      las etiquetas de apertura y cierre, por ejemplo
+    </p>
+    <div class="code-box">
+      <div class="code-header">HTML</div>
+      <code
+        >&lt;title&gt;
+        <span style="color: red">Página sobre HTML</span> &lt;/title&gt;</code
+      >
+    </div>
+
+    <h4><em>&lt;script&gt; &lt;/script&gt;</em></h4>
+    <p>
+      Define cual sera el archivo de JavaScript que vamos a usar sobre el
+      archivo HTML, se coloca la ruta del archivo JS dentro del atributo src y
+      se usa el atributo defer para que el JavaScript se cargue después de que
+      se haya cargado todo el archivo HTML y CSS, asi se evitan errores cuando
+      el archivo JS intenta acceder a elementos HTML que todavia no existen en
+      la pagina, por ejemplo
+    </p>
+    <div class="code-box">
+      <div class="code-header">HTML</div>
+      <code
+        >&lt;script
+        <span style="color: red">src="ruta/del/archivo.js" defer</span>&gt;
+        &lt;/script&gt;</code
+      >
+    </div>
+
+    <h4><em>&lt;link /&gt;</em></h4>
+    <p>
+      Permite importar el diseño css colocando el valor “stylesheet” en el
+      atributo rel, y la ruta del archivo css en el atributo href, por ejemplo
+    </p>
+    <div class="code-box">
+      <div class="code-header">HTML</div>
+      <code
+        >&lt;link
+        <span style="color: red"
+          >rel="stylesheet" href="ruta/del/archivo.css"</span
+        >
+        /&gt;</code
+      >
+    </div>
+
+    <p>
+      Permite agregar un icono al lado del title colocando “icon” en el atributo
+      rel y la ruta del icono en el atributo href, por ejemplo
+    </p>
+    <div class="code-box">
+      <div class="code-header">HTML</div>
+      <code
+        >&lt;link
+        <span style="color: red">rel="icon" href="ruta/del/icono.ico"</span>
+        /&gt;</code
+      >
+    </div>
+
+    <!-- etiquetas dentro del body -->
+    <h3><em>Etiquetas dentro del body</em></h3>
+
+    <!-- etiquetas de tipo contenedor -->
+    <h4><em>Etiquetas de tipo contenedor</em></h4>
+    <p>
+      Estas etiquetas se utilizan para estructurar y organizar el contenido de
+      la página web, proporcionando una semántica clara sobre la función de cada
+      sección.
+    </p>
+    <ul>
+      <li>
+        &lt;header&gt; &lt;/header&gt;: Define el encabezado de la página web,
+        generalmente contiene el logotipo, el título y la barra de navegación.
+      </li>
+      <li>
+        &lt;nav&gt; &lt;/nav&gt;: Define la barra de navegación de la página
+        web, generalmente contiene enlaces a las diferentes secciones del sitio
+        web.
+      </li>
+      <li>
+        &lt;main&gt; &lt;/main&gt;: Define el contenido principal de la página
+        web, es decir, la parte más importante del sitio.
+      </li>
+      <li>
+        &lt;aside&gt; &lt;/aside&gt;: Define contenido adicional relacionado con
+        el contenido principal, como barras laterales, citas o enlaces
+        relacionados.
+      </li>
+      <li>
+        &lt;footer&gt; &lt;/footer&gt;: Define el pie de página de la página
+        web, generalmente contiene información de contacto, derechos de autor y
+        enlaces a redes sociales.
+      </li>
+      <li>
+        &lt;section&gt; &lt;/section&gt;: Define una sección de contenido dentro
+        de la página web, puede contener encabezados, párrafos, imágenes, etc.
+      </li>
+      <li>
+        &lt;article&gt; &lt;/article&gt;: Define un artículo independiente
+        dentro de la página web, como una entrada de blog o una noticia.
+      </li>
+      <li>
+        &lt;figure&gt; &lt;/figure&gt;: Define un contenedor para contenido
+        multimedia, como imágenes, gráficos o videos, junto con su leyenda.
+      </li>
+    </ul>
+
+    <!-- etiquetas de tipo texto -->
+    <h4><em>Etiquetas de tipo texto</em></h4>
+    <p>
+      Estas etiquetas se utilizan para dar formato y estructura al texto dentro
+      de la página web.
+    </p>
+    <ul>
+      <li>
+        &lt;h1&gt; a &lt;h6&gt;: Define los encabezados de diferentes niveles,
+        siendo &lt;h1&gt; el más importante y &lt;h6&gt; el menos importante.
+      </li>
+      <li>&lt;p&gt; &lt;/p&gt;: Define un párrafo de texto.</li>
+      <li>
+        &lt;strong&gt; &lt;/strong&gt;: Define texto en negrita, indicando
+        énfasis fuerte.
+      </li>
+      <li>
+        &lt;em&gt; &lt;/em&gt;: Define texto en cursiva, indicando énfasis
+        moderado.
+      </li>
+      <li>
+        &lt;span&gt; &lt;/span&gt;: Sirve para colocar dentro de texto, esta
+        etiqueta nos permite identificar una pequeña parte del texto para
+        cambiarle el estilo.
+      </li>
+      <li>
+        &lt;br /&gt;: Sirve para insertar un salto de línea dentro de un
+        párrafo.
+      </li>
+      <li>
+        &lt;hr /&gt;: Sirve para insertar una línea horizontal que puede ser
+        utilizada como un separador de contenido.
+      </li>
+      <li>
+        &lt;blockquote&gt; &lt;/blockquote&gt;: Define una cita en bloque,
+        generalmente se utiliza para citas largas o extractos de texto. Por
+        ejemplo
+        <div class="code-box">
+          <div class="code-header">HTML</div>
+          <div>
+            <code
+              >&lt;blockquote cite="url"&gt;Esta es una cita en
+              bloque.&lt;/blockquote&gt; &lt;cite&gt;MDN
+              Documentation&lt;/cite&gt;
+            </code>
+          </div>
+        </div>
+
+        <p>Nos da como resultado:</p>
+
+        <div class="resultado-box">
+          <div class="resultado-header">Resultado</div>
+          <blockquote cite="url">Esta es una cita en bloque.</blockquote>
+          <cite>MDN Documentation</cite>
+        </div>
+      </li>
+
+      <li>
+        &lt;q&gt; &lt;/q&gt;: Es una cita a nivel de linea y no de parrafo. El
+        navegador la muestra entre comillas. Por ejemplo:
+
+        <div class="code-box">
+          <div class="code-header">HTML</div>
+          <div>
+            <code
+              >&lt;q cite="url"&gt;Esta es una cita en línea.&lt;/q&gt;
+            </code>
+          </div>
+        </div>
+
+        <p>Nos da como resultado:</p>
+
+        <div class="resultado-box">
+          <div class="resultado-header">Resultado</div>
+          <q cite="url"> Esta es una cita en línea. </q>
+        </div>
+      </li>
+      <li>
+        &lt;abbr&gt; &lt;/abbr&gt;: Para abreviaciones, el navegador nos muestra
+        el texto subrayado con puntos y cuando hacemos hover nos muestra el
+        significado. Por ejemplo:
+
+        <div class="code-box">
+          <div class="code-header">HTML</div>
+          <div>
+            <code
+              >&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;
+            </code>
+          </div>
+        </div>
+
+        <p>Nos da como resultado:</p>
+
+        <div class="resultado-box">
+          <div class="resultado-header">Resultado</div>
+          <abbr title="HyperText Markup Language"> HTML </abbr>
+        </div>
+      </li>
+
+      <li>
+        &lt;address&gt; &lt;/address&gt;: Para direcciones, el navegador nos
+        muestra el texto en cursiva. Por ejemplo:
+
+        <div class="code-box">
+          <div class="code-header">HTML</div>
+          <div>
+            <code
+              >&lt;address&gt;123 Main St, Anytown, USA&lt;/address&gt;
+            </code>
+          </div>
+        </div>
+
+        <p>Nos da como resultado:</p>
+
+        <div class="resultado-box">
+          <div class="resultado-header">Resultado</div>
+          <address>123 Main St, Anytown, USA</address>
+        </div>
+      </li>
+
+      <li>
+        &lt;sup&gt; &lt;/sup&gt;: Para superíndices, el navegador nos muestra el
+        texto en superíndice. Por ejemplo:
+
+        <div class="code-box">
+          <div class="code-header">HTML</div>
+          <div>
+            <code>10&lt;sup&gt;2&lt;/sup&gt; </code>
+          </div>
+        </div>
+
+        <p>Nos da como resultado:</p>
+
+        <div class="resultado-box">
+          <div class="resultado-header">Resultado</div>
+          10<sup>2</sup>
+        </div>
+      </li>
+
+      <li>
+        &lt;sub&gt; &lt;/sub&gt;: Para subíndices, el navegador nos muestra el
+        texto en subíndice. Por ejemplo:
+
+        <div class="code-box">
+          <div class="code-header">HTML</div>
+          <div>
+            <code>H&lt;sub&gt;2&lt;/sub&gt;O</code>
+          </div>
+        </div>
+
+        <p>Nos da como resultado:</p>
+
+        <div class="resultado-box">
+          <div class="resultado-header">Resultado</div>
+          H<sub>2</sub>O
+        </div>
+      </li>
+
+      <li>
+        &lt;time&gt; &lt;/time&gt;: Para representar fechas y horas, el
+        navegador nos muestra el texto en un formato específico. Por ejemplo:
+
+        <div class="code-box">
+          <div class="code-header">HTML</div>
+          <div>
+            <code
+              >hoy &lt;time datetime="2023-03-15"&gt;15 de marzo de
+              2023&lt;/time&gt; se celebra el cumpleaños de Ana.</code
+            >
+          </div>
+        </div>
+
+        <p>Nos da como resultado:</p>
+
+        <div class="resultado-box">
+          <div class="resultado-header">Resultado</div>
+          hoy <time datetime="2023-03-15">15 de marzo de 2023</time> se celebra
+          el cumpleaños de Ana.
+        </div>
+      </li>
+
+      <li>
+        &lt;details&gt; &lt;/details&gt;: Para representar información adicional
+        que el usuario puede mostrar u ocultar, el navegador nos muestra un
+        cuadro desplegable. Por ejemplo:
+
+        <div class="code-box">
+          <div class="code-header">HTML</div>
+          <div>
+            <code>
+              <span>&lt;details&gt;</span> <br />
+              <span>&lt;summary&gt;Más información&lt;/summary&gt;</span> <br />
+              <span>Rodar sobre sal por media hora</span> <br />
+              <span>&lt;/details&gt;</span>
+            </code>
+          </div>
+        </div>
+
+        <p>Nos da como resultado:</p>
+
+        <div class="resultado-box">
+          <div class="resultado-header">Resultado</div>
+          <details>
+            <summary>Más información</summary>
+            Rodar sobre sal por media hora
+          </details>
+        </div>
+      </li>
+
+      <li>
+        &lt;a&gt; &lt;/a&gt;: Para crear enlaces, el navegador nos muestra el
+        texto como un hipervínculo. Por ejemplo:
+
+        <div class="code-box">
+          <div class="code-header">HTML</div>
+          <div>
+            <code>
+              Visitar &lt;a
+              href="https://www.ejemplo.com"&gt;ejemplo.com&lt;/a&gt;</code
+            >
+          </div>
+        </div>
+
+        <p>Nos da como resultado:</p>
+
+        <div class="resultado-box">
+          <div class="resultado-header">Resultado</div>
+          Visitar <a href="https://www.ejemplo.com">ejemplo.com </a>
+        </div>
+      </li>
+    </ul>
+
+    <p>
+      <strong>Nota:</strong> El uso de estas etiquetas es muy importante para el
+      SEO
+    </p>
+
+    <!-- etiquetas de tipo lista -->
+    <h4><em>Etiquetas de tipo lista</em></h4>
   </body>
 </html>

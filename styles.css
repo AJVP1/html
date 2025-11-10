@@ -34,6 +34,13 @@ h3 {
   line-height: 1.2;
 }
 
+h4 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
 p {
   margin: 10px 0;
   font-weight: 400;
@@ -61,6 +68,27 @@ img {
 }
 
 .code-header {
+  background: #262626;
+  padding: 10px 15px;
+  border-radius: 6px 6px 0 0;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 600;
+  margin: -20px -20px 15px;
+}
+
+.resultado-box {
+  background: #b2b2b2;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 700px;
+  width: 100%;
+  color: white;
+  margin: 20px auto;
+}
+
+.resultado-header {
   background: #262626;
   padding: 10px 15px;
   border-radius: 6px 6px 0 0;
