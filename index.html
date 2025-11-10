@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Importar la fuente Montserrat desde Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Titulo -->
+    <h1>HTML (HyperText Markup Language)</h1>
+
+    <!-- Indice -->
+
+    <!-- Fundamentos -->
+    <h2>Fundamentos de HTML</h2>
+    <hr />
+
+    <h3><em>¿Qué es HTML?</em></h3>
+
+    <p>
+      El Lenguaje de Marcado de Hipertexto o HTML por sus siglas en inglés
+      (HyperText Markup Language) es el código para construir la estructura de
+      una página web.
+    </p>
+
+    <p>
+      En otras palabras, HTML es el esqueleto con el cual definimos cada
+      elemento que compone la página web, así como: enlaces, párrafos, títulos,
+      botones, imágenes, formularios, entre otros.
+    </p>
+
+    <p>
+      <strong>Nota:</strong> con “! + tab” se coloca rápidamente la estructura
+      de html
+    </p>
+
+    <h3><em>Proceso de renderizado del motor del navegador</em></h3>
+
+    <ol>
+      <li>
+        Transforma los archivos a un árbol de objetos HTML o CSS, estos se
+        denominan DOM (Document Object Model) y CSSDOM (Cascade Style Sheet
+        Object Model), respectivamente. Cada nodo en el árbol es una
+        representación de los elementos que contiene el archivo HTML o CSS.
+      </li>
+      <li>
+        Calcula el estilo correspondiente a cada nodo del DOM relacionado al
+        CSSDOM.
+      </li>
+      <li>Calcula las dimensiones de cada nodo y dónde va en la pantalla.</li>
+      <li>
+        Pinta o renderiza los diferentes elementos como cajas o contenedores.
+      </li>
+      <li>
+        Agrupa todas las cajas en diferentes capas para convertirlas en una
+        imagen que se renderiza.
+      </li>
+    </ol>
+
+    <h3><em>Index.html</em></h3>
+
+    <p>
+      Index es la primera pagina que va a buscar el servidor a la hora de abrir
+      el sitio web. Si tenemos más páginas, entonces estas se relacionan a la
+      página index. Tambien podemos tener subcarpetas, las cuales van a tener su
+      propio archivo index.html.
+    </p>
+
+    <h3><em>Comentarios en HTML</em></h3>
+
+    <p>
+      Los comentarios de HTML consisten en señalar algo que se ignorará. Para
+      establecer un comentario HTML se lo envuelve entre
+      <code>&lt;!--</code> y <code>--&gt;</code>, independiente de la cantidad
+      de líneas.
+    </p>
+
+    <div class="code-box">
+      <div class="code-header">HTML</div>
+      <pre>
+        <span style="color: green">&lt;!-- Este es un comentario en HTML --&gt;</span>
+
+        <span style="color: green">&lt;!--</span>
+        <span style="color: green">Este es un comentario</span>
+        <span style="color: green">que abarca varias líneas</span>
+        <span style="color: green">--&gt;</span>
+      </pre>
+    </div>
+
+    <p>
+      <strong>Nota:</strong> se puede comentar una sección, seleccionado el
+      código y oprimiendo las teclas “control + /”
+    </p>
+
+    <!-- Maquetacion -->
+    <h2>Maquetación</h2>
+    <hr />
+
+    <h3><em>Elementos no vacíos</em></h3>
+
+    <p>
+      Los elementos son cada una de las partes que conforman un archivo HTML. Su
+      estructura contiene:
+    </p>
+
+    <ul>
+      <li>Etiqueta de apertura: Indica el inicio de un elemento.</li>
+      <li>
+        Contenido: Es el texto o los elementos que se encuentran dentro de la
+        etiqueta.
+      </li>
+      <li>Etiqueta de cierre: Indica el final de un elemento.</li>
+    </ul>
+
+    <img src="./imgs/Imagen1.png" alt="Imagen de elementos no vacíos" />
+
+    <h3><em>Elementos vacíos</em></h3>
+
+    <p>
+      Los elementos vacíos son aquellos que únicamente se representan en una
+      etiqueta de apertura. Por ejemplo, la etiqueta de imagen:
+      <code style="color: red"
+        >&lt;img src="ruta/de/la/imagen" alt="Texto alternativo"&gt;</code
+      >
+    </p>
+
+    <p>
+      Estas etiquetas pueden cerrarse en la misma etiqueta de apertura,
+      utilizando la barra inclinada “/” al final:
+      <code
+        >&lt;img src="ruta/de/la/imagen" alt="Texto alternativo"
+        <span style="color: red">/</span>&gt;</code
+      >
+    </p>
+
+    <img src="./imgs/Imagen2.png" alt="imagen de elementos vacíos" />
+
+    <h3><em>Atributos</em></h3>
+
+    <p>
+      Los atributos HTML son propiedades en la etiqueta de apertura que manejan
+      el comportamiento del elemento. Su valor está envuelto en comillas.
+    </p>
+
+    <img src="./imgs/Imagen3.png" alt="imagen de atributos" />
+
+    <h3><em>Anidado de elementos</em></h3>
+
+    <p>
+      El anidamiento de elementos HTML consiste en envolver varias etiquetas en
+      otras etiquetas.
+    </p>
+
+    <img src="./imgs/Imagen4.png" alt="imagen de anidado de elementos" />
+
+    <p>
+      Interpreta a cada elemento HTML como una caja donde puedes guardar
+      diferentes elementos u otras cajas. Estas cajas tendrán diferentes tamaños
+      y estarán colocadas junto a otras.
+    </p>
+
+    <p>
+      Aquellas etiquetas que envuelven a otras se las denomina “padres”. Es
+      decir, <code>&lt;section&gt;</code> es padre de <code>&lt;h1&gt;</code>,
+      <code>&lt;p&gt;</code>, <code>&lt;ul&gt;</code>, y a su vez
+      <code>&lt;ul&gt;</code> es padre de 3 etiquetas <code>&lt;li&gt;</code>.
+    </p>
+
+    <p>
+      Las etiquetas que son el contenido de otras, se las denomina “hijos”. Es
+      decir, las etiquetas <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>,
+      <code>&lt;ul&gt;</code> son hijos de <code>&lt;section&gt;</code>, y a su
+      vez las etiquetas <code>&lt;li&gt;</code> son hijos de
+      <code>&lt;ul&gt;</code>.
+    </p>
+
+    <!-- HTML Semantico -->
+    <h2>HTML Semántico</h2>
+    <hr />
+  </body>
+</html>
