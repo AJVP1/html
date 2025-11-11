@@ -12,16 +12,88 @@
     />
   </head>
   <body>
-    <!-- Titulo -->
-    <h1>HTML (HyperText Markup Language)</h1>
-
     <!-- Indice -->
+    <nav class="indice">
+      <h2>Índice de Contenidos</h2>
+      <ul>
+        <li>
+          <a href="#fundamentos">Fundamentos de HTML</a>
+          <ul>
+            <li><a href="#que-es-html">¿Qué es HTML?</a></li>
+            <li>
+              <a href="#proceso-renderizado"
+                >Proceso de renderizado del motor del navegador</a
+              >
+            </li>
+            <li><a href="#index-html">Index.html</a></li>
+            <li><a href="#comentarios-html">Comentarios en HTML</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#maquetacion">Maquetación</a>
+          <ul>
+            <li><a href="#elementos-no-vacios">Elementos no vacíos</a></li>
+            <li><a href="#elementos-vacios">Elementos vacíos</a></li>
+            <li><a href="#atributos">Atributos</a></li>
+            <li><a href="#anidado-elementos">Anidado de elementos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#html-semantico">HTML Semántico</a>
+          <ul>
+            <li><a href="#definicion">Definición</a></li>
+            <li>
+              <a href="#etiquetas-anatomia">Etiquetas de anatomía del HTML</a>
+              <ul>
+                <li><a href="#doctype">DOCTYPE html</a></li>
+                <li><a href="#html-tag">html lang</a></li>
+                <li><a href="#head-tag">head</a></li>
+                <li><a href="#body-tag">body</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#etiquetas-head">Etiquetas dentro del head</a>
+              <ul>
+                <li><a href="#meta-tag">meta</a></li>
+                <li><a href="#title-tag">title</a></li>
+                <li><a href="#script-tag">script</a></li>
+                <li><a href="#link-tag">link</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#etiquetas-body">Etiquetas dentro del body</a>
+              <ul>
+                <li>
+                  <a href="#etiquetas-contenedor"
+                    >Etiquetas de tipo contenedor</a
+                  >
+                </li>
+                <li><a href="#etiquetas-texto">Etiquetas de tipo texto</a></li>
+                <li><a href="#etiquetas-lista">Etiquetas de tipo lista</a></li>
+                <li><a href="#etiquetas-multimedia">Etiquetas multimedia</a></li>
+                <li>
+                  <a href="#etiquetas-formularios"
+                    >Etiquetas para formularios</a
+                  >
+                </li>
+                <li><a href="#etiquetas-menu">Etiquetas para menús</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
 
-    <!---------------------------------------------------- Fundamentos -->
-    <h2>Fundamentos de HTML</h2>
+    <!-- Contenido Principal -->
+    <div class="contenido-principal">
+      <!-- Titulo -->
+      <h1 id="titulo-principal">HTML (HyperText Markup Language)</h1>
+
+      <!---------------------------------------------------- Fundamentos -->
+    <h2 id="fundamentos">Fundamentos de HTML</h2>
     <hr />
 
-    <h3><em>¿Qué es HTML?</em></h3>
+    <h3 id="que-es-html"><em>¿Qué es HTML?</em></h3>
 
     <p>
       El Lenguaje de Marcado de Hipertexto o HTML por sus siglas en inglés
@@ -40,7 +112,9 @@
       de html
     </p>
 
-    <h3><em>Proceso de renderizado del motor del navegador</em></h3>
+    <h3 id="proceso-renderizado">
+      <em>Proceso de renderizado del motor del navegador</em>
+    </h3>
 
     <ol>
       <li>
@@ -63,7 +137,7 @@
       </li>
     </ol>
 
-    <h3><em>Index.html</em></h3>
+    <h3 id="index-html"><em>Index.html</em></h3>
 
     <p>
       Index es la primera pagina que va a buscar el servidor a la hora de abrir
@@ -72,7 +146,7 @@
       propio archivo index.html.
     </p>
 
-    <h3><em>Comentarios en HTML</em></h3>
+    <h3 id="comentarios-html"><em>Comentarios en HTML</em></h3>
 
     <p>
       Los comentarios de HTML consisten en señalar algo que se ignorará. Para
@@ -103,10 +177,10 @@
     </p>
 
     <!-------------------------------------------------- Maquetacion -->
-    <h2>Maquetación</h2>
+    <h2 id="maquetacion">Maquetación</h2>
     <hr />
 
-    <h3><em>Elementos no vacíos</em></h3>
+    <h3 id="elementos-no-vacios"><em>Elementos no vacíos</em></h3>
 
     <p>
       Los elementos son cada una de las partes que conforman un archivo HTML. Su
@@ -124,7 +198,7 @@
 
     <img src="./imgs/Imagen1.png" alt="Imagen de elementos no vacíos" />
 
-    <h3><em>Elementos vacíos</em></h3>
+    <h3 id="elementos-vacios"><em>Elementos vacíos</em></h3>
 
     <p>
       Los elementos vacíos son aquellos que únicamente se representan en una
@@ -145,7 +219,7 @@
 
     <img src="./imgs/Imagen2.png" alt="imagen de elementos vacíos" />
 
-    <h3><em>Atributos</em></h3>
+    <h3 id="atributos"><em>Atributos</em></h3>
 
     <p>
       Los atributos HTML son propiedades en la etiqueta de apertura que manejan
@@ -154,7 +228,7 @@
 
     <img src="./imgs/Imagen3.png" alt="imagen de atributos" />
 
-    <h3><em>Anidado de elementos</em></h3>
+    <h3 id="anidado-elementos"><em>Anidado de elementos</em></h3>
 
     <p>
       El anidamiento de elementos HTML consiste en envolver varias etiquetas en
@@ -185,11 +259,11 @@
     </p>
 
     <!--------------------------------------- HTML Semantico -->
-    <h2>HTML Semántico</h2>
+    <h2 id="html-semantico">HTML Semántico</h2>
     <hr />
 
     <!-- Definicion -->
-    <h3><em>Definición</em></h3>
+    <h3 id="definicion"><em>Definición</em></h3>
     <p>
       El HTML semántico consiste en que cada elemento tenga su propia etiqueta
       que lo defina correctamente. Sin utilizar etiquetas muy generales, como
@@ -197,28 +271,28 @@
     </p>
 
     <!-- Etiquetas de anatomía del HTML -->
-    <h3><em>Etiquetas de anatomía del HTML</em></h3>
+    <h3 id="etiquetas-anatomia"><em>Etiquetas de anatomía del HTML</em></h3>
 
     <p>
       La estructura básica de un documento HTML está configurada por las
       siguientes etiquetas principales:
     </p>
 
-    <h4>
+    <h4 id="doctype">
       <em><code>&lt;!DOCTYPE html&gt;</code></em>
     </h4>
     <p>
       Define el tipo de documento y la versión de HTML que se está utilizando.
     </p>
 
-    <h4>
+    <h4 id="html-tag">
       <em><code>&lt;html lang="es-US"&gt; &lt;/html&gt;</code></em>
     </h4>
     <p>
       Es la etiqueta raíz que envuelve todo el contenido del documento HTML.
     </p>
 
-    <h4>
+    <h4 id="head-tag">
       <em><code>&lt;head&gt; &lt;/head&gt;</code></em>
     </h4>
     <p>
@@ -228,7 +302,7 @@
       navegador. Esto es importante para motores de búsqueda como Google.
     </p>
 
-    <h4>
+    <h4 id="body-tag">
       <em><code>&lt;body&gt; &lt;/body&gt;</code></em>
     </h4>
     <p>
@@ -244,10 +318,10 @@
     </p>
 
     <!-- Etiquetas dentro del head -->
-    <h3><em>Etiquetas dentro del head</em></h3>
+    <h3 id="etiquetas-head"><em>Etiquetas dentro del head</em></h3>
     <p>Algunas de las etiquetas más comunes dentro del head son:</p>
 
-    <h4>
+    <h4 id="meta-tag">
       <em><code>&lt;meta /&gt;</code></em>
     </h4>
     <p>
@@ -319,7 +393,7 @@
       </code>
     </div>
 
-    <h4><em>&lt;title&gt; Titulo &lt;/title&gt;</em></h4>
+    <h4 id="title-tag"><em>&lt;title&gt; Titulo &lt;/title&gt;</em></h4>
     <p>
       Define el nombre de la ventana en el navegador colocando el valor entre
       las etiquetas de apertura y cierre, por ejemplo
@@ -332,7 +406,7 @@
       >
     </div>
 
-    <h4><em>&lt;script&gt; &lt;/script&gt;</em></h4>
+    <h4 id="script-tag"><em>&lt;script&gt; &lt;/script&gt;</em></h4>
     <p>
       Define cual sera el archivo de JavaScript que vamos a usar sobre el
       archivo HTML, se coloca la ruta del archivo JS dentro del atributo src y
@@ -350,7 +424,7 @@
       >
     </div>
 
-    <h4><em>&lt;link /&gt;</em></h4>
+    <h4 id="link-tag"><em>&lt;link /&gt;</em></h4>
     <p>
       Permite importar el diseño css colocando el valor “stylesheet” en el
       atributo rel, y la ruta del archivo css en el atributo href, por ejemplo
@@ -380,10 +454,10 @@
     </div>
 
     <!-- etiquetas dentro del body -->
-    <h3><em>Etiquetas dentro del body</em></h3>
+    <h3 id="etiquetas-body"><em>Etiquetas dentro del body</em></h3>
 
     <!-- etiquetas de tipo contenedor -->
-    <h4><em>Etiquetas de tipo contenedor</em></h4>
+    <h4 id="etiquetas-contenedor"><em>Etiquetas de tipo contenedor</em></h4>
     <p>
       Estas etiquetas se utilizan para estructurar y organizar el contenido de
       la página web, proporcionando una semántica clara sobre la función de cada
@@ -428,7 +502,7 @@
     </ul>
 
     <!-- etiquetas de tipo texto -->
-    <h4><em>Etiquetas de tipo texto</em></h4>
+    <h4 id="etiquetas-texto"><em>Etiquetas de tipo texto</em></h4>
     <p>
       Estas etiquetas se utilizan para dar formato y estructura al texto dentro
       de la página web.
@@ -668,7 +742,7 @@
     </p>
 
     <!-- etiquetas de tipo lista -->
-    <h4><em>Etiquetas de tipo lista</em></h4>
+    <h4 id="etiquetas-lista"><em>Etiquetas de tipo lista</em></h4>
     <p>
       Hay tres tipos de listas, las ordenadas, las desordenadas y las listas de
       descripcion. Estas son:
@@ -796,7 +870,7 @@
     </ul>
 
     <!-- etiquetas de tipo multimedia -->
-    <h4><em>Etiquetas multimedia</em></h4>
+    <h4 id="etiquetas-multimedia"><em>Etiquetas multimedia</em></h4>
     <p>
       Estas etiquetas se utilizan para insertar y controlar contenido multimedia
       en la página web, como imágenes, audio y video.
@@ -924,7 +998,7 @@
     </ul>
 
     <!-- etiquetas para formularios -->
-    <h4><em>etiquetas para formularios</em></h4>
+    <h4 id="etiquetas-formularios"><em>etiquetas para formularios</em></h4>
     <p>Las etiquetas más comunes para formularios son:</p>
 
     <ul>
@@ -1217,7 +1291,7 @@
     </ul>
 
     <!-- etiquetas para menu -->
-    <h4><em>etiquetas para menús</em></h4>
+    <h4 id="etiquetas-menu"><em>etiquetas para menús</em></h4>
     <p>Las etiquetas más comunes para menús son:</p>
     <ul>
       <li>
@@ -1302,5 +1376,6 @@
         </div>
       </li>
     </ul>
+    </div>
   </body>
 </html>
