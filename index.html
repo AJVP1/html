@@ -1381,6 +1381,116 @@
         </div>
       </li>
     </ul>
+
+    <!-- etiquetas para tablas -->
+    <h4 id="etiquetas-tablas"><em>etiquetas para tablas</em></h4>
+    <p>Las etiquetas más comunes para crear tablas en HTML son:</p>
+    
+    <ul>
+      <li>
+        <p>
+          &lt;table&gt; &lt;/table&gt;: Define la estructura principal de una tabla.
+        </p>
+        <p>
+          Dentro de ella se utilizan filas (&lt;tr&gt;) y celdas (&lt;th&gt;).
+        </p>
+    
+        <div class="code-box">
+          <div class="code-header">HTML</div>
+          <code>
+            &lt;table <span style="color: red">border="1"</span>&gt; <br />
+            &nbsp;&nbsp;&lt;tr&gt; <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Nombre&lt;/th&gt; <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Edad&lt;/th&gt; <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;País&lt;/th&gt; <br />
+            &nbsp;&nbsp;&lt;/tr&gt; <br />
+            &nbsp;&nbsp;&lt;tr&gt; <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Ana&lt;/td&gt; <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;25&lt;/td&gt; <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Argentina&lt;/td&gt; <br />
+            &nbsp;&nbsp;&lt;/tr&gt; <br />
+            &lt;/table&gt;
+          </code>
+        </div>
+    
+        <div class="resultado-box">
+          <div class="resultado-header">Resultado</div>
+          <table border="1">
+            <tr>
+              <th>Nombre</th>
+              <th>Edad</th>
+              <th>País</th>
+            </tr>
+            <tr>
+              <td>Ana</td>
+              <td>25</td>
+              <td>Argentina</td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
+      <li>
+        <p>
+          &lt;thead&gt;, &lt;tbody&gt; y &lt;tfoot&gt;: Permiten organizar la tabla
+          en encabezado, cuerpo y pie.
+        </p>
+        <p>
+          Mejoran la legibilidad y accesibilidad de las tablas.
+        </p>
+    
+        <div class="code-box">
+          <div class="code-header">HTML</div>
+          <code>
+            &lt;table border="1"&gt; <br />
+            &nbsp;&nbsp;&lt;thead&gt; <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt; <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Producto&lt;/th&gt; <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Precio&lt;/th&gt; <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt; <br />
+            &nbsp;&nbsp;&lt;/thead&gt; <br />
+            &nbsp;&nbsp;&lt;tbody&gt; <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt; <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Laptop&lt;/td&gt; <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;$1200&lt;/td&gt; <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt; <br />
+            &nbsp;&nbsp;&lt;/tbody&gt; <br />
+            &nbsp;&nbsp;&lt;tfoot&gt; <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt; <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Total&lt;/td&gt; <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;$1200&lt;/td&gt; <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt; <br />
+            &nbsp;&nbsp;&lt;/tfoot&gt; <br />
+            &lt;/table&gt;
+          </code>
+        </div>
+    
+        <div class="resultado-box">
+          <div class="resultado-header">Resultado</div>
+          <table border="1">
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Laptop</td>
+                <td>$1200</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>Total</td>
+                <td>$1200</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </li>
+    </ul>
+
     </div>
   </body>
 </html>
