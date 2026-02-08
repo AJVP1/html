@@ -1,144 +1,663 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>HTML Docs - Etiquetas del head</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#141414",
+              "background-light": "#f7f7f7",
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .sidebar-scroll::-webkit-scrollbar {
+        width: 4px;
+      }
+      .sidebar-scroll::-webkit-scrollbar-thumb {
+        background: #e5e5e5;
+        border-radius: 10px;
+      }
+      pre,
+      code {
+        font-family:
+          "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas",
+          "Liberation Mono", "Courier New", monospace;
+      }
+    </style>
   </head>
-  <body>
-    <h1 id="etiquetas-head"><em>Etiquetas dentro del head</em></h1>
-    <p>Algunas de las etiquetas más comunes dentro del head son:</p>
 
-    <h4 id="meta-tag">
-      <em><code>&lt;meta /&gt;</code></em>
-    </h4>
-    <p>
-      Define la semántica del navegador mediante el atributo “charset”, y
-      permite el uso de caracteres especiales mediante el valor “UFT-8”, por
-      ejemplo
-    </p>
-    <div class="code-box">
-      <div class="code-header">HTML</div>
-      <code>
-        &lt;meta <span style="color: red">charset="UTF-8"</span>/&gt;
-      </code>
-    </div>
+  <body class="bg-white text-[#141414] antialiased font-display">
+    <!-- Top Navigation Bar -->
+    <header
+      class="sticky top-0 z-50 w-full border-b border-[#f2f2f2] bg-white/95 backdrop-blur-lg"
+    >
+      <div class="max-w-[1440px] mx-auto px-6 py-4">
+        <a class="flex items-center gap-3 w-fit" href="../index.html">
+          <div class="size-9 text-primary">
+            <svg
+              fill="none"
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_6_330)">
+                <path
+                  clip-rule="evenodd"
+                  d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                ></path>
+              </g>
+              <defs>
+                <clipPath id="clip0_6_330">
+                  <rect fill="white" height="48" width="48"></rect>
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+          <span class="text-xl font-extrabold tracking-tight">HTML Docs</span>
+        </a>
+      </div>
+    </header>
 
-    <p>
-      Define el autor de la pagina web colocando el valor “author” en el
-      atributo name, y el nombre del autor en el atributo content, por ejemplo
-    </p>
-    <div class="code-box">
-      <div class="code-header">HTML</div>
-      <code>
-        &lt;meta
-        <span style="color: red">name="author" content="Juan Pérez"</span>/&gt;
-      </code>
-    </div>
+    <div class="max-w-[1440px] mx-auto flex">
+      <!-- Sidebar Navigation -->
+      <aside
+        class="hidden md:flex flex-col w-72 h-[calc(100vh-64px)] sticky top-16 border-r border-[#f2f2f2] overflow-y-auto sidebar-scroll p-6"
+      >
+        <div class="space-y-8">
+          <!-- Maquetación -->
+          <div>
+            <h5
+              class="mb-4 text-xs font-bold uppercase tracking-wider text-[#757575]"
+            >
+              Maquetación
+            </h5>
+            <ul class="space-y-1">
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="1-maquetacion.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >dashboard</span
+                  >
+                  Maquetación
+                </a>
+              </li>
+            </ul>
+          </div>
 
-    <p>
-      Define el uso de la pagina web colocando el valor “description” en el
-      atributo name, y la descripción en el atributo content, por ejemplo
-    </p>
-    <div class="code-box">
-      <div class="code-header">HTML</div>
-      <code>
-        &lt;meta
-        <span style="color: red"
-          >name="description" content="Página web sobre HTML"</span
-        >/&gt;
-      </code>
-    </div>
+          <!-- HTML Semántico -->
+          <div>
+            <h5
+              class="mb-4 text-xs font-bold uppercase tracking-wider text-[#757575]"
+            >
+              HTML Semántico
+            </h5>
+            <ul class="space-y-1">
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="2-anatomia.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >data_object</span
+                  >
+                  Anatomía del HTML
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg bg-[#f2f2f2] font-semibold transition-colors text-sm"
+                  href="3-head.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >integration_instructions</span
+                  >
+                  Etiquetas del head
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="4-contenedor.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >web</span
+                  >
+                  Contenedor
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="5-texto.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >text_fields</span
+                  >
+                  Texto
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="6-listas.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >format_list_bulleted</span
+                  >
+                  Listas
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="7-multimedia.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >perm_media</span
+                  >
+                  Multimedia
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="8-formularios.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >edit_note</span
+                  >
+                  Formularios
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="9-menu.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >menu</span
+                  >
+                  Menús
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="10-tablas.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >table_chart</span
+                  >
+                  Tablas
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
 
-    <p>
-      Permite el responsive design colocando el valor “viewport” en el atributo
-      name, y el valor “width=device-width, initial-scale=1.0” en el atributo
-      content, por ejemplo
-    </p>
-    <div class="code-box">
-      <div class="code-header">HTML</div>
-      <code style="margin: 0">
-        &lt;meta
-        <span style="color: red"
-          >name="viewport" content="width=device-width, initial-scale=1.0"</span
-        >/&gt;
-      </code>
-    </div>
+      <!-- Main Content Pane -->
+      <main class="flex-1 min-w-0">
+        <div class="max-w-4xl mx-auto px-6 py-10 lg:px-12">
+          <!-- Breadcrumbs -->
+          <nav aria-label="Breadcrumb" class="flex items-center gap-2 mb-8 text-sm font-medium">
+            <a class="text-[#757575] hover:text-primary" href="../index.html"
+              >Docs</a
+            >
+            <span class="material-symbols-outlined text-xs text-[#757575]"
+              >chevron_right</span
+            >
+            <span class="text-primary">Etiquetas del head</span>
+          </nav>
 
-    <p>
-      Define las palabras clave de la página web para motores de búsqueda
-      colocando el valor “keywords” en el atributo name, y las palabras clave
-      separadas por comas en el atributo content, por ejemplo
-    </p>
-    <div class="code-box">
-      <div class="code-header">HTML</div>
-      <code>
-        &lt;meta
-        <span style="color: red"
-          >name="keywords" content="HTML, etiquetas, meta"</span
+          <!-- Page Header -->
+          <section class="mb-12">
+            <h1
+              class="text-4xl font-extrabold tracking-tight text-[#141414] mb-4"
+            >
+              Etiquetas dentro del head
+            </h1>
+            <p class="text-xl text-[#757575] leading-relaxed">
+              Algunas de las etiquetas más comunes dentro del head son:
+            </p>
+          </section>
+
+          <!-- Content -->
+          <article class="prose prose-slate max-w-none">
+            <!-- meta tag -->
+            <h2 id="meta-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;meta /&gt;</code
+              >
+            </h2>
+
+            <h3 class="text-lg font-semibold mt-8 mb-3">Charset</h3>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Define la semántica del navegador mediante el atributo
+              "charset", y permite el uso de caracteres especiales mediante el
+              valor "UTF-8", por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;meta <span class="text-[#f87171]">charset="UTF-8"</span> /&gt;</code></pre>
+            </div>
+
+            <h3 class="text-lg font-semibold mt-8 mb-3">Author</h3>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Define el autor de la página web colocando el valor "author" en
+              el atributo name, y el nombre del autor en el atributo content,
+              por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;meta <span class="text-[#f87171]">name="author" content="Juan Pérez"</span> /&gt;</code></pre>
+            </div>
+
+            <h3 class="text-lg font-semibold mt-8 mb-3">Description</h3>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Define el uso de la página web colocando el valor "description"
+              en el atributo name, y la descripción en el atributo content, por
+              ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;meta <span class="text-[#f87171]">name="description" content="Página web sobre HTML"</span> /&gt;</code></pre>
+            </div>
+
+            <h3 class="text-lg font-semibold mt-8 mb-3">Viewport</h3>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Permite el responsive design colocando el valor "viewport" en el
+              atributo name, y el valor "width=device-width, initial-scale=1.0"
+              en el atributo content, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;meta <span class="text-[#f87171]">name="viewport" content="width=device-width, initial-scale=1.0"</span> /&gt;</code></pre>
+            </div>
+
+            <h3 class="text-lg font-semibold mt-8 mb-3">Keywords</h3>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Define las palabras clave de la página web para motores de
+              búsqueda colocando el valor "keywords" en el atributo name, y las
+              palabras clave separadas por comas en el atributo content, por
+              ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;meta <span class="text-[#f87171]">name="keywords" content="HTML, etiquetas, meta"</span> /&gt;</code></pre>
+            </div>
+
+            <h3 class="text-lg font-semibold mt-8 mb-3">Robots</h3>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Controla cómo los motores de búsqueda indexan y rastrean la
+              página. Los valores más comunes son "index" (permitir
+              indexación), "noindex" (no indexar), "follow" (seguir enlaces) y
+              "nofollow" (no seguir enlaces), por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;meta <span class="text-[#f87171]">name="robots" content="index, follow"</span> /&gt;</code></pre>
+            </div>
+
+            <h3 class="text-lg font-semibold mt-8 mb-3">Theme-color</h3>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Define el color de la barra de dirección del navegador en
+              dispositivos móviles, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;meta <span class="text-[#f87171]">name="theme-color" content="#141414"</span> /&gt;</code></pre>
+            </div>
+
+            <h3 class="text-lg font-semibold mt-8 mb-3">Open Graph</h3>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Las meta etiquetas Open Graph controlan cómo se muestra la página
+              cuando se comparte en redes sociales como Facebook, Twitter o
+              WhatsApp. Se usan los atributos "property" y "content", por
+              ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;meta <span class="text-[#f87171]">property="og:title" content="Mi Página Web"</span> /&gt;
+&lt;meta <span class="text-[#f87171]">property="og:description" content="Descripción de la página"</span> /&gt;
+&lt;meta <span class="text-[#f87171]">property="og:image" content="https://ejemplo.com/imagen.png"</span> /&gt;</code></pre>
+            </div>
+
+            <!-- title tag -->
+            <h2 id="title-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;title&gt; &lt;/title&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Define el nombre de la ventana en el navegador colocando el valor
+              entre las etiquetas de apertura y cierre, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;title&gt; <span class="text-[#f87171]">Página sobre HTML</span> &lt;/title&gt;</code></pre>
+            </div>
+
+            <!-- script tag -->
+            <h2 id="script-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;script&gt; &lt;/script&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Define cual será el archivo de JavaScript que vamos a usar sobre
+              el archivo HTML, se coloca la ruta del archivo JS dentro del
+              atributo src y se usa el atributo defer para que el JavaScript se
+              cargue después de que se haya cargado todo el archivo HTML y CSS,
+              así se evitan errores cuando el archivo JS intenta acceder a
+              elementos HTML que todavía no existen en la página, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;script <span class="text-[#f87171]">src="ruta/del/archivo.js" defer</span>&gt; &lt;/script&gt;</code></pre>
+            </div>
+
+            <!-- link tag -->
+            <h2 id="link-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;link /&gt;</code
+              >
+            </h2>
+
+            <h3 class="text-lg font-semibold mt-8 mb-3">Stylesheet</h3>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Permite importar el diseño CSS colocando el valor "stylesheet" en
+              el atributo rel, y la ruta del archivo CSS en el atributo href,
+              por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;link <span class="text-[#f87171]">rel="stylesheet" href="ruta/del/archivo.css"</span> /&gt;</code></pre>
+            </div>
+
+            <h3 class="text-lg font-semibold mt-8 mb-3">Icon</h3>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Permite agregar un icono al lado del title colocando "icon" en el
+              atributo rel y la ruta del icono en el atributo href, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;link <span class="text-[#f87171]">rel="icon" href="ruta/del/icono.ico"</span> /&gt;</code></pre>
+            </div>
+
+            <h3 class="text-lg font-semibold mt-8 mb-3">Canonical</h3>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Indica a los motores de búsqueda cuál es la URL principal de una
+              página cuando existen varias URLs con el mismo contenido, evitando
+              problemas de contenido duplicado en SEO, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;link <span class="text-[#f87171]">rel="canonical" href="https://ejemplo.com/pagina"</span> /&gt;</code></pre>
+            </div>
+
+            <h3 class="text-lg font-semibold mt-8 mb-3">Preconnect y Preload</h3>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Optimizan el rendimiento de la página. "preconnect" establece una
+              conexión anticipada con un servidor externo, y "preload" carga
+              recursos importantes de forma anticipada antes de que el navegador
+              los necesite, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;link <span class="text-[#f87171]">rel="preconnect" href="https://fonts.googleapis.com"</span> /&gt;
+&lt;link <span class="text-[#f87171]">rel="preload" href="estilos.css" as="style"</span> /&gt;</code></pre>
+            </div>
+
+            <!-- style tag -->
+            <h2 id="style-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;style&gt; &lt;/style&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Permite escribir estilos CSS directamente dentro del documento
+              HTML sin necesidad de un archivo externo. Es útil para estilos
+              pequeños o específicos de una sola página, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;style&gt;
+  <span class="text-[#f87171]">body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+  }</span>
+&lt;/style&gt;</code></pre>
+            </div>
+
+            <!-- base tag -->
+            <h2 id="base-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;base /&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Define la URL base para todas las URLs relativas del documento.
+              También puede definir cómo se abren los enlaces por defecto
+              mediante el atributo "target", por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;base <span class="text-[#f87171]">href="https://ejemplo.com/" target="_blank"</span> /&gt;</code></pre>
+            </div>
+
+            <!-- noscript tag -->
+            <h2 id="noscript-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;noscript&gt; &lt;/noscript&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Define contenido alternativo que se muestra cuando el navegador
+              del usuario no soporta JavaScript o lo tiene deshabilitado, por
+              ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;noscript&gt;
+  <span class="text-[#f87171]">&lt;p&gt;Esta página requiere JavaScript para funcionar correctamente.&lt;/p&gt;</span>
+&lt;/noscript&gt;</code></pre>
+            </div>
+
+            <div
+              class="bg-[#f7f7f7] border-l-4 border-primary p-5 my-8 rounded-r-lg"
+            >
+              <div class="flex gap-3">
+                <span class="material-symbols-outlined text-primary"
+                  >lightbulb</span
+                >
+                <div>
+                  <p class="font-bold text-sm mb-1">Tip</p>
+                  <p class="text-sm text-[#757575]">
+                    Las etiquetas
+                    <code
+                      class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono"
+                      >&lt;meta&gt;</code
+                    >,
+                    <code
+                      class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono"
+                      >&lt;link&gt;</code
+                    >
+                    y
+                    <code
+                      class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono"
+                      >&lt;script&gt;</code
+                    >
+                    no son visibles en la página, pero son fundamentales para
+                    el SEO, el rendimiento y el correcto funcionamiento del
+                    sitio.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Navigation Footer -->
+          <div
+            class="mt-20 pt-10 border-t border-[#f2f2f2] flex items-center justify-between"
+          >
+            <a
+              class="group flex flex-col items-start text-left"
+              href="2-anatomia.html"
+            >
+              <span class="text-xs text-[#757575] mb-1">Anterior</span>
+              <div
+                class="flex items-center gap-2 font-bold text-primary group-hover:-translate-x-1 transition-transform"
+              >
+                <span class="material-symbols-outlined">arrow_back</span>
+                Anatomía del HTML
+              </div>
+            </a>
+            <a
+              class="group flex flex-col items-end text-right"
+              href="4-contenedor.html"
+            >
+              <span class="text-xs text-[#757575] mb-1">Siguiente</span>
+              <div
+                class="flex items-center gap-2 font-bold text-primary group-hover:translate-x-1 transition-transform"
+              >
+                Contenedor
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </main>
+
+      <!-- Right Side Table of Contents -->
+      <aside
+        class="hidden xl:block w-64 h-[calc(100vh-64px)] sticky top-16 p-8 overflow-y-auto"
+      >
+        <h5
+          class="text-xs font-bold uppercase tracking-wider text-[#757575] mb-4"
         >
-        /&gt;
-      </code>
-    </div>
-
-    <h4 id="title-tag"><em>&lt;title&gt; Titulo &lt;/title&gt;</em></h4>
-    <p>
-      Define el nombre de la ventana en el navegador colocando el valor entre
-      las etiquetas de apertura y cierre, por ejemplo
-    </p>
-    <div class="code-box">
-      <div class="code-header">HTML</div>
-      <code
-        >&lt;title&gt;
-        <span style="color: red">Página sobre HTML</span> &lt;/title&gt;</code
-      >
-    </div>
-
-    <h4 id="script-tag"><em>&lt;script&gt; &lt;/script&gt;</em></h4>
-    <p>
-      Define cual sera el archivo de JavaScript que vamos a usar sobre el
-      archivo HTML, se coloca la ruta del archivo JS dentro del atributo src y
-      se usa el atributo defer para que el JavaScript se cargue después de que
-      se haya cargado todo el archivo HTML y CSS, asi se evitan errores cuando
-      el archivo JS intenta acceder a elementos HTML que todavia no existen en
-      la pagina, por ejemplo
-    </p>
-    <div class="code-box">
-      <div class="code-header">HTML</div>
-      <code
-        >&lt;script
-        <span style="color: red">src="ruta/del/archivo.js" defer</span>&gt;
-        &lt;/script&gt;</code
-      >
-    </div>
-
-    <h4 id="link-tag"><em>&lt;link /&gt;</em></h4>
-    <p>
-      Permite importar el diseño css colocando el valor “stylesheet” en el
-      atributo rel, y la ruta del archivo css en el atributo href, por ejemplo
-    </p>
-    <div class="code-box">
-      <div class="code-header">HTML</div>
-      <code
-        >&lt;link
-        <span style="color: red"
-          >rel="stylesheet" href="ruta/del/archivo.css"</span
-        >
-        /&gt;</code
-      >
-    </div>
-
-    <p>
-      Permite agregar un icono al lado del title colocando “icon” en el atributo
-      rel y la ruta del icono en el atributo href, por ejemplo
-    </p>
-    <div class="code-box">
-      <div class="code-header">HTML</div>
-      <code
-        >&lt;link
-        <span style="color: red">rel="icon" href="ruta/del/icono.ico"</span>
-        /&gt;</code
-      >
+          En esta página
+        </h5>
+        <ul class="space-y-3 text-sm">
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#meta-tag"
+              >&lt;meta /&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#title-tag"
+              >&lt;title&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#script-tag"
+              >&lt;script&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#link-tag"
+              >&lt;link /&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#style-tag"
+              >&lt;style&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#base-tag"
+              >&lt;base /&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#noscript-tag"
+              >&lt;noscript&gt;</a
+            >
+          </li>
+        </ul>
+      </aside>
     </div>
   </body>
 </html>
