@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTML Docs - Introducción</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
@@ -93,85 +93,6 @@
         class="hidden md:flex flex-col w-72 h-[calc(100vh-64px)] sticky top-16 border-r border-[#f2f2f2] overflow-y-auto sidebar-scroll p-6"
       >
         <div class="space-y-8">
-          <!-- Inicio -->
-          <div>
-            <h5
-              class="mb-4 text-xs font-bold uppercase tracking-wider text-[#757575]"
-            >
-              Inicio
-            </h5>
-            <ul class="space-y-1">
-              <li>
-                <a
-                  class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-white font-medium text-sm"
-                  href="#fundamentos"
-                >
-                  <span class="material-symbols-outlined text-base">home</span>
-                  Introducción
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Fundamentos -->
-          <div>
-            <h5
-              class="mb-4 text-xs font-bold uppercase tracking-wider text-[#757575]"
-            >
-              Fundamentos de HTML
-            </h5>
-            <ul class="space-y-1">
-              <li>
-                <a
-                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
-                  href="#que-es-html"
-                >
-                  <span
-                    class="material-symbols-outlined text-base text-[#757575]"
-                    >code</span
-                  >
-                  ¿Qué es HTML?
-                </a>
-              </li>
-              <li>
-                <a
-                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
-                  href="#proceso-renderizado"
-                >
-                  <span
-                    class="material-symbols-outlined text-base text-[#757575]"
-                    >display_settings</span
-                  >
-                  Proceso de renderizado
-                </a>
-              </li>
-              <li>
-                <a
-                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
-                  href="#index-html"
-                >
-                  <span
-                    class="material-symbols-outlined text-base text-[#757575]"
-                    >description</span
-                  >
-                  Index.html
-                </a>
-              </li>
-              <li>
-                <a
-                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
-                  href="#comentarios-html"
-                >
-                  <span
-                    class="material-symbols-outlined text-base text-[#757575]"
-                    >comment</span
-                  >
-                  Comentarios en HTML
-                </a>
-              </li>
-            </ul>
-          </div>
-
           <!-- Maquetación -->
           <div>
             <h5
@@ -183,49 +104,13 @@
               <li>
                 <a
                   class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
-                  href="#elementos-no-vacios"
+                  href="secciones/1-maquetacion.html"
                 >
                   <span
                     class="material-symbols-outlined text-base text-[#757575]"
-                    >check_box_outline_blank</span
+                    >dashboard</span
                   >
-                  Elementos no vacíos
-                </a>
-              </li>
-              <li>
-                <a
-                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
-                  href="#elementos-vacios"
-                >
-                  <span
-                    class="material-symbols-outlined text-base text-[#757575]"
-                    >check_box_outline_blank</span
-                  >
-                  Elementos vacíos
-                </a>
-              </li>
-              <li>
-                <a
-                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
-                  href="#atributos"
-                >
-                  <span
-                    class="material-symbols-outlined text-base text-[#757575]"
-                    >tune</span
-                  >
-                  Atributos
-                </a>
-              </li>
-              <li>
-                <a
-                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
-                  href="#anidado-elementos"
-                >
-                  <span
-                    class="material-symbols-outlined text-base text-[#757575]"
-                    >account_tree</span
-                  >
-                  Anidado de elementos
+                  Maquetación
                 </a>
               </li>
             </ul>
@@ -242,182 +127,110 @@
               <li>
                 <a
                   class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
-                  href="#definicion"
+                  href="secciones/2-anatomia.html"
                 >
                   <span
                     class="material-symbols-outlined text-base text-[#757575]"
-                    >menu_book</span
+                    >data_object</span
                   >
-                  Definición
+                  Anatomía del HTML
                 </a>
               </li>
               <li>
-                <details class="group">
-                  <summary
-                    class="flex cursor-pointer items-center justify-between gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] text-sm list-none"
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="secciones/3-head.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >integration_instructions</span
                   >
-                    <div class="flex items-center gap-3">
-                      <span
-                        class="material-symbols-outlined text-base text-[#757575]"
-                        >data_object</span
-                      >
-                      Anatomía del HTML
-                    </div>
-                    <span
-                      class="material-symbols-outlined text-sm transition-transform group-open:rotate-180"
-                      >expand_more</span
-                    >
-                  </summary>
-                  <ul class="mt-1 ml-9 space-y-1 border-l border-[#f2f2f2]">
-                    <li>
-                      <a
-                        class="block py-1.5 pl-4 text-sm text-[#757575] hover:text-primary"
-                        href="#doctype"
-                        >DOCTYPE</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        class="block py-1.5 pl-4 text-sm text-[#757575] hover:text-primary"
-                        href="#html-tag"
-                        >html lang</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        class="block py-1.5 pl-4 text-sm text-[#757575] hover:text-primary"
-                        href="#head-tag"
-                        >head</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        class="block py-1.5 pl-4 text-sm text-[#757575] hover:text-primary"
-                        href="#body-tag"
-                        >body</a
-                      >
-                    </li>
-                  </ul>
-                </details>
+                  Etiquetas del head
+                </a>
               </li>
               <li>
-                <details class="group">
-                  <summary
-                    class="flex cursor-pointer items-center justify-between gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] text-sm list-none"
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="secciones/4-contenedor.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >web</span
                   >
-                    <div class="flex items-center gap-3">
-                      <span
-                        class="material-symbols-outlined text-base text-[#757575]"
-                        >integration_instructions</span
-                      >
-                      Etiquetas del head
-                    </div>
-                    <span
-                      class="material-symbols-outlined text-sm transition-transform group-open:rotate-180"
-                      >expand_more</span
-                    >
-                  </summary>
-                  <ul class="mt-1 ml-9 space-y-1 border-l border-[#f2f2f2]">
-                    <li>
-                      <a
-                        class="block py-1.5 pl-4 text-sm text-[#757575] hover:text-primary"
-                        href="#meta-tag"
-                        >meta</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        class="block py-1.5 pl-4 text-sm text-[#757575] hover:text-primary"
-                        href="#title-tag"
-                        >title</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        class="block py-1.5 pl-4 text-sm text-[#757575] hover:text-primary"
-                        href="#script-tag"
-                        >script</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        class="block py-1.5 pl-4 text-sm text-[#757575] hover:text-primary"
-                        href="#link-tag"
-                        >link</a
-                      >
-                    </li>
-                  </ul>
-                </details>
+                  Contenedor
+                </a>
               </li>
               <li>
-                <details class="group">
-                  <summary
-                    class="flex cursor-pointer items-center justify-between gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] text-sm list-none"
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="secciones/5-texto.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >text_fields</span
                   >
-                    <div class="flex items-center gap-3">
-                      <span
-                        class="material-symbols-outlined text-base text-[#757575]"
-                        >web</span
-                      >
-                      Etiquetas del body
-                    </div>
-                    <span
-                      class="material-symbols-outlined text-sm transition-transform group-open:rotate-180"
-                      >expand_more</span
-                    >
-                  </summary>
-                  <ul class="mt-1 ml-9 space-y-1 border-l border-[#f2f2f2]">
-                    <li>
-                      <a
-                        class="block py-1.5 pl-4 text-sm text-[#757575] hover:text-primary"
-                        href="#etiquetas-contenedor"
-                        >Contenedor</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        class="block py-1.5 pl-4 text-sm text-[#757575] hover:text-primary"
-                        href="#etiquetas-texto"
-                        >Texto</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        class="block py-1.5 pl-4 text-sm text-[#757575] hover:text-primary"
-                        href="#etiquetas-lista"
-                        >Listas</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        class="block py-1.5 pl-4 text-sm text-[#757575] hover:text-primary"
-                        href="#etiquetas-multimedia"
-                        >Multimedia</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        class="block py-1.5 pl-4 text-sm text-[#757575] hover:text-primary"
-                        href="#etiquetas-formularios"
-                        >Formularios</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        class="block py-1.5 pl-4 text-sm text-[#757575] hover:text-primary"
-                        href="#etiquetas-menu"
-                        >Menús</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        class="block py-1.5 pl-4 text-sm text-[#757575] hover:text-primary"
-                        href="#etiquetas-tablas"
-                        >Tablas</a
-                      >
-                    </li>
-                  </ul>
-                </details>
+                  Texto
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="secciones/6-listas.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >format_list_bulleted</span
+                  >
+                  Listas
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="secciones/7-multimedia.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >perm_media</span
+                  >
+                  Multimedia
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="secciones/8-formularios.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >edit_note</span
+                  >
+                  Formularios
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="secciones/9-menu.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >menu</span
+                  >
+                  Menús
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="secciones/10-tablas.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >table_chart</span
+                  >
+                  Tablas
+                </a>
               </li>
             </ul>
           </div>
@@ -429,7 +242,7 @@
         <div class="max-w-4xl mx-auto px-6 py-10 lg:px-12">
           <!-- Breadcrumbs -->
           <nav class="flex items-center gap-2 mb-8 text-sm font-medium">
-            <a class="text-[#757575] hover:text-primary" href="#">Docs</a>
+            <a class="text-[#757575] hover:text-primary" href="index.html">Docs</a>
             <span class="material-symbols-outlined text-xs text-[#757575]"
               >chevron_right</span
             >
@@ -577,17 +390,6 @@
 
             <!-- Code Block -->
             <div class="relative group my-6">
-              <div
-                class="absolute right-4 top-4 opacity-0 group-hover:opacity-100 transition-opacity"
-              >
-                <button
-                  class="p-2 bg-white/10 hover:bg-white/20 rounded-md text-white backdrop-blur-sm"
-                >
-                  <span class="material-symbols-outlined text-sm"
-                    >content_copy</span
-                  >
-                </button>
-              </div>
               <div class="bg-[#141414] rounded-xl p-6 overflow-x-auto">
                 <pre
                   class="text-sm leading-relaxed text-gray-300"
@@ -619,37 +421,12 @@
               </div>
             </div>
 
-            <!-- Feature Cards -->
-            <h2 class="text-2xl font-bold mt-12 mb-4">Conceptos clave</h2>
-            <div class="grid md:grid-cols-2 gap-6 my-8">
-              <div class="p-6 border border-[#f2f2f2] rounded-xl">
-                <span class="material-symbols-outlined text-3xl mb-4"
-                  >code</span
-                >
-                <h3 class="font-bold text-lg mb-2">Estructura</h3>
-                <p class="text-sm text-[#757575]">
-                  HTML define el esqueleto de toda página web mediante etiquetas
-                  que organizan el contenido de forma jerárquica.
-                </p>
-              </div>
-              <div class="p-6 border border-[#f2f2f2] rounded-xl">
-                <span class="material-symbols-outlined text-3xl mb-4"
-                  >language</span
-                >
-                <h3 class="font-bold text-lg mb-2">Semántica</h3>
-                <p class="text-sm text-[#757575]">
-                  Las etiquetas semánticas dan significado al contenido,
-                  mejorando la accesibilidad y el SEO de tu sitio web.
-                </p>
-              </div>
-            </div>
           </article>
 
           <!-- Navigation Footer -->
           <div
-            class="mt-20 pt-10 border-t border-[#f2f2f2] flex items-center justify-between"
+            class="mt-20 pt-10 border-t border-[#f2f2f2] flex items-center justify-end"
           >
-            <div></div>
             <a
               class="group flex flex-col items-end text-right"
               href="secciones/1-maquetacion.html"
@@ -677,7 +454,7 @@
         </h5>
         <ul class="space-y-3 text-sm">
           <li>
-            <a class="text-primary font-medium" href="#que-es-html"
+            <a class="text-[#757575] hover:text-primary" href="#que-es-html"
               >¿Qué es HTML?</a
             >
           </li>
@@ -701,20 +478,6 @@
             >
           </li>
         </ul>
-
-        <div class="mt-12 p-6 bg-background-light rounded-xl">
-          <p class="text-xs font-bold mb-3">¿Preguntas?</p>
-          <p class="text-xs text-[#757575] leading-relaxed mb-4">
-            ¿No encuentras lo que buscas? Consulta los recursos adicionales.
-          </p>
-          <a
-            class="inline-flex items-center gap-2 text-xs font-bold text-primary"
-            href="#"
-          >
-            Ver recursos
-            <span class="material-symbols-outlined text-sm">open_in_new</span>
-          </a>
-        </div>
       </aside>
     </div>
   </body>
