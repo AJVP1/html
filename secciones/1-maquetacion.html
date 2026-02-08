@@ -1,90 +1,509 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>HTML Docs - Maquetación</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#141414",
+              "background-light": "#f7f7f7",
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .sidebar-scroll::-webkit-scrollbar {
+        width: 4px;
+      }
+      .sidebar-scroll::-webkit-scrollbar-thumb {
+        background: #e5e5e5;
+        border-radius: 10px;
+      }
+      pre,
+      code {
+        font-family:
+          "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas",
+          "Liberation Mono", "Courier New", monospace;
+      }
+    </style>
   </head>
-  <body>
-    <h1 id="maquetacion">Maquetación</h1>
-    <hr />
 
-    <h2 id="elementos-no-vacios"><em>Elementos no vacíos</em></h2>
+  <body class="bg-white text-[#141414] antialiased font-display">
+    <!-- Top Navigation Bar -->
+    <header
+      class="sticky top-0 z-50 w-full border-b border-[#f2f2f2] bg-white/95 backdrop-blur-lg"
+    >
+      <div class="max-w-[1440px] mx-auto px-6 py-4">
+        <a class="flex items-center gap-3 w-fit" href="../index.html">
+          <div class="size-9 text-primary">
+            <svg
+              fill="none"
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_6_330)">
+                <path
+                  clip-rule="evenodd"
+                  d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                ></path>
+              </g>
+              <defs>
+                <clipPath id="clip0_6_330">
+                  <rect fill="white" height="48" width="48"></rect>
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+          <span class="text-xl font-extrabold tracking-tight">HTML Docs</span>
+        </a>
+      </div>
+    </header>
 
-    <p>
-      Los elementos son cada una de las partes que conforman un archivo HTML. Su
-      estructura contiene:
-    </p>
-
-    <ul>
-      <li>Etiqueta de apertura: Indica el inicio de un elemento.</li>
-      <li>
-        Contenido: Es el texto o los elementos que se encuentran dentro de la
-        etiqueta.
-      </li>
-      <li>Etiqueta de cierre: Indica el final de un elemento.</li>
-    </ul>
-
-    <img src="./imgs/Imagen1.png" alt="Imagen de elementos no vacíos" />
-
-    <h3 id="elementos-vacios"><em>Elementos vacíos</em></h3>
-
-    <p>
-      Los elementos vacíos son aquellos que únicamente se representan en una
-      etiqueta de apertura. Por ejemplo, la etiqueta de imagen:
-      <code style="color: red"
-        >&lt;img src="ruta/de/la/imagen" alt="Texto alternativo"&gt;</code
+    <div class="max-w-[1440px] mx-auto flex">
+      <!-- Sidebar Navigation -->
+      <aside
+        class="hidden md:flex flex-col w-72 h-[calc(100vh-64px)] sticky top-16 border-r border-[#f2f2f2] overflow-y-auto sidebar-scroll p-6"
       >
-    </p>
+        <div class="space-y-8">
+          <!-- Maquetación -->
+          <div>
+            <h5
+              class="mb-4 text-xs font-bold uppercase tracking-wider text-[#757575]"
+            >
+              Maquetación
+            </h5>
+            <ul class="space-y-1">
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg bg-[#f2f2f2] font-semibold transition-colors text-sm"
+                  href="1-maquetacion.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >dashboard</span
+                  >
+                  Maquetación
+                </a>
+              </li>
+            </ul>
+          </div>
 
-    <p>
-      Estas etiquetas pueden cerrarse en la misma etiqueta de apertura,
-      utilizando la barra inclinada “/” al final:
-      <code
-        >&lt;img src="ruta/de/la/imagen" alt="Texto alternativo"
-        <span style="color: red">/</span>&gt;</code
+          <!-- HTML Semántico -->
+          <div>
+            <h5
+              class="mb-4 text-xs font-bold uppercase tracking-wider text-[#757575]"
+            >
+              HTML Semántico
+            </h5>
+            <ul class="space-y-1">
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="2-anatomia.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >data_object</span
+                  >
+                  Anatomía del HTML
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="3-head.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >integration_instructions</span
+                  >
+                  Etiquetas del head
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="4-contenedor.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >web</span
+                  >
+                  Contenedor
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="5-texto.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >text_fields</span
+                  >
+                  Texto
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="6-listas.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >format_list_bulleted</span
+                  >
+                  Listas
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="7-multimedia.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >perm_media</span
+                  >
+                  Multimedia
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="8-formularios.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >edit_note</span
+                  >
+                  Formularios
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="9-menu.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >menu</span
+                  >
+                  Menús
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="10-tablas.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >table_chart</span
+                  >
+                  Tablas
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content Pane -->
+      <main class="flex-1 min-w-0">
+        <div class="max-w-4xl mx-auto px-6 py-10 lg:px-12">
+          <!-- Breadcrumbs -->
+          <nav aria-label="Breadcrumb" class="flex items-center gap-2 mb-8 text-sm font-medium">
+            <a class="text-[#757575] hover:text-primary" href="../index.html"
+              >Docs</a
+            >
+            <span class="material-symbols-outlined text-xs text-[#757575]"
+              >chevron_right</span
+            >
+            <span class="text-primary">Maquetación</span>
+          </nav>
+
+          <!-- Page Header -->
+          <section class="mb-12">
+            <h1
+              class="text-4xl font-extrabold tracking-tight text-[#141414] mb-4"
+            >
+              Maquetación
+            </h1>
+            <p class="text-xl text-[#757575] leading-relaxed">
+              Comprende la estructura de los elementos HTML, sus atributos y
+              cómo se anidan entre sí.
+            </p>
+          </section>
+
+          <!-- Content -->
+          <article class="prose prose-slate max-w-none">
+            <!-- Elementos no vacíos -->
+            <h2 id="elementos-no-vacios" class="text-2xl font-bold mt-12 mb-4">
+              Elementos no vacíos
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Los elementos son cada una de las partes que conforman un archivo
+              HTML. Su estructura contiene:
+            </p>
+
+            <ul class="space-y-2 my-4 ml-6 list-disc">
+              <li class="text-base leading-7 text-[#141414]">
+                <strong>Etiqueta de apertura:</strong> Indica el inicio de un
+                elemento.
+              </li>
+              <li class="text-base leading-7 text-[#141414]">
+                <strong>Contenido:</strong> Es el texto o los elementos que se
+                encuentran dentro de la etiqueta.
+              </li>
+              <li class="text-base leading-7 text-[#141414]">
+                <strong>Etiqueta de cierre:</strong> Indica el final de un
+                elemento.
+              </li>
+            </ul>
+
+            <div class="my-6">
+              <img
+                class="mx-auto max-w-full"
+                loading="lazy"
+                src="../imgs/Imagen1.png"
+                alt="Diagrama mostrando etiqueta de apertura, contenido y etiqueta de cierre de un elemento HTML"
+              />
+            </div>
+
+            <!-- Elementos vacíos -->
+            <h2 id="elementos-vacios" class="text-2xl font-bold mt-12 mb-4">
+              Elementos vacíos
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Los elementos vacíos son aquellos que únicamente se representan en
+              una etiqueta de apertura. Por ejemplo, la etiqueta de imagen:
+            </p>
+
+            <!-- Code Block -->
+            <div class="relative group my-6">
+              <div class="bg-[#141414] rounded-xl p-6 overflow-x-auto">
+                <pre
+                  class="text-sm leading-relaxed text-gray-300"
+                ><code><span class="text-blue-400">&lt;img</span> <span class="text-yellow-300">src=</span><span class="text-green-400">"ruta/de/la/imagen"</span> <span class="text-yellow-300">alt=</span><span class="text-green-400">"Texto alternativo"</span><span class="text-blue-400">&gt;</span></code></pre>
+              </div>
+            </div>
+
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Estas etiquetas pueden cerrarse en la misma etiqueta de apertura,
+              utilizando la barra inclinada "/" al final:
+            </p>
+
+            <!-- Code Block -->
+            <div class="relative group my-6">
+              <div class="bg-[#141414] rounded-xl p-6 overflow-x-auto">
+                <pre
+                  class="text-sm leading-relaxed text-gray-300"
+                ><code><span class="text-blue-400">&lt;img</span> <span class="text-yellow-300">src=</span><span class="text-green-400">"ruta/de/la/imagen"</span> <span class="text-yellow-300">alt=</span><span class="text-green-400">"Texto alternativo"</span> <span class="text-red-400">/</span><span class="text-blue-400">&gt;</span></code></pre>
+              </div>
+            </div>
+
+            <div class="my-6">
+              <img
+                class="mx-auto max-w-full"
+                loading="lazy"
+                src="../imgs/Imagen2.png"
+                alt="Diagrama mostrando la estructura de un elemento vacío como la etiqueta img"
+              />
+            </div>
+
+            <!-- Atributos -->
+            <h2 id="atributos" class="text-2xl font-bold mt-12 mb-4">
+              Atributos
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Los atributos HTML son propiedades en la etiqueta de apertura que
+              manejan el comportamiento del elemento. Su valor está envuelto en
+              comillas.
+            </p>
+
+            <div class="my-6">
+              <img
+                class="mx-auto max-w-full"
+                loading="lazy"
+                src="../imgs/Imagen3.png"
+                alt="Diagrama mostrando un atributo HTML con su nombre y valor entre comillas"
+              />
+            </div>
+
+            <!-- Anidado de elementos -->
+            <h2 id="anidado-elementos" class="text-2xl font-bold mt-12 mb-4">
+              Anidado de elementos
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              El anidamiento de elementos HTML consiste en envolver varias
+              etiquetas en otras etiquetas.
+            </p>
+
+            <div class="my-6">
+              <img
+                class="mx-auto max-w-full"
+                loading="lazy"
+                src="../imgs/Imagen4.png"
+                alt="Diagrama mostrando elementos HTML anidados con relación padre e hijo"
+              />
+            </div>
+
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Interpreta a cada elemento HTML como una caja donde puedes guardar
+              diferentes elementos u otras cajas. Estas cajas tendrán diferentes
+              tamaños y estarán colocadas junto a otras.
+            </p>
+
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Aquellas etiquetas que envuelven a otras se las denomina "padres".
+              Es decir,
+              <code class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono"
+                >&lt;section&gt;</code
+              >
+              es padre de
+              <code class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono"
+                >&lt;h1&gt;</code
+              >,
+              <code class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono"
+                >&lt;p&gt;</code
+              >,
+              <code class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono"
+                >&lt;ul&gt;</code
+              >, y a su vez
+              <code class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono"
+                >&lt;ul&gt;</code
+              >
+              es padre de 3 etiquetas
+              <code class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono"
+                >&lt;li&gt;</code
+              >.
+            </p>
+
+            <p class="text-base leading-7 text-[#141414] mb-6">
+              Las etiquetas que son el contenido de otras, se las denomina
+              "hijos". Es decir, las etiquetas
+              <code class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono"
+                >&lt;h1&gt;</code
+              >,
+              <code class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono"
+                >&lt;p&gt;</code
+              >,
+              <code class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono"
+                >&lt;ul&gt;</code
+              >
+              son hijos de
+              <code class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono"
+                >&lt;section&gt;</code
+              >, y a su vez las etiquetas
+              <code class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono"
+                >&lt;li&gt;</code
+              >
+              son hijos de
+              <code class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono"
+                >&lt;ul&gt;</code
+              >.
+            </p>
+          </article>
+
+          <!-- Navigation Footer -->
+          <div
+            class="mt-20 pt-10 border-t border-[#f2f2f2] flex items-center justify-between"
+          >
+            <a
+              class="group flex flex-col items-start text-left"
+              href="../index.html"
+            >
+              <span class="text-xs text-[#757575] mb-1">Anterior</span>
+              <div
+                class="flex items-center gap-2 font-bold text-primary group-hover:-translate-x-1 transition-transform"
+              >
+                <span class="material-symbols-outlined">arrow_back</span>
+                Introducción
+              </div>
+            </a>
+            <a
+              class="group flex flex-col items-end text-right"
+              href="2-anatomia.html"
+            >
+              <span class="text-xs text-[#757575] mb-1">Siguiente</span>
+              <div
+                class="flex items-center gap-2 font-bold text-primary group-hover:translate-x-1 transition-transform"
+              >
+                Anatomía del HTML
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </main>
+
+      <!-- Right Side Table of Contents -->
+      <aside
+        class="hidden xl:block w-64 h-[calc(100vh-64px)] sticky top-16 p-8 overflow-y-auto"
       >
-    </p>
-
-    <img src="./imgs/Imagen2.png" alt="imagen de elementos vacíos" />
-
-    <h3 id="atributos"><em>Atributos</em></h3>
-
-    <p>
-      Los atributos HTML son propiedades en la etiqueta de apertura que manejan
-      el comportamiento del elemento. Su valor está envuelto en comillas.
-    </p>
-
-    <img src="./imgs/Imagen3.png" alt="imagen de atributos" />
-
-    <h3 id="anidado-elementos"><em>Anidado de elementos</em></h3>
-
-    <p>
-      El anidamiento de elementos HTML consiste en envolver varias etiquetas en
-      otras etiquetas.
-    </p>
-
-    <img src="./imgs/Imagen4.png" alt="imagen de anidado de elementos" />
-
-    <p>
-      Interpreta a cada elemento HTML como una caja donde puedes guardar
-      diferentes elementos u otras cajas. Estas cajas tendrán diferentes tamaños
-      y estarán colocadas junto a otras.
-    </p>
-
-    <p>
-      Aquellas etiquetas que envuelven a otras se las denomina “padres”. Es
-      decir, <code>&lt;section&gt;</code> es padre de <code>&lt;h1&gt;</code>,
-      <code>&lt;p&gt;</code>, <code>&lt;ul&gt;</code>, y a su vez
-      <code>&lt;ul&gt;</code> es padre de 3 etiquetas <code>&lt;li&gt;</code>.
-    </p>
-
-    <p>
-      Las etiquetas que son el contenido de otras, se las denomina “hijos”. Es
-      decir, las etiquetas <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>,
-      <code>&lt;ul&gt;</code> son hijos de <code>&lt;section&gt;</code>, y a su
-      vez las etiquetas <code>&lt;li&gt;</code> son hijos de
-      <code>&lt;ul&gt;</code>.
-    </p>
+        <h5
+          class="text-xs font-bold uppercase tracking-wider text-[#757575] mb-4"
+        >
+          En esta página
+        </h5>
+        <ul class="space-y-3 text-sm">
+          <li>
+            <a
+              class="text-[#757575] hover:text-primary"
+              href="#elementos-no-vacios"
+              >Elementos no vacíos</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-[#757575] hover:text-primary"
+              href="#elementos-vacios"
+              >Elementos vacíos</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#atributos"
+              >Atributos</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-[#757575] hover:text-primary"
+              href="#anidado-elementos"
+              >Anidado de elementos</a
+            >
+          </li>
+        </ul>
+      </aside>
+    </div>
   </body>
 </html>
