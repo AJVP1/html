@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="etiquetas-multimedia"><em>Etiquetas multimedia</em></h1>
+    <p>
+      Estas etiquetas se utilizan para insertar y controlar contenido multimedia
+      en la página web, como imágenes, audio y video.
+    </p>
+    <p>
+      Pagina web para reducir el tamaño de las imágenes:
+      <a href="https://tinypng.com/">TinyPNG</a>
+    </p>
+    <p>
+      Pagina web para quitar los metadatos de las imágenes:
+      <a href="https://www.verexif.com/es/">VerExif</a>
+    </p>
+    <p>
+      Pagina web para descargar imágenes:
+      <a href="https://www.pexels.com/es-es/">Pexels</a>
+    </p>
+    <p>
+      <strong>Nota:</strong> el tamaño optima de una imagen es 70 KB para que
+      cargue rápido la pagina
+    </p>
+    <ul>
+      <li>
+        <p>&lt;img&gt;: Para insertar imágenes en la página web.</p>
+        <p>
+          Se puede colocar imágenes colocando la ruta/url como valor del
+          atributo src, y un texto opcional como valor del atributo alt
+        </p>
+        <p>
+          Se puede modificar la altura y anchura con los atributos width = “100”
+          y height = “200”
+        </p>
+        <p>
+          Se puede usar el atributo loading="lazy" para que se descargue la
+          imagen cuando estemos cerca del elemento
+        </p>
+        <p>
+          Se puede usar el atributo decoding="async" para procesar sin bloquear
+          el renderizado
+        </p>
+        <p>
+          <strong>Nota:</strong> Establecer dimensiones evita cambios de layout
+          inesperados mientras las imágenes cargan.
+        </p>
+        <div class="code-box">
+          <div class="code-header">HTML</div>
+          <code
+            >&lt;img
+            <span style="color: red"
+              >src="ruta/de/la/imagen.jpg" alt="Texto alternativo" width="200"
+              height="150"</span
+            >
+            /&gt;</code
+          >
+        </div>
+      </li>
+      <li>
+        <p>&lt;audio&gt;: Para insertar contenido de audio en la página web.</p>
+        <p>Usa el atributo controls para agregarle los controles al audio</p>
+        <p>
+          Usa la etiqueta source dentro del contenido para colocar distintos
+          formatos
+        </p>
+        <div class="code-box">
+          <div class="code-header">HTML</div>
+          <code
+            >&lt;audio <span style="color: red">controls</span>&gt; <br />
+            &nbsp;&nbsp;&lt;source
+            <span style="color: red"
+              >src="ruta/del/audio.mp3" type="audio/mpeg"</span
+            >
+            &gt; <br />
+            &nbsp;&nbsp;&lt;source
+            <span style="color: red"
+              >src="ruta/del/audio.ogg" type="audio/ogg"</span
+            >
+            &gt; <br />
+            &nbsp;&nbsp;Tu navegador no soporta el elemento de audio. <br />
+            &lt;/audio&gt;</code
+          >
+        </div>
+      </li>
+      <li>
+        <p>&lt;video&gt;: Para insertar contenido de video en la página web.</p>
+        <p>
+          Usa el atributo controls para agregarle los botones de control del
+          video.
+        </p>
+        <p>
+          Usa el atributo autoplay para que el video se reproduzca
+          automáticamente.
+        </p>
+        <p>
+          Usa el atributo loop, hace que el vídeo (o audio) comience a
+          reproducirse de nuevo cada vez que termina. Esto también puede ser
+          molesto, así que úselo solo si es realmente necesario.
+        </p>
+        <p>
+          Usa el atributo muted, hace que el contenido multimedia se reproduzca
+          con el sonido desactivado de forma predeterminada.
+        </p>
+        <p>
+          Usa el atributo poster, la URL de una imagen que se mostrará antes de
+          que se reproduzca el video. Está diseñado para ser utilizado para una
+          pantalla de presentación o una pantalla publicitaria.
+        </p>
+        <p>
+          Usa el atributo preload, le indica al navegador que cargue el video de
+          antemano.
+        </p>
+        <p>
+          Usa la etiqueta source dentro del contenido para colocar distintos
+          formatos.
+        </p>
+        <div class="code-box">
+          <div class="code-header">HTML</div>
+          <code
+            >&lt;video
+            <span style="color: red"
+              >controls autoplay loop muted preload="auto"
+              poster="poster.png"</span
+            >&gt; <br />
+            &nbsp;&nbsp;&lt;source
+            <span style="color: red"
+              >src="ruta/del/video.mp4" type="video/mp4"</span
+            >
+            &gt; <br />
+            &nbsp;&nbsp;&lt;source
+            <span style="color: red"
+              >src="ruta/del/video.ogg" type="video/ogg"</span
+            >
+            &gt; <br />
+            &nbsp;&nbsp;Tu navegador no soporta el elemento de video. <br />
+            &lt;/video&gt;</code
+          >
+        </div>
+      </li>
+    </ul>
+  </body>
+</html>

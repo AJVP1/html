@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="etiquetas-texto"><em>Etiquetas de tipo texto</em></h1>
+    <p>
+      Estas etiquetas se utilizan para dar formato y estructura al texto dentro
+      de la página web.
+    </p>
+    <ul>
+      <li>
+        &lt;h1&gt; a &lt;h6&gt;: Define los encabezados de diferentes niveles,
+        siendo &lt;h1&gt; el más importante y &lt;h6&gt; el menos importante.
+      </li>
+      <li>&lt;p&gt; &lt;/p&gt;: Define un párrafo de texto.</li>
+      <li>
+        &lt;strong&gt; &lt;/strong&gt;: Define texto en negrita, indicando
+        énfasis fuerte.
+      </li>
+      <li>
+        &lt;em&gt; &lt;/em&gt;: Define texto en cursiva, indicando énfasis
+        moderado.
+      </li>
+      <li>
+        &lt;span&gt; &lt;/span&gt;: Sirve para colocar dentro de texto, esta
+        etiqueta nos permite identificar una pequeña parte del texto para
+        cambiarle el estilo.
+      </li>
+      <li>
+        &lt;br /&gt;: Sirve para insertar un salto de línea dentro de un
+        párrafo.
+      </li>
+      <li>
+        &lt;hr /&gt;: Sirve para insertar una línea horizontal que puede ser
+        utilizada como un separador de contenido.
+      </li>
+      <li>
+        &lt;blockquote&gt; &lt;/blockquote&gt;: Define una cita en bloque,
+        generalmente se utiliza para citas largas o extractos de texto. Por
+        ejemplo
+        <div class="code-box">
+          <div class="code-header">HTML</div>
+          <div>
+            <code
+              >&lt;blockquote cite="url"&gt;Esta es una cita en
+              bloque.&lt;/blockquote&gt; &lt;cite&gt;MDN
+              Documentation&lt;/cite&gt;
+            </code>
+          </div>
+        </div>
+
+        <div class="resultado-box">
+          <div class="resultado-header">Resultado</div>
+          <blockquote cite="url">Esta es una cita en bloque.</blockquote>
+          <cite>MDN Documentation</cite>
+        </div>
+      </li>
+
+      <li>
+        &lt;q&gt; &lt;/q&gt;: Es una cita a nivel de linea y no de parrafo. El
+        navegador la muestra entre comillas. Por ejemplo:
+
+        <div class="code-box">
+          <div class="code-header">HTML</div>
+          <div>
+            <code
+              >&lt;q cite="url"&gt;Esta es una cita en línea.&lt;/q&gt;
+            </code>
+          </div>
+        </div>
+
+        <div class="resultado-box">
+          <div class="resultado-header">Resultado</div>
+          <q cite="url"> Esta es una cita en línea. </q>
+        </div>
+      </li>
+      <li>
+        &lt;abbr&gt; &lt;/abbr&gt;: Para abreviaciones, el navegador nos muestra
+        el texto subrayado con puntos y cuando hacemos hover nos muestra el
+        significado. Por ejemplo:
+
+        <div class="code-box">
+          <div class="code-header">HTML</div>
+          <div>
+            <code
+              >&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;
+            </code>
+          </div>
+        </div>
+
+        <div class="resultado-box">
+          <div class="resultado-header">Resultado</div>
+          <abbr title="HyperText Markup Language"> HTML </abbr>
+        </div>
+      </li>
+
+      <li>
+        &lt;address&gt; &lt;/address&gt;: Para direcciones, el navegador nos
+        muestra el texto en cursiva. Por ejemplo:
+
+        <div class="code-box">
+          <div class="code-header">HTML</div>
+          <div>
+            <code
+              >&lt;address&gt;123 Main St, Anytown, USA&lt;/address&gt;
+            </code>
+          </div>
+        </div>
+
+        <div class="resultado-box">
+          <div class="resultado-header">Resultado</div>
+          <address>123 Main St, Anytown, USA</address>
+        </div>
+      </li>
+
+      <li>
+        &lt;sup&gt; &lt;/sup&gt;: Para superíndices, el navegador nos muestra el
+        texto en superíndice. Por ejemplo:
+
+        <div class="code-box">
+          <div class="code-header">HTML</div>
+          <div>
+            <code>10&lt;sup&gt;2&lt;/sup&gt; </code>
+          </div>
+        </div>
+
+        <div class="resultado-box">
+          <div class="resultado-header">Resultado</div>
+          10<sup>2</sup>
+        </div>
+      </li>
+
+      <li>
+        &lt;sub&gt; &lt;/sub&gt;: Para subíndices, el navegador nos muestra el
+        texto en subíndice. Por ejemplo:
+
+        <div class="code-box">
+          <div class="code-header">HTML</div>
+          <div>
+            <code>H&lt;sub&gt;2&lt;/sub&gt;O</code>
+          </div>
+        </div>
+
+        <div class="resultado-box">
+          <div class="resultado-header">Resultado</div>
+          H<sub>2</sub>O
+        </div>
+      </li>
+
+      <li>
+        <p>
+          &lt;time&gt; &lt;/time&gt;: Para representar fechas y horas, el
+          navegador nos muestra el texto en un formato específico.
+        </p>
+        <p>
+          Usa el atributo datetime para especificar la fecha y hora en formato
+          ISO 8601.
+        </p>
+
+        <div class="code-box">
+          <div class="code-header">HTML</div>
+          <div>
+            <code
+              >hoy &lt; time
+              <span style="color: red">datetime="2023-03-15"</span> &gt; 15 de
+              marzo de 2023&lt;/time&gt; se celebra el cumpleaños de Ana.</code
+            >
+          </div>
+        </div>
+
+        <div class="resultado-box">
+          <div class="resultado-header">Resultado</div>
+          hoy <time datetime="2023-03-15">15 de marzo de 2023</time> se celebra
+          el cumpleaños de Ana.
+        </div>
+      </li>
+
+      <li>
+        <p>
+          &lt;details&gt; &lt;/details&gt;: Para representar información
+          adicional que el usuario puede mostrar u ocultar, el navegador nos
+          muestra un cuadro desplegable.
+        </p>
+        <p>
+          Usa la etiqueta &lt;summary&gt; para definir el encabezado del cuadro
+          desplegable.
+        </p>
+
+        <div class="code-box">
+          <div class="code-header">HTML</div>
+          <div>
+            <code>
+              <span>&lt;details&gt;</span> <br />
+              <span style="color: red"
+                >&lt;summary&gt;Más información&lt;/summary&gt;</span
+              >
+              <br />
+              <span>&lt;p&gt; Rodar sobre sal por media hora &lt;/p&gt;</span>
+              <br />
+              <span>&lt;/details&gt;</span>
+            </code>
+          </div>
+        </div>
+
+        <div class="resultado-box">
+          <div class="resultado-header">Resultado</div>
+          <details>
+            <summary>Más información</summary>
+            Rodar sobre sal por media hora
+          </details>
+        </div>
+      </li>
+
+      <li>
+        <p>
+          &lt;a&gt; &lt;/a&gt;: Para crear enlaces, el navegador nos muestra el
+          texto como un hipervínculo.
+        </p>
+        <p>Usa el atributo href para especificar la url del enlace.</p>
+        <p>
+          Puede usar href como "https://wa.me/5700000" para enviar un whatsapp
+          por ejemplo
+        </p>
+        <p>
+          Usa el atributo target="_blank" para abrir una nueva pestana con la
+          url.
+        </p>
+        <p>
+          Si usa "_blank", es necesario agregar rel="noopener nofererrer" por
+          temas de seguridad.
+        </p>
+
+        <div class="code-box">
+          <div class="code-header">HTML</div>
+          <div>
+            <code>
+              Visitar &lt;a
+              <span style="color: red"> href="https://www.ejemplo.com"</span
+              >&gt;ejemplo.com&lt;/a&gt;
+            </code>
+          </div>
+        </div>
+
+        <div class="resultado-box">
+          <div class="resultado-header">Resultado</div>
+          Visitar <a href="https://www.ejemplo.com">ejemplo.com </a>
+        </div>
+      </li>
+    </ul>
+
+    <p>
+      <strong>Nota:</strong> El uso de estas etiquetas es muy importante para el
+      SEO
+    </p>
+  </body>
+</html>

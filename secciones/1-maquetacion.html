@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="maquetacion">Maquetación</h1>
+    <hr />
+
+    <h2 id="elementos-no-vacios"><em>Elementos no vacíos</em></h2>
+
+    <p>
+      Los elementos son cada una de las partes que conforman un archivo HTML. Su
+      estructura contiene:
+    </p>
+
+    <ul>
+      <li>Etiqueta de apertura: Indica el inicio de un elemento.</li>
+      <li>
+        Contenido: Es el texto o los elementos que se encuentran dentro de la
+        etiqueta.
+      </li>
+      <li>Etiqueta de cierre: Indica el final de un elemento.</li>
+    </ul>
+
+    <img src="./imgs/Imagen1.png" alt="Imagen de elementos no vacíos" />
+
+    <h3 id="elementos-vacios"><em>Elementos vacíos</em></h3>
+
+    <p>
+      Los elementos vacíos son aquellos que únicamente se representan en una
+      etiqueta de apertura. Por ejemplo, la etiqueta de imagen:
+      <code style="color: red"
+        >&lt;img src="ruta/de/la/imagen" alt="Texto alternativo"&gt;</code
+      >
+    </p>
+
+    <p>
+      Estas etiquetas pueden cerrarse en la misma etiqueta de apertura,
+      utilizando la barra inclinada “/” al final:
+      <code
+        >&lt;img src="ruta/de/la/imagen" alt="Texto alternativo"
+        <span style="color: red">/</span>&gt;</code
+      >
+    </p>
+
+    <img src="./imgs/Imagen2.png" alt="imagen de elementos vacíos" />
+
+    <h3 id="atributos"><em>Atributos</em></h3>
+
+    <p>
+      Los atributos HTML son propiedades en la etiqueta de apertura que manejan
+      el comportamiento del elemento. Su valor está envuelto en comillas.
+    </p>
+
+    <img src="./imgs/Imagen3.png" alt="imagen de atributos" />
+
+    <h3 id="anidado-elementos"><em>Anidado de elementos</em></h3>
+
+    <p>
+      El anidamiento de elementos HTML consiste en envolver varias etiquetas en
+      otras etiquetas.
+    </p>
+
+    <img src="./imgs/Imagen4.png" alt="imagen de anidado de elementos" />
+
+    <p>
+      Interpreta a cada elemento HTML como una caja donde puedes guardar
+      diferentes elementos u otras cajas. Estas cajas tendrán diferentes tamaños
+      y estarán colocadas junto a otras.
+    </p>
+
+    <p>
+      Aquellas etiquetas que envuelven a otras se las denomina “padres”. Es
+      decir, <code>&lt;section&gt;</code> es padre de <code>&lt;h1&gt;</code>,
+      <code>&lt;p&gt;</code>, <code>&lt;ul&gt;</code>, y a su vez
+      <code>&lt;ul&gt;</code> es padre de 3 etiquetas <code>&lt;li&gt;</code>.
+    </p>
+
+    <p>
+      Las etiquetas que son el contenido de otras, se las denomina “hijos”. Es
+      decir, las etiquetas <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>,
+      <code>&lt;ul&gt;</code> son hijos de <code>&lt;section&gt;</code>, y a su
+      vez las etiquetas <code>&lt;li&gt;</code> son hijos de
+      <code>&lt;ul&gt;</code>.
+    </p>
+  </body>
+</html>

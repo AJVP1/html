@@ -1,1498 +1,721 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HTML</title>
-    <link rel="stylesheet" href="styles.css" />
-    <!-- Importar la fuente Montserrat desde Google Fonts -->
+    <title>HTML Docs - Introducción</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#141414",
+              "background-light": "#f7f7f7",
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .sidebar-scroll::-webkit-scrollbar {
+        width: 4px;
+      }
+      .sidebar-scroll::-webkit-scrollbar-thumb {
+        background: #e5e5e5;
+        border-radius: 10px;
+      }
+      pre,
+      code {
+        font-family:
+          "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas",
+          "Liberation Mono", "Courier New", monospace;
+      }
+    </style>
   </head>
-  <body>
-    <!-- Indice -->
-    <nav class="indice">
-      <h2>Índice de Contenidos</h2>
-      <ul>
-        <li>
-          <a href="#fundamentos">Fundamentos de HTML</a>
-          <ul>
-            <li><a href="#que-es-html">¿Qué es HTML?</a></li>
-            <li>
-              <a href="#proceso-renderizado"
-                >Proceso de renderizado del motor del navegador</a
-              >
-            </li>
-            <li><a href="#index-html">Index.html</a></li>
-            <li><a href="#comentarios-html">Comentarios en HTML</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#maquetacion">Maquetación</a>
-          <ul>
-            <li><a href="#elementos-no-vacios">Elementos no vacíos</a></li>
-            <li><a href="#elementos-vacios">Elementos vacíos</a></li>
-            <li><a href="#atributos">Atributos</a></li>
-            <li><a href="#anidado-elementos">Anidado de elementos</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#html-semantico">HTML Semántico</a>
-          <ul>
-            <li><a href="#definicion">Definición</a></li>
-            <li>
-              <a href="#etiquetas-anatomia">Etiquetas de anatomía del HTML</a>
-              <ul>
-                <li><a href="#doctype">DOCTYPE html</a></li>
-                <li><a href="#html-tag">html lang</a></li>
-                <li><a href="#head-tag">head</a></li>
-                <li><a href="#body-tag">body</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="#etiquetas-head">Etiquetas dentro del head</a>
-              <ul>
-                <li><a href="#meta-tag">meta</a></li>
-                <li><a href="#title-tag">title</a></li>
-                <li><a href="#script-tag">script</a></li>
-                <li><a href="#link-tag">link</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="#etiquetas-body">Etiquetas dentro del body</a>
-              <ul>
-                <li>
-                  <a href="#etiquetas-contenedor"
-                    >Etiquetas de tipo contenedor</a
+
+  <body class="bg-white text-[#141414] antialiased font-display">
+    <!-- Top Navigation Bar -->
+    <header
+      class="sticky top-0 z-50 w-full border-b border-[#f2f2f2] bg-white/95 backdrop-blur-lg"
+    >
+      <div class="max-w-[1440px] mx-auto px-6 py-4">
+        <a class="flex items-center gap-3 w-fit" href="index.html">
+          <div class="size-9 text-primary">
+            <svg
+              fill="none"
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_6_330)">
+                <path
+                  clip-rule="evenodd"
+                  d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                ></path>
+              </g>
+              <defs>
+                <clipPath id="clip0_6_330">
+                  <rect fill="white" height="48" width="48"></rect>
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+          <span class="text-xl font-extrabold tracking-tight">HTML Docs</span>
+        </a>
+      </div>
+    </header>
+
+    <div class="max-w-[1440px] mx-auto flex">
+      <!-- Sidebar Navigation -->
+      <aside
+        class="hidden md:flex flex-col w-72 h-[calc(100vh-64px)] sticky top-16 border-r border-[#f2f2f2] overflow-y-auto sidebar-scroll p-6"
+      >
+        <div class="space-y-8">
+          <!-- Inicio -->
+          <div>
+            <h5
+              class="mb-4 text-xs font-bold uppercase tracking-wider text-[#757575]"
+            >
+              Inicio
+            </h5>
+            <ul class="space-y-1">
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-white font-medium text-sm"
+                  href="#fundamentos"
+                >
+                  <span class="material-symbols-outlined text-base">home</span>
+                  Introducción
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Fundamentos -->
+          <div>
+            <h5
+              class="mb-4 text-xs font-bold uppercase tracking-wider text-[#757575]"
+            >
+              Fundamentos de HTML
+            </h5>
+            <ul class="space-y-1">
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="#que-es-html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >code</span
                   >
-                </li>
-                <li><a href="#etiquetas-texto">Etiquetas de tipo texto</a></li>
-                <li><a href="#etiquetas-lista">Etiquetas de tipo lista</a></li>
-                <li><a href="#etiquetas-multimedia">Etiquetas multimedia</a></li>
-                <li>
-                  <a href="#etiquetas-formularios"
-                    >Etiquetas para formularios</a
+                  ¿Qué es HTML?
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="#proceso-renderizado"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >display_settings</span
                   >
-                </li>
-                <li><a href="#etiquetas-menu">Etiquetas para menús</a></li>
-                <li><a href="#etiquetas-tablas">Etiquetas para tablas</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- Contenido Principal -->
-    <div class="contenido-principal">
-      <!-- Titulo -->
-      <h1 id="titulo-principal">HTML (HyperText Markup Language)</h1>
-
-      <!---------------------------------------------------- Fundamentos -->
-    <h2 id="fundamentos">Fundamentos de HTML</h2>
-    <hr />
-
-    <h3 id="que-es-html"><em>¿Qué es HTML?</em></h3>
-
-    <p>
-      El Lenguaje de Marcado de Hipertexto o HTML por sus siglas en inglés
-      (HyperText Markup Language) es el código para construir la estructura de
-      una página web.
-    </p>
-
-    <p>
-      En otras palabras, HTML es el esqueleto con el cual definimos cada
-      elemento que compone la página web, así como: enlaces, párrafos, títulos,
-      botones, imágenes, formularios, entre otros.
-    </p>
-
-    <p>
-      <strong>Nota:</strong> con “! + tab” se coloca rápidamente la estructura
-      de html
-    </p>
-
-    <h3 id="proceso-renderizado">
-      <em>Proceso de renderizado del motor del navegador</em>
-    </h3>
-
-    <ol>
-      <li>
-        Transforma los archivos a un árbol de objetos HTML o CSS, estos se
-        denominan DOM (Document Object Model) y CSSDOM (Cascade Style Sheet
-        Object Model), respectivamente. Cada nodo en el árbol es una
-        representación de los elementos que contiene el archivo HTML o CSS.
-      </li>
-      <li>
-        Calcula el estilo correspondiente a cada nodo del DOM relacionado al
-        CSSDOM.
-      </li>
-      <li>Calcula las dimensiones de cada nodo y dónde va en la pantalla.</li>
-      <li>
-        Pinta o renderiza los diferentes elementos como cajas o contenedores.
-      </li>
-      <li>
-        Agrupa todas las cajas en diferentes capas para convertirlas en una
-        imagen que se renderiza.
-      </li>
-    </ol>
-
-    <h3 id="index-html"><em>Index.html</em></h3>
-
-    <p>
-      Index es la primera pagina que va a buscar el servidor a la hora de abrir
-      el sitio web. Si tenemos más páginas, entonces estas se relacionan a la
-      página index. Tambien podemos tener subcarpetas, las cuales van a tener su
-      propio archivo index.html.
-    </p>
-
-    <h3 id="comentarios-html"><em>Comentarios en HTML</em></h3>
-
-    <p>
-      Los comentarios de HTML consisten en señalar algo que se ignorará. Para
-      establecer un comentario HTML se lo envuelve entre
-      <code>&lt;!--</code> y <code>--&gt;</code>, independiente de la cantidad
-      de líneas.
-    </p>
-
-    <div class="code-box">
-      <div class="code-header">HTML</div>
-      <code>
-        <span style="color: green"
-          >&lt;!-- Este es un comentario en HTML --&gt;</span
-        >
-        <br />
-        <br />
-
-        <span style="color: green">&lt;!--</span> <br />
-        <span style="color: green">Este es un comentario</span> <br />
-        <span style="color: green">que abarca varias líneas</span> <br />
-        <span style="color: green">--&gt;</span>
-      </code>
-    </div>
-
-    <p>
-      <strong>Nota:</strong> se puede comentar una sección, seleccionado el
-      código y oprimiendo las teclas “control + /”
-    </p>
-
-    <!-------------------------------------------------- Maquetacion -->
-    <h2 id="maquetacion">Maquetación</h2>
-    <hr />
-
-    <h3 id="elementos-no-vacios"><em>Elementos no vacíos</em></h3>
-
-    <p>
-      Los elementos son cada una de las partes que conforman un archivo HTML. Su
-      estructura contiene:
-    </p>
-
-    <ul>
-      <li>Etiqueta de apertura: Indica el inicio de un elemento.</li>
-      <li>
-        Contenido: Es el texto o los elementos que se encuentran dentro de la
-        etiqueta.
-      </li>
-      <li>Etiqueta de cierre: Indica el final de un elemento.</li>
-    </ul>
-
-    <img src="./imgs/Imagen1.png" alt="Imagen de elementos no vacíos" />
-
-    <h3 id="elementos-vacios"><em>Elementos vacíos</em></h3>
-
-    <p>
-      Los elementos vacíos son aquellos que únicamente se representan en una
-      etiqueta de apertura. Por ejemplo, la etiqueta de imagen:
-      <code style="color: red"
-        >&lt;img src="ruta/de/la/imagen" alt="Texto alternativo"&gt;</code
-      >
-    </p>
-
-    <p>
-      Estas etiquetas pueden cerrarse en la misma etiqueta de apertura,
-      utilizando la barra inclinada “/” al final:
-      <code
-        >&lt;img src="ruta/de/la/imagen" alt="Texto alternativo"
-        <span style="color: red">/</span>&gt;</code
-      >
-    </p>
-
-    <img src="./imgs/Imagen2.png" alt="imagen de elementos vacíos" />
-
-    <h3 id="atributos"><em>Atributos</em></h3>
-
-    <p>
-      Los atributos HTML son propiedades en la etiqueta de apertura que manejan
-      el comportamiento del elemento. Su valor está envuelto en comillas.
-    </p>
-
-    <img src="./imgs/Imagen3.png" alt="imagen de atributos" />
-
-    <h3 id="anidado-elementos"><em>Anidado de elementos</em></h3>
-
-    <p>
-      El anidamiento de elementos HTML consiste en envolver varias etiquetas en
-      otras etiquetas.
-    </p>
-
-    <img src="./imgs/Imagen4.png" alt="imagen de anidado de elementos" />
-
-    <p>
-      Interpreta a cada elemento HTML como una caja donde puedes guardar
-      diferentes elementos u otras cajas. Estas cajas tendrán diferentes tamaños
-      y estarán colocadas junto a otras.
-    </p>
-
-    <p>
-      Aquellas etiquetas que envuelven a otras se las denomina “padres”. Es
-      decir, <code>&lt;section&gt;</code> es padre de <code>&lt;h1&gt;</code>,
-      <code>&lt;p&gt;</code>, <code>&lt;ul&gt;</code>, y a su vez
-      <code>&lt;ul&gt;</code> es padre de 3 etiquetas <code>&lt;li&gt;</code>.
-    </p>
-
-    <p>
-      Las etiquetas que son el contenido de otras, se las denomina “hijos”. Es
-      decir, las etiquetas <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>,
-      <code>&lt;ul&gt;</code> son hijos de <code>&lt;section&gt;</code>, y a su
-      vez las etiquetas <code>&lt;li&gt;</code> son hijos de
-      <code>&lt;ul&gt;</code>.
-    </p>
-
-    <!--------------------------------------- HTML Semantico -->
-    <h2 id="html-semantico">HTML Semántico</h2>
-    <hr />
-
-    <!-- Definicion -->
-    <h3 id="definicion"><em>Definición</em></h3>
-    <p>
-      El HTML semántico consiste en que cada elemento tenga su propia etiqueta
-      que lo defina correctamente. Sin utilizar etiquetas muy generales, como
-      <code>&lt;div&gt;</code> o <code>&lt;span&gt;</code>.
-    </p>
-
-    <!-- Etiquetas de anatomía del HTML -->
-    <h3 id="etiquetas-anatomia"><em>Etiquetas de anatomía del HTML</em></h3>
-
-    <p>
-      La estructura básica de un documento HTML está configurada por las
-      siguientes etiquetas principales:
-    </p>
-
-    <h4 id="doctype">
-      <em><code>&lt;!DOCTYPE html&gt;</code></em>
-    </h4>
-    <p>
-      Define el tipo de documento y la versión de HTML que se está utilizando.
-    </p>
-
-    <h4 id="html-tag">
-      <em><code>&lt;html lang="es-US"&gt; &lt;/html&gt;</code></em>
-    </h4>
-    <p>
-      Es la etiqueta raíz que envuelve todo el contenido del documento HTML.
-    </p>
-
-    <h4 id="head-tag">
-      <em><code>&lt;head&gt; &lt;/head&gt;</code></em>
-    </h4>
-    <p>
-      Define la metainformación, es decir, toda información que no es contenido
-      como tal de la página web. Por ejemplo, los enlaces a archivos CSS y
-      JavaScript, el título y la imagen que aparecen en la pestaña del
-      navegador. Esto es importante para motores de búsqueda como Google.
-    </p>
-
-    <h4 id="body-tag">
-      <em><code>&lt;body&gt; &lt;/body&gt;</code></em>
-    </h4>
-    <p>
-      Contiene todo el contenido visible de la página web, como texto, imágenes,
-      videos, enlaces, etc.
-    </p>
-
-    <img src="./imgs/Imagen5.png" alt="ejemplo de anatomía del html" />
-
-    <p>
-      <strong>Nota:</strong> con “! + tab” se coloca rápidamente la estructura
-      de html
-    </p>
-
-    <!-- Etiquetas dentro del head -->
-    <h3 id="etiquetas-head"><em>Etiquetas dentro del head</em></h3>
-    <p>Algunas de las etiquetas más comunes dentro del head son:</p>
-
-    <h4 id="meta-tag">
-      <em><code>&lt;meta /&gt;</code></em>
-    </h4>
-    <p>
-      Define la semántica del navegador mediante el atributo “charset”, y
-      permite el uso de caracteres especiales mediante el valor “UFT-8”, por
-      ejemplo
-    </p>
-    <div class="code-box">
-      <div class="code-header">HTML</div>
-      <code>
-        &lt;meta <span style="color: red">charset="UTF-8"</span>/&gt;
-      </code>
-    </div>
-
-    <p>
-      Define el autor de la pagina web colocando el valor “author” en el
-      atributo name, y el nombre del autor en el atributo content, por ejemplo
-    </p>
-    <div class="code-box">
-      <div class="code-header">HTML</div>
-      <code>
-        &lt;meta
-        <span style="color: red">name="author" content="Juan Pérez"</span>/&gt;
-      </code>
-    </div>
-
-    <p>
-      Define el uso de la pagina web colocando el valor “description” en el
-      atributo name, y la descripción en el atributo content, por ejemplo
-    </p>
-    <div class="code-box">
-      <div class="code-header">HTML</div>
-      <code>
-        &lt;meta
-        <span style="color: red"
-          >name="description" content="Página web sobre HTML"</span
-        >/&gt;
-      </code>
-    </div>
-
-    <p>
-      Permite el responsive design colocando el valor “viewport” en el atributo
-      name, y el valor “width=device-width, initial-scale=1.0” en el atributo
-      content, por ejemplo
-    </p>
-    <div class="code-box">
-      <div class="code-header">HTML</div>
-      <code style="margin: 0">
-        &lt;meta
-        <span style="color: red"
-          >name="viewport" content="width=device-width, initial-scale=1.0"</span
-        >/&gt;
-      </code>
-    </div>
-
-    <p>
-      Define las palabras clave de la página web para motores de búsqueda
-      colocando el valor “keywords” en el atributo name, y las palabras clave
-      separadas por comas en el atributo content, por ejemplo
-    </p>
-    <div class="code-box">
-      <div class="code-header">HTML</div>
-      <code>
-        &lt;meta
-        <span style="color: red"
-          >name="keywords" content="HTML, etiquetas, meta"</span
-        >
-        /&gt;
-      </code>
-    </div>
-
-    <h4 id="title-tag"><em>&lt;title&gt; Titulo &lt;/title&gt;</em></h4>
-    <p>
-      Define el nombre de la ventana en el navegador colocando el valor entre
-      las etiquetas de apertura y cierre, por ejemplo
-    </p>
-    <div class="code-box">
-      <div class="code-header">HTML</div>
-      <code
-        >&lt;title&gt;
-        <span style="color: red">Página sobre HTML</span> &lt;/title&gt;</code
-      >
-    </div>
-
-    <h4 id="script-tag"><em>&lt;script&gt; &lt;/script&gt;</em></h4>
-    <p>
-      Define cual sera el archivo de JavaScript que vamos a usar sobre el
-      archivo HTML, se coloca la ruta del archivo JS dentro del atributo src y
-      se usa el atributo defer para que el JavaScript se cargue después de que
-      se haya cargado todo el archivo HTML y CSS, asi se evitan errores cuando
-      el archivo JS intenta acceder a elementos HTML que todavia no existen en
-      la pagina, por ejemplo
-    </p>
-    <div class="code-box">
-      <div class="code-header">HTML</div>
-      <code
-        >&lt;script
-        <span style="color: red">src="ruta/del/archivo.js" defer</span>&gt;
-        &lt;/script&gt;</code
-      >
-    </div>
-
-    <h4 id="link-tag"><em>&lt;link /&gt;</em></h4>
-    <p>
-      Permite importar el diseño css colocando el valor “stylesheet” en el
-      atributo rel, y la ruta del archivo css en el atributo href, por ejemplo
-    </p>
-    <div class="code-box">
-      <div class="code-header">HTML</div>
-      <code
-        >&lt;link
-        <span style="color: red"
-          >rel="stylesheet" href="ruta/del/archivo.css"</span
-        >
-        /&gt;</code
-      >
-    </div>
-
-    <p>
-      Permite agregar un icono al lado del title colocando “icon” en el atributo
-      rel y la ruta del icono en el atributo href, por ejemplo
-    </p>
-    <div class="code-box">
-      <div class="code-header">HTML</div>
-      <code
-        >&lt;link
-        <span style="color: red">rel="icon" href="ruta/del/icono.ico"</span>
-        /&gt;</code
-      >
-    </div>
-
-    <!-- etiquetas dentro del body -->
-    <h3 id="etiquetas-body"><em>Etiquetas dentro del body</em></h3>
-
-    <!-- etiquetas de tipo contenedor -->
-    <h4 id="etiquetas-contenedor"><em>Etiquetas de tipo contenedor</em></h4>
-    <p>
-      Estas etiquetas se utilizan para estructurar y organizar el contenido de
-      la página web, proporcionando una semántica clara sobre la función de cada
-      sección.
-    </p>
-    <ul>
-      <li>
-        &lt;header&gt; &lt;/header&gt;: Define el encabezado de la página web,
-        generalmente contiene el logotipo, el título y la barra de navegación.
-      </li>
-      <li>
-        &lt;nav&gt; &lt;/nav&gt;: Define la barra de navegación de la página
-        web, generalmente contiene enlaces a las diferentes secciones del sitio
-        web.
-      </li>
-      <li>
-        &lt;main&gt; &lt;/main&gt;: Define el contenido principal de la página
-        web, es decir, la parte más importante del sitio.
-      </li>
-      <li>
-        &lt;aside&gt; &lt;/aside&gt;: Define contenido adicional relacionado con
-        el contenido principal, como barras laterales, citas o enlaces
-        relacionados.
-      </li>
-      <li>
-        &lt;footer&gt; &lt;/footer&gt;: Define el pie de página de la página
-        web, generalmente contiene información de contacto, derechos de autor y
-        enlaces a redes sociales.
-      </li>
-      <li>
-        &lt;section&gt; &lt;/section&gt;: Define una sección de contenido dentro
-        de la página web, puede contener encabezados, párrafos, imágenes, etc.
-      </li>
-      <li>
-        &lt;article&gt; &lt;/article&gt;: Define un artículo independiente
-        dentro de la página web, como una entrada de blog o una noticia.
-      </li>
-      <li>
-        &lt;figure&gt; &lt;/figure&gt;: Define un contenedor para contenido
-        multimedia, como imágenes, gráficos o videos, junto con su leyenda.
-      </li>
-    </ul>
-
-    <!-- etiquetas de tipo texto -->
-    <h4 id="etiquetas-texto"><em>Etiquetas de tipo texto</em></h4>
-    <p>
-      Estas etiquetas se utilizan para dar formato y estructura al texto dentro
-      de la página web.
-    </p>
-    <ul>
-      <li>
-        &lt;h1&gt; a &lt;h6&gt;: Define los encabezados de diferentes niveles,
-        siendo &lt;h1&gt; el más importante y &lt;h6&gt; el menos importante.
-      </li>
-      <li>&lt;p&gt; &lt;/p&gt;: Define un párrafo de texto.</li>
-      <li>
-        &lt;strong&gt; &lt;/strong&gt;: Define texto en negrita, indicando
-        énfasis fuerte.
-      </li>
-      <li>
-        &lt;em&gt; &lt;/em&gt;: Define texto en cursiva, indicando énfasis
-        moderado.
-      </li>
-      <li>
-        &lt;span&gt; &lt;/span&gt;: Sirve para colocar dentro de texto, esta
-        etiqueta nos permite identificar una pequeña parte del texto para
-        cambiarle el estilo.
-      </li>
-      <li>
-        &lt;br /&gt;: Sirve para insertar un salto de línea dentro de un
-        párrafo.
-      </li>
-      <li>
-        &lt;hr /&gt;: Sirve para insertar una línea horizontal que puede ser
-        utilizada como un separador de contenido.
-      </li>
-      <li>
-        &lt;blockquote&gt; &lt;/blockquote&gt;: Define una cita en bloque,
-        generalmente se utiliza para citas largas o extractos de texto. Por
-        ejemplo
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <div>
-            <code
-              >&lt;blockquote cite="url"&gt;Esta es una cita en
-              bloque.&lt;/blockquote&gt; &lt;cite&gt;MDN
-              Documentation&lt;/cite&gt;
-            </code>
+                  Proceso de renderizado
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="#index-html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >description</span
+                  >
+                  Index.html
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="#comentarios-html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >comment</span
+                  >
+                  Comentarios en HTML
+                </a>
+              </li>
+            </ul>
           </div>
-        </div>
 
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          <blockquote cite="url">Esta es una cita en bloque.</blockquote>
-          <cite>MDN Documentation</cite>
-        </div>
-      </li>
-
-      <li>
-        &lt;q&gt; &lt;/q&gt;: Es una cita a nivel de linea y no de parrafo. El
-        navegador la muestra entre comillas. Por ejemplo:
-
-        <div class="code-box">
-          <div class="code-header">HTML</div>
+          <!-- Maquetación -->
           <div>
-            <code
-              >&lt;q cite="url"&gt;Esta es una cita en línea.&lt;/q&gt;
-            </code>
-          </div>
-        </div>
-
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          <q cite="url"> Esta es una cita en línea. </q>
-        </div>
-      </li>
-      <li>
-        &lt;abbr&gt; &lt;/abbr&gt;: Para abreviaciones, el navegador nos muestra
-        el texto subrayado con puntos y cuando hacemos hover nos muestra el
-        significado. Por ejemplo:
-
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <div>
-            <code
-              >&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;
-            </code>
-          </div>
-        </div>
-
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          <abbr title="HyperText Markup Language"> HTML </abbr>
-        </div>
-      </li>
-
-      <li>
-        &lt;address&gt; &lt;/address&gt;: Para direcciones, el navegador nos
-        muestra el texto en cursiva. Por ejemplo:
-
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <div>
-            <code
-              >&lt;address&gt;123 Main St, Anytown, USA&lt;/address&gt;
-            </code>
-          </div>
-        </div>
-
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          <address>123 Main St, Anytown, USA</address>
-        </div>
-      </li>
-
-      <li>
-        &lt;sup&gt; &lt;/sup&gt;: Para superíndices, el navegador nos muestra el
-        texto en superíndice. Por ejemplo:
-
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <div>
-            <code>10&lt;sup&gt;2&lt;/sup&gt; </code>
-          </div>
-        </div>
-
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          10<sup>2</sup>
-        </div>
-      </li>
-
-      <li>
-        &lt;sub&gt; &lt;/sub&gt;: Para subíndices, el navegador nos muestra el
-        texto en subíndice. Por ejemplo:
-
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <div>
-            <code>H&lt;sub&gt;2&lt;/sub&gt;O</code>
-          </div>
-        </div>
-
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          H<sub>2</sub>O
-        </div>
-      </li>
-
-      <li>
-        <p>
-          &lt;time&gt; &lt;/time&gt;: Para representar fechas y horas, el
-          navegador nos muestra el texto en un formato específico.
-        </p>
-        <p>
-          Usa el atributo datetime para especificar la fecha y hora en formato
-          ISO 8601.
-        </p>
-
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <div>
-            <code
-              >hoy &lt; time
-              <span style="color: red">datetime="2023-03-15"</span> &gt; 15 de
-              marzo de 2023&lt;/time&gt; se celebra el cumpleaños de Ana.</code
+            <h5
+              class="mb-4 text-xs font-bold uppercase tracking-wider text-[#757575]"
             >
+              Maquetación
+            </h5>
+            <ul class="space-y-1">
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="#elementos-no-vacios"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >check_box_outline_blank</span
+                  >
+                  Elementos no vacíos
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="#elementos-vacios"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >check_box_outline_blank</span
+                  >
+                  Elementos vacíos
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="#atributos"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >tune</span
+                  >
+                  Atributos
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="#anidado-elementos"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >account_tree</span
+                  >
+                  Anidado de elementos
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- HTML Semántico -->
+          <div>
+            <h5
+              class="mb-4 text-xs font-bold uppercase tracking-wider text-[#757575]"
+            >
+              HTML Semántico
+            </h5>
+            <ul class="space-y-1">
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="#definicion"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >menu_book</span
+                  >
+                  Definición
+                </a>
+              </li>
+              <li>
+                <details class="group">
+                  <summary
+                    class="flex cursor-pointer items-center justify-between gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] text-sm list-none"
+                  >
+                    <div class="flex items-center gap-3">
+                      <span
+                        class="material-symbols-outlined text-base text-[#757575]"
+                        >data_object</span
+                      >
+                      Anatomía del HTML
+                    </div>
+                    <span
+                      class="material-symbols-outlined text-sm transition-transform group-open:rotate-180"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <ul class="mt-1 ml-9 space-y-1 border-l border-[#f2f2f2]">
+                    <li>
+                      <a
+                        class="block py-1.5 pl-4 text-sm text-[#757575] hover:text-primary"
+                        href="#doctype"
+                        >DOCTYPE</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="block py-1.5 pl-4 text-sm text-[#757575] hover:text-primary"
+                        href="#html-tag"
+                        >html lang</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="block py-1.5 pl-4 text-sm text-[#757575] hover:text-primary"
+                        href="#head-tag"
+                        >head</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="block py-1.5 pl-4 text-sm text-[#757575] hover:text-primary"
+                        href="#body-tag"
+                        >body</a
+                      >
+                    </li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details class="group">
+                  <summary
+                    class="flex cursor-pointer items-center justify-between gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] text-sm list-none"
+                  >
+                    <div class="flex items-center gap-3">
+                      <span
+                        class="material-symbols-outlined text-base text-[#757575]"
+                        >integration_instructions</span
+                      >
+                      Etiquetas del head
+                    </div>
+                    <span
+                      class="material-symbols-outlined text-sm transition-transform group-open:rotate-180"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <ul class="mt-1 ml-9 space-y-1 border-l border-[#f2f2f2]">
+                    <li>
+                      <a
+                        class="block py-1.5 pl-4 text-sm text-[#757575] hover:text-primary"
+                        href="#meta-tag"
+                        >meta</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="block py-1.5 pl-4 text-sm text-[#757575] hover:text-primary"
+                        href="#title-tag"
+                        >title</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="block py-1.5 pl-4 text-sm text-[#757575] hover:text-primary"
+                        href="#script-tag"
+                        >script</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="block py-1.5 pl-4 text-sm text-[#757575] hover:text-primary"
+                        href="#link-tag"
+                        >link</a
+                      >
+                    </li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details class="group">
+                  <summary
+                    class="flex cursor-pointer items-center justify-between gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] text-sm list-none"
+                  >
+                    <div class="flex items-center gap-3">
+                      <span
+                        class="material-symbols-outlined text-base text-[#757575]"
+                        >web</span
+                      >
+                      Etiquetas del body
+                    </div>
+                    <span
+                      class="material-symbols-outlined text-sm transition-transform group-open:rotate-180"
+                      >expand_more</span
+                    >
+                  </summary>
+                  <ul class="mt-1 ml-9 space-y-1 border-l border-[#f2f2f2]">
+                    <li>
+                      <a
+                        class="block py-1.5 pl-4 text-sm text-[#757575] hover:text-primary"
+                        href="#etiquetas-contenedor"
+                        >Contenedor</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="block py-1.5 pl-4 text-sm text-[#757575] hover:text-primary"
+                        href="#etiquetas-texto"
+                        >Texto</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="block py-1.5 pl-4 text-sm text-[#757575] hover:text-primary"
+                        href="#etiquetas-lista"
+                        >Listas</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="block py-1.5 pl-4 text-sm text-[#757575] hover:text-primary"
+                        href="#etiquetas-multimedia"
+                        >Multimedia</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="block py-1.5 pl-4 text-sm text-[#757575] hover:text-primary"
+                        href="#etiquetas-formularios"
+                        >Formularios</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="block py-1.5 pl-4 text-sm text-[#757575] hover:text-primary"
+                        href="#etiquetas-menu"
+                        >Menús</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="block py-1.5 pl-4 text-sm text-[#757575] hover:text-primary"
+                        href="#etiquetas-tablas"
+                        >Tablas</a
+                      >
+                    </li>
+                  </ul>
+                </details>
+              </li>
+            </ul>
           </div>
         </div>
+      </aside>
 
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          hoy <time datetime="2023-03-15">15 de marzo de 2023</time> se celebra
-          el cumpleaños de Ana.
-        </div>
-      </li>
+      <!-- Main Content Pane -->
+      <main class="flex-1 min-w-0">
+        <div class="max-w-4xl mx-auto px-6 py-10 lg:px-12">
+          <!-- Breadcrumbs -->
+          <nav class="flex items-center gap-2 mb-8 text-sm font-medium">
+            <a class="text-[#757575] hover:text-primary" href="#">Docs</a>
+            <span class="material-symbols-outlined text-xs text-[#757575]"
+              >chevron_right</span
+            >
+            <span class="text-primary">Introducción</span>
+          </nav>
 
-      <li>
-        <p>
-          &lt;details&gt; &lt;/details&gt;: Para representar información
-          adicional que el usuario puede mostrar u ocultar, el navegador nos
-          muestra un cuadro desplegable.
-        </p>
-        <p>
-          Usa la etiqueta &lt;summary&gt; para definir el encabezado del cuadro
-          desplegable.
-        </p>
+          <!-- Page Header -->
+          <section class="mb-12">
+            <h1
+              class="text-4xl font-extrabold tracking-tight text-[#141414] mb-4"
+            >
+              Fundamentos de HTML
+            </h1>
+            <p class="text-xl text-[#757575] leading-relaxed">
+              Aprende los conceptos fundamentales de HTML, el lenguaje de
+              marcado que define la estructura de toda página web.
+            </p>
+          </section>
 
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <div>
-            <code>
-              <span>&lt;details&gt;</span> <br />
-              <span style="color: red"
-                >&lt;summary&gt;Más información&lt;/summary&gt;</span
+          <!-- Content -->
+          <article class="prose prose-slate max-w-none">
+            <!-- ¿Qué es HTML? -->
+            <h2 id="que-es-html" class="text-2xl font-bold mt-12 mb-4">
+              ¿Qué es HTML?
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              El Lenguaje de Marcado de Hipertexto o HTML por sus siglas en
+              inglés (HyperText Markup Language) es el código para construir la
+              estructura de una página web.
+            </p>
+            <p class="text-base leading-7 text-[#141414] mb-6">
+              En otras palabras, HTML es el esqueleto con el cual definimos cada
+              elemento que compone la página web, así como: enlaces, párrafos,
+              títulos, botones, imágenes, formularios, entre otros.
+            </p>
+
+            <div
+              class="bg-[#f7f7f7] border-l-4 border-primary p-5 my-8 rounded-r-lg"
+            >
+              <div class="flex gap-3">
+                <span class="material-symbols-outlined text-primary"
+                  >lightbulb</span
+                >
+                <div>
+                  <p class="font-bold text-sm mb-1">Tip</p>
+                  <p class="text-sm text-[#757575]">
+                    Con
+                    <code
+                      class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono"
+                      >! + Tab</code
+                    >
+                    se coloca rápidamente la estructura base de HTML en tu
+                    editor de código.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Proceso de renderizado -->
+            <h2 id="proceso-renderizado" class="text-2xl font-bold mt-12 mb-4">
+              Proceso de renderizado del motor del navegador
+            </h2>
+            <div class="space-y-4 my-6">
+              <div class="flex gap-4 items-start">
+                <span
+                  class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center"
+                  >1</span
+                >
+                <p class="text-base leading-7 text-[#141414]">
+                  Transforma los archivos a un árbol de objetos HTML o CSS,
+                  estos se denominan DOM (Document Object Model) y CSSDOM
+                  (Cascade Style Sheet Object Model), respectivamente. Cada nodo
+                  en el árbol es una representación de los elementos que
+                  contiene el archivo HTML o CSS.
+                </p>
+              </div>
+              <div class="flex gap-4 items-start">
+                <span
+                  class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center"
+                  >2</span
+                >
+                <p class="text-base leading-7 text-[#141414]">
+                  Calcula el estilo correspondiente a cada nodo del DOM
+                  relacionado al CSSDOM.
+                </p>
+              </div>
+              <div class="flex gap-4 items-start">
+                <span
+                  class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center"
+                  >3</span
+                >
+                <p class="text-base leading-7 text-[#141414]">
+                  Calcula las dimensiones de cada nodo y dónde va en la
+                  pantalla.
+                </p>
+              </div>
+              <div class="flex gap-4 items-start">
+                <span
+                  class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center"
+                  >4</span
+                >
+                <p class="text-base leading-7 text-[#141414]">
+                  Pinta o renderiza los diferentes elementos como cajas o
+                  contenedores.
+                </p>
+              </div>
+              <div class="flex gap-4 items-start">
+                <span
+                  class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center"
+                  >5</span
+                >
+                <p class="text-base leading-7 text-[#141414]">
+                  Agrupa todas las cajas en diferentes capas para convertirlas
+                  en una imagen que se renderiza.
+                </p>
+              </div>
+            </div>
+
+            <!-- Index.html -->
+            <h2 id="index-html" class="text-2xl font-bold mt-12 mb-4">
+              Index.html
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-6">
+              Index es la primera página que va a buscar el servidor a la hora
+              de abrir el sitio web. Si tenemos más páginas, entonces estas se
+              relacionan a la página index. También podemos tener subcarpetas,
+              las cuales van a tener su propio archivo index.html.
+            </p>
+
+            <!-- Comentarios en HTML -->
+            <h2 id="comentarios-html" class="text-2xl font-bold mt-12 mb-4">
+              Comentarios en HTML
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-6">
+              Los comentarios de HTML consisten en señalar algo que se ignorará.
+              Para establecer un comentario HTML se lo envuelve entre
+              <code class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono"
+                >&lt;!--</code
               >
-              <br />
-              <span>&lt;p&gt; Rodar sobre sal por media hora &lt;/p&gt;</span>
-              <br />
-              <span>&lt;/details&gt;</span>
-            </code>
-          </div>
-        </div>
+              y
+              <code class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono"
+                >--&gt;</code
+              >, independiente de la cantidad de líneas.
+            </p>
 
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          <details>
-            <summary>Más información</summary>
-            Rodar sobre sal por media hora
-          </details>
-        </div>
-      </li>
+            <!-- Code Block -->
+            <div class="relative group my-6">
+              <div
+                class="absolute right-4 top-4 opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                <button
+                  class="p-2 bg-white/10 hover:bg-white/20 rounded-md text-white backdrop-blur-sm"
+                >
+                  <span class="material-symbols-outlined text-sm"
+                    >content_copy</span
+                  >
+                </button>
+              </div>
+              <div class="bg-[#141414] rounded-xl p-6 overflow-x-auto">
+                <pre
+                  class="text-sm leading-relaxed text-gray-300"
+                ><code><span class="text-green-400">&lt;!-- Este es un comentario en HTML --&gt;</span>
 
-      <li>
-        <p>
-          &lt;a&gt; &lt;/a&gt;: Para crear enlaces, el navegador nos muestra el
-          texto como un hipervínculo.
-        </p>
-        <p>Usa el atributo href para especificar la url del enlace.</p>
-        <p>Puede usar href como "https://wa.me/5700000" para enviar un whatsapp por ejemplo</p>
-        <p>Usa el atributo target="_blank" para abrir una nueva pestana con la url.</p>
-        <p>Si usa "_blank", es necesario agregar rel="noopener nofererrer" por temas de seguridad.</p>
-        
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <div>
-            <code>
-              Visitar &lt;a
-              <span style="color: red"> href="https://www.ejemplo.com"</span
-              >&gt;ejemplo.com&lt;/a&gt;
-            </code>
-          </div>
-        </div>
+<span class="text-green-400">&lt;!--</span>
+<span class="text-green-400">Este es un comentario</span>
+<span class="text-green-400">que abarca varias líneas</span>
+<span class="text-green-400">--&gt;</span></code></pre>
+              </div>
+            </div>
 
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          Visitar <a href="https://www.ejemplo.com">ejemplo.com </a>
-        </div>
-      </li>
-    </ul>
-
-    <p>
-      <strong>Nota:</strong> El uso de estas etiquetas es muy importante para el
-      SEO
-    </p>
-
-    <!-- etiquetas de tipo lista -->
-    <h4 id="etiquetas-lista"><em>Etiquetas de tipo lista</em></h4>
-    <p>
-      Hay tres tipos de listas, las ordenadas, las desordenadas y las listas de
-      descripcion. Estas son:
-    </p>
-    <ul>
-      <li>
-        &lt;ul&gt; &lt;/ul&gt;: Para crear listas desordenadas, el navegador nos
-        muestra los elementos de la lista con viñetas. Por ejemplo:
-
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <div>
-            <code>
-              &lt;ul&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Elemento 1&lt;/li&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Elemento 2&lt;/li&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Elemento 3&lt;/li&gt; <br />
-              &lt;/ul&gt;
-            </code>
-          </div>
-        </div>
-
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          <ul>
-            <li>Elemento 1</li>
-            <li>Elemento 2</li>
-            <li>Elemento 3</li>
-          </ul>
-        </div>
-      </li>
-
-      <li>
-        &lt;ol&gt; &lt;/ol&gt;: Para crear listas ordenadas, el navegador nos
-        muestra los elementos de la lista con números. Por ejemplo:
-
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <div>
-            <code>
-              &lt;ol&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Elemento 1&lt;/li&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Elemento 2&lt;/li&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Elemento 3&lt;/li&gt; <br />
-              &lt;/ol&gt;
-            </code>
-          </div>
-        </div>
-
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          <ol>
-            <li>Elemento 1</li>
-            <li>Elemento 2</li>
-            <li>Elemento 3</li>
-          </ol>
-        </div>
-
-        <p>
-          Podemos usar el atributo start para especificar de que numero empezar
-          el conteo, por ejemplo:
-        </p>
-
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <div>
-            <code>
-              &lt;ol <span style="color: red">start="5"</span>&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Elemento 1&lt;/li&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Elemento 2&lt;/li&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Elemento 3&lt;/li&gt; <br />
-              &lt;/ol&gt;
-            </code>
-          </div>
-        </div>
-
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          <ol start="5">
-            <li>Elemento 1</li>
-            <li>Elemento 2</li>
-            <li>Elemento 3</li>
-          </ol>
-        </div>
-      </li>
-
-      <li>
-        <p>
-          &lt;dl&gt; &lt;/dl&gt;: Para crear listas de descripción, el navegador
-          nos muestra los términos y sus descripciones.
-        </p>
-        <p>Usa &lt;dt&gt; &lt;/dt&gt; para definir el término</p>
-        <p>
-          Usa &lt;dd&gt; &lt;/dd&gt; para definir la descripción del término.
-        </p>
-
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <div>
-            <code>
-              &lt;dl&gt; <br />
-              &nbsp;&nbsp;&lt;dt&gt;Término 1&lt;/dt&gt; <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&lt;dd&gt;Descripción del término
-              1&lt;/dd&gt;
-              <br />
-              &nbsp;&nbsp;&lt;dt&gt;Término 2&lt;/dt&gt; <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&lt;dd&gt;Descripción del término
-              2&lt;/dd&gt;
-              <br />
-              &lt;/dl&gt;
-            </code>
-          </div>
-        </div>
-
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          <dl>
-            <dt>Término 1</dt>
-            <dd>Descripción del término 1</dd>
-            <dt>Término 2</dt>
-            <dd>Descripción del término 2</dd>
-          </dl>
-        </div>
-      </li>
-    </ul>
-
-    <!-- etiquetas de tipo multimedia -->
-    <h4 id="etiquetas-multimedia"><em>Etiquetas multimedia</em></h4>
-    <p>
-      Estas etiquetas se utilizan para insertar y controlar contenido multimedia
-      en la página web, como imágenes, audio y video.
-    </p>
-    <p>
-      Pagina web para reducir el tamaño de las imágenes:
-      <a href="https://tinypng.com/">TinyPNG</a>
-    </p>
-    <p>
-      Pagina web para quitar los metadatos de las imágenes:
-      <a href="https://www.verexif.com/es/">VerExif</a>
-    </p>
-    <p>
-      Pagina web para descargar imágenes:
-      <a href="https://www.pexels.com/es-es/">Pexels</a>
-    </p>
-    <p>
-      <strong>Nota:</strong> el tamaño optima de una imagen es 70 KB para que
-      cargue rápido la pagina
-    </p>
-    <ul>
-      <li>
-        <p>&lt;img&gt;: Para insertar imágenes en la página web.</p>
-        <p>
-          Se puede colocar imágenes colocando la ruta/url como valor del
-          atributo src, y un texto opcional como valor del atributo alt
-        </p>
-        <p>
-          Se puede modificar la altura y anchura con los atributos width = “100”
-          y height = “200”
-        </p>
-        <p>Se puede usar el atributo loading="lazy" para que se descargue la imagen cuando estemos cerca del elemento</p>
-        <p>Se puede usar el atributo decoding="async" para procesar sin bloquear el renderizado</p>
-        <p><strong>Nota:</strong> Establecer dimensiones evita cambios de layout inesperados mientras las imágenes cargan.</p>
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <code
-            >&lt;img
-            <span style="color: red"
-              >src="ruta/de/la/imagen.jpg" alt="Texto alternativo" width="200"
-              height="150"</span
+            <div
+              class="bg-[#f7f7f7] border-l-4 border-primary p-5 my-8 rounded-r-lg"
             >
-            /&gt;</code
+              <div class="flex gap-3">
+                <span class="material-symbols-outlined text-primary">info</span>
+                <div>
+                  <p class="font-bold text-sm mb-1">Nota</p>
+                  <p class="text-sm text-[#757575]">
+                    Se puede comentar una sección seleccionando el código y
+                    oprimiendo las teclas
+                    <code
+                      class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono"
+                      >Ctrl + /</code
+                    >.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature Cards -->
+            <h2 class="text-2xl font-bold mt-12 mb-4">Conceptos clave</h2>
+            <div class="grid md:grid-cols-2 gap-6 my-8">
+              <div class="p-6 border border-[#f2f2f2] rounded-xl">
+                <span class="material-symbols-outlined text-3xl mb-4"
+                  >code</span
+                >
+                <h3 class="font-bold text-lg mb-2">Estructura</h3>
+                <p class="text-sm text-[#757575]">
+                  HTML define el esqueleto de toda página web mediante etiquetas
+                  que organizan el contenido de forma jerárquica.
+                </p>
+              </div>
+              <div class="p-6 border border-[#f2f2f2] rounded-xl">
+                <span class="material-symbols-outlined text-3xl mb-4"
+                  >language</span
+                >
+                <h3 class="font-bold text-lg mb-2">Semántica</h3>
+                <p class="text-sm text-[#757575]">
+                  Las etiquetas semánticas dan significado al contenido,
+                  mejorando la accesibilidad y el SEO de tu sitio web.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Navigation Footer -->
+          <div
+            class="mt-20 pt-10 border-t border-[#f2f2f2] flex items-center justify-between"
           >
+            <div></div>
+            <a
+              class="group flex flex-col items-end text-right"
+              href="secciones/1-maquetacion.html"
+            >
+              <span class="text-xs text-[#757575] mb-1">Siguiente</span>
+              <div
+                class="flex items-center gap-2 font-bold text-primary group-hover:translate-x-1 transition-transform"
+              >
+                Maquetación
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </div>
+            </a>
+          </div>
         </div>
-      </li>
-      <li>
-        <p>&lt;audio&gt;: Para insertar contenido de audio en la página web.</p>
-        <p>Usa el atributo controls para agregarle los controles al audio</p>
-        <p>
-          Usa la etiqueta source dentro del contenido para colocar distintos
-          formatos
-        </p>
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <code
-            >&lt;audio <span style="color: red">controls</span>&gt; <br />
-            &nbsp;&nbsp;&lt;source
-            <span style="color: red"
-              >src="ruta/del/audio.mp3" type="audio/mpeg"</span
-            >
-            &gt; <br />
-            &nbsp;&nbsp;&lt;source
-            <span style="color: red"
-              >src="ruta/del/audio.ogg" type="audio/ogg"</span
-            >
-            &gt; <br />
-            &nbsp;&nbsp;Tu navegador no soporta el elemento de audio. <br />
-            &lt;/audio&gt;</code
-          >
-        </div>
-      </li>
-      <li>
-        <p>&lt;video&gt;: Para insertar contenido de video en la página web.</p>
-        <p>
-          Usa el atributo controls para agregarle los botones de control del
-          video.
-        </p>
-        <p>
-          Usa el atributo autoplay para que el video se reproduzca
-          automáticamente.
-        </p>
-        <p>
-          Usa el atributo loop, hace que el vídeo (o audio) comience a
-          reproducirse de nuevo cada vez que termina. Esto también puede ser
-          molesto, así que úselo solo si es realmente necesario.
-        </p>
-        <p>
-          Usa el atributo muted, hace que el contenido multimedia se reproduzca
-          con el sonido desactivado de forma predeterminada.
-        </p>
-        <p>
-          Usa el atributo poster, la URL de una imagen que se mostrará antes de
-          que se reproduzca el video. Está diseñado para ser utilizado para una
-          pantalla de presentación o una pantalla publicitaria.
-        </p>
-        <p>
-          Usa el atributo preload, le indica al navegador que cargue el video de
-          antemano.
-        </p>
-        <p>
-          Usa la etiqueta source dentro del contenido para colocar distintos
-          formatos.
-        </p>
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <code
-            >&lt;video
-            <span style="color: red"
-              >controls autoplay loop muted preload="auto"
-              poster="poster.png"</span
-            >&gt; <br />
-            &nbsp;&nbsp;&lt;source
-            <span style="color: red"
-              >src="ruta/del/video.mp4" type="video/mp4"</span
-            >
-            &gt; <br />
-            &nbsp;&nbsp;&lt;source
-            <span style="color: red"
-              >src="ruta/del/video.ogg" type="video/ogg"</span
-            >
-            &gt; <br />
-            &nbsp;&nbsp;Tu navegador no soporta el elemento de video. <br />
-            &lt;/video&gt;</code
-          >
-        </div>
-      </li>
-    </ul>
+      </main>
 
-    <!-- etiquetas para formularios -->
-    <h4 id="etiquetas-formularios"><em>etiquetas para formularios</em></h4>
-    <p>Las etiquetas más comunes para formularios son:</p>
-
-    <ul>
-      <li>
-        <p>
-          &lt;form&gt; &lt;/form&gt;: Define un formulario HTML para la
-          recopilación de datos del usuario.
-        </p>
-        <p>
-          Usa el atributo action que contiene una url/path para indicar a donde
-          debe ser enviada la información del formulario una vez se presione el
-          boton de enviar la información
-        </p>
-        <p>
-          Usa el atributo method para indicar el método HTTP que se debe
-          utilizar al enviar el formulario (GET o POST).
-        </p>
-        <p>
-          Usa el atributo enctype para especificar cómo se deben codificar los
-          datos del formulario al enviarlos al servidor.
-        </p>
-        <p>
-          Usa el atributo target para especificar dónde se debe mostrar la
-          respuesta del servidor después de enviar el formulario.
-        </p>
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <code
-            >&lt;form
-            <span style="color: red"
-              >action="/submit" method="POST" enctype="multipart/form-data"
-              target="_blank"</span
+      <!-- Right Side Table of Contents -->
+      <aside
+        class="hidden xl:block w-64 h-[calc(100vh-64px)] sticky top-16 p-8 overflow-y-auto"
+      >
+        <h5
+          class="text-xs font-bold uppercase tracking-wider text-[#757575] mb-4"
+        >
+          En esta página
+        </h5>
+        <ul class="space-y-3 text-sm">
+          <li>
+            <a class="text-primary font-medium" href="#que-es-html"
+              >¿Qué es HTML?</a
             >
-            &gt; <br />
-            &nbsp;&nbsp;...contenido del formulario... <br />
-            &lt;/form&gt;</code
-          >
-        </div>
-      </li>
+          </li>
+          <li>
+            <a
+              class="text-[#757575] hover:text-primary"
+              href="#proceso-renderizado"
+              >Proceso de renderizado</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#index-html"
+              >Index.html</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-[#757575] hover:text-primary"
+              href="#comentarios-html"
+              >Comentarios en HTML</a
+            >
+          </li>
+        </ul>
 
-      <li>
-        <p>
-          &lt;label&gt; &lt;/label&gt;: Define una etiqueta para un elemento de
-          formulario.
-        </p>
-        <p>
-          Usa el atributo for para asociar la etiqueta con un elemento de
-          formulario específico.
-        </p>
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <code
-            >&lt;label
-            <span style="color: red">for="nombre"</span
-            >&gt;Nombre:&lt;/label&gt;</code
-          >
-        </div>
-      </li>
-
-      <li>
-        <p>
-          &lt;input&gt;: Define un campo de entrada para la recopilación de
-          datos del usuario.
-        </p>
-        <p>
-          Usa el atributo type para especificar el tipo de campo de entrada
-          (texto, contraseña, correo electrónico, etc.). Los distintos tipos de
-          son:
+        <div class="mt-12 p-6 bg-background-light rounded-xl">
+          <p class="text-xs font-bold mb-3">¿Preguntas?</p>
+          <p class="text-xs text-[#757575] leading-relaxed mb-4">
+            ¿No encuentras lo que buscas? Consulta los recursos adicionales.
+          </p>
           <a
-            href="https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements/input"
-            >MDN Web Docs</a
+            class="inline-flex items-center gap-2 text-xs font-bold text-primary"
+            href="#"
           >
-        </p>
-        <p>
-          Usa el atributo id cuyo valor debe ser igual al suministrado en el
-          atributo for del label
-        </p>
-        <p>
-          Usa el atributo name para identificar el campo de entrada al enviar el
-          formulario.
-        </p>
-        <p>
-          Usa el atributo required para indicar que el campo es obligatorio.
-        </p>
-        <p>
-          Usa el atributo placeholder para proporcionar un texto de sugerencia
-          que se muestra en el campo de entrada.
-        </p>
-        <p>
-          Usa el atributo value para establecer un valor predeterminado para el
-          campo de entrada.
-        </p>
-        <p>
-          Usa el atributo autocomplete para habilitar o deshabilitar la función
-          de autocompletado del navegador.
-        </p>
-        <p>
-          Usa el atributo min y max para establecer límites en los valores
-          numéricos.
-        </p>
-        <p>
-          Usa el atributo step para especificar el incremento permitido para los
-          valores numéricos.
-        </p>
-        <p>
-          Usa el atributo pattern para establecer una expresión regular que el
-          valor del campo debe cumplir.
-        </p>
-        <p>
-          Usa el atributo title para proporcionar información adicional sobre el
-          campo de entrada.
-        </p>
-        <p>
-          Usa el atributo tabindex para especificar el orden en que los
-          elementos del formulario deben recibir el foco al navegar con la tecla
-          Tab.
-        </p>
-        <p>
-          Usa el atributo autofocus para indicar que el campo debe recibir el
-          foco automáticamente al cargar la página.
-        </p>
-        <p>
-          Usa el atributo form para asociar el campo de entrada con un
-          formulario específico.
-        </p>
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <code
-            >&lt;input
-            <span style="color: red"
-              >type="text" name="nombre" placeholder="Nombre" required</span
-            >
-            &gt;</code
-          >
+            Ver recursos
+            <span class="material-symbols-outlined text-sm">open_in_new</span>
+          </a>
         </div>
-      </li>
-
-      <p>Ejemplo de un formulario con form, labels y inputs:</p>
-      <div class="code-box">
-        <div class="code-header">HTML</div>
-        <code
-          >&lt;form
-          <span style="color: red">action="/submit" method="POST"</span>
-          &gt; <br />
-          &nbsp;&nbsp;&lt;label
-          <span style="color: red">for="nombre"</span>&gt;Nombre:&lt;/label&gt;
-          <br />
-          &nbsp;&nbsp;&lt;input
-          <span style="color: red"
-            >type="text" id="nombre" name="nombre" placeholder="Nombre"
-            required</span
-          >
-          &gt; <br />
-          &nbsp;&nbsp;&lt;label
-          <span style="color: red">for="email"</span>&gt;Email:&lt;/label&gt;
-          <br />
-          &nbsp;&nbsp;&lt;input
-          <span style="color: red"
-            >type="email" id="email" name="email" placeholder="Email"
-            required</span
-          >
-          &gt; <br />
-          &nbsp;&nbsp;&lt;input
-          <span style="color: red">type="submit" value="Enviar"</span>
-          &gt; <br />
-          &lt;/form&gt;</code
-        >
-      </div>
-
-      <div class="resultado-box">
-        <div class="resultado-header">Resultado</div>
-        <form action="/submit" method="POST">
-          <label for="nombre">Nombre:</label><br />
-          <input
-            type="text"
-            id="nombre"
-            name="nombre"
-            placeholder="Nombre"
-            required
-          /><br />
-          <label for="email">Email:</label><br />
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Email"
-            required
-          /><br />
-          <input type="submit" value="Enviar" />
-        </form>
-      </div>
-
-      <li>
-        <p>
-          &lt;fieldset&gt; &lt;/fieldset&gt;: Funciona como contenedor de los
-          inputs, esta coloca un borde en el contenedor.
-        </p>
-        <p>
-          Usa la etiqueta &lt;legend&gt; &lt;/legend&gt; para definir un título
-          para el grupo de campos.
-        </p>
-
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <code
-            >&lt;fieldset&gt; <br />
-
-            &nbsp;&nbsp;<span style="color: red"
-              >&lt;legend&gt;Choose classes to attend:&lt;/legend&gt;</span
-            >
-            <br />
-            &nbsp;&nbsp;&lt;input type="checkbox" id="yoga" name="yoga" /&gt;
-            <br />
-            &nbsp;&nbsp;&lt;label for="yoga"&gt;Yoga (+$10)&lt;/label&gt; <br />
-            &nbsp;&nbsp;&lt;input type="checkbox" id="coffee" name="coffee"
-            /&gt;
-            <br />
-            &nbsp;&nbsp;&lt;label for="coffee"&gt;Coffee roasting
-            (+$20)&lt;/label&gt;
-            <br />
-            &nbsp;&nbsp;&lt;input type="checkbox" id="balloon" name="balloon"
-            /&gt;
-            <br />
-            &nbsp;&nbsp;&lt;label for="balloon"&gt;Balloon animal art
-            (+$5)&lt;/label&gt; <br />
-            &lt;/fieldset&gt;</code
-          >
-        </div>
-
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          <fieldset>
-            <legend>Choose classes to attend:</legend>
-
-            <input type="checkbox" id="yoga" name="yoga" />
-            <label for="yoga">Yoga (+$10)</label>
-
-            <input type="checkbox" id="coffee" name="coffee" />
-            <label for="coffee">Coffee roasting (+$20)</label>
-
-            <input type="checkbox" id="balloon" name="balloon" />
-            <label for="balloon">Balloon animal art (+$5)</label>
-          </fieldset>
-        </div>
-      </li>
-
-      <li>
-        <p>
-          &lt;textarea&gt; &lt;/textarea&gt;: Define un área de texto para la
-          entrada de texto multilínea.
-        </p>
-        <p>
-          Usa el atributo name para identificar el área de texto al enviar el
-          formulario.
-        </p>
-        <p>
-          Usa el atributo rows para especificar el número de filas visibles en
-          el área de texto.
-        </p>
-        <p>
-          Usa el atributo cols para especificar el número de columnas visibles
-          en el área de texto.
-        </p>
-        <p>
-          Usa el atributo placeholder para proporcionar un texto de sugerencia
-          que se muestra en el área de texto.
-        </p>
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <code
-            >&lt;textarea
-            <span style="color: red"
-              >name="mensaje" rows="4" cols="50" placeholder="Escribe tu mensaje
-              aquí..."</span
-            >
-            &gt;&lt;/textarea&gt;</code
-          >
-        </div>
-
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          <textarea
-            name="mensaje"
-            rows="4"
-            cols="50"
-            placeholder="Escribe tu mensaje aquí..."
-          ></textarea>
-        </div>
-      </li>
-    </ul>
-
-    <!-- etiquetas para menu -->
-    <h4 id="etiquetas-menu"><em>etiquetas para menús</em></h4>
-    <p>Las etiquetas más comunes para menús son:</p>
-    <ul>
-      <li>
-        <p>
-          &lt;datalist&gt; &lt;/datalist&gt;: Se utiliza para proporcionar una
-          lista de opciones predefinidas para un campo de entrada.
-        </p>
-        <p>
-          Usa la etiqueta &lt;input&gt; con el atributo list para asociar el
-          campo de entrada con la lista de opciones.
-        </p>
-        <p>
-          Usa la etiqueta &lt;option&gt; &lt;/option&gt; dentro de
-          &lt;datalist&gt; para definir las opciones disponibles.
-        </p>
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <code
-            >&lt;input
-            <span style="color: red">list="navegadores" name="navegador"</span>
-            &gt; <br />
-            &lt;datalist
-            <span style="color: red">id="navegadores"</span>&gt; <br />
-            &nbsp;&nbsp;&lt;option value="Chrome"&gt;&lt;/option&gt; <br />
-            &nbsp;&nbsp;&lt;option value="Firefox"&gt;&lt;/option&gt; <br />
-            &nbsp;&nbsp;&lt;option value="Safari"&gt;&lt;/option&gt; <br />
-            &nbsp;&nbsp;&lt;option value="Edge"&gt;&lt;/option&gt; <br />
-            &nbsp;&nbsp;&lt;option value="Opera"&gt;&lt;/option&gt; <br />
-            &lt;/datalist&gt;</code
-          >
-        </div>
-
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          <input list="navegadores" name="navegador" />
-          <datalist id="navegadores">
-            <option value="Chrome"></option>
-            <option value="Firefox"></option>
-            <option value="Safari"></option>
-            <option value="Edge"></option>
-            <option value="Opera"></option>
-          </datalist>
-        </div>
-      </li>
-
-      <li>
-        <p>
-          &lt;select&gt; &lt;/select&gt;: Se utiliza para crear un menú
-          desplegable.
-        </p>
-        <p>
-          Usa la etiqueta &lt;option&gt; &lt;/option&gt; dentro de
-          &lt;select&gt; para definir las opciones disponibles.
-        </p>
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <code
-            >&lt;select <span style="color: red">name="frutas"</span>&gt; <br />
-            &nbsp;&nbsp;&lt;option value=""&gt;--Selecciona una
-            fruta--&lt;/option&gt;
-            <br />
-            &nbsp;&nbsp;&lt;option value="manzana"&gt;Manzana&lt;/option&gt;
-            <br />
-            &nbsp;&nbsp;&lt;option value="banana"&gt;Banana&lt;/option&gt;
-            <br />
-            &nbsp;&nbsp;&lt;option value="naranja"&gt;Naranja&lt;/option&gt;
-            <br />
-            &nbsp;&nbsp;&lt;option value="pera"&gt;Pera&lt;/option&gt; <br />
-            &lt;/select&gt;
-          </code>
-        </div>
-
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          <select name="frutas">
-            <option value="">--Selecciona una fruta--</option>
-            <option value="manzana">Manzana</option>
-            <option value="banana">Banana</option>
-            <option value="naranja">Naranja</option>
-            <option value="pera">Pera</option>
-          </select>
-        </div>
-      </li>
-    </ul>
-
-    <!-- etiquetas para tablas -->
-    <h4 id="etiquetas-tablas"><em>etiquetas para tablas</em></h4>
-    <p>Las etiquetas más comunes para crear tablas en HTML son:</p>
-    
-    <ul>
-      <li>
-        <p>
-          &lt;table&gt; &lt;/table&gt;: Define la estructura principal de una tabla.
-        </p>
-        <p>
-          Dentro de ella se utilizan filas (&lt;tr&gt;) y celdas (&lt;th&gt;).
-        </p>
-    
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <code>
-            &lt;table <span style="color: red">border="1"</span>&gt; <br />
-            &nbsp;&nbsp;&lt;tr&gt; <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Nombre&lt;/th&gt; <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Edad&lt;/th&gt; <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;País&lt;/th&gt; <br />
-            &nbsp;&nbsp;&lt;/tr&gt; <br />
-            &nbsp;&nbsp;&lt;tr&gt; <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Ana&lt;/td&gt; <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;25&lt;/td&gt; <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Argentina&lt;/td&gt; <br />
-            &nbsp;&nbsp;&lt;/tr&gt; <br />
-            &lt;/table&gt;
-          </code>
-        </div>
-    
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          <table border="1">
-            <tr>
-              <th>Nombre</th>
-              <th>Edad</th>
-              <th>País</th>
-            </tr>
-            <tr>
-              <td>Ana</td>
-              <td>25</td>
-              <td>Argentina</td>
-            </tr>
-          </table>
-        </div>
-      </li>
-    
-      <li>
-        <p>
-          &lt;thead&gt;, &lt;tbody&gt; y &lt;tfoot&gt;: Permiten organizar la tabla
-          en encabezado, cuerpo y pie.
-        </p>
-        <p>
-          Mejoran la legibilidad y accesibilidad de las tablas.
-        </p>
-    
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <code>
-            &lt;table border="1"&gt; <br />
-            &nbsp;&nbsp;&lt;thead&gt; <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt; <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Producto&lt;/th&gt; <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Precio&lt;/th&gt; <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt; <br />
-            &nbsp;&nbsp;&lt;/thead&gt; <br />
-            &nbsp;&nbsp;&lt;tbody&gt; <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt; <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Laptop&lt;/td&gt; <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;$1200&lt;/td&gt; <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt; <br />
-            &nbsp;&nbsp;&lt;/tbody&gt; <br />
-            &nbsp;&nbsp;&lt;tfoot&gt; <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt; <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Total&lt;/td&gt; <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;$1200&lt;/td&gt; <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt; <br />
-            &nbsp;&nbsp;&lt;/tfoot&gt; <br />
-            &lt;/table&gt;
-          </code>
-        </div>
-    
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          <table border="1">
-            <thead>
-              <tr>
-                <th>Producto</th>
-                <th>Precio</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Laptop</td>
-                <td>$1200</td>
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-                <td>Total</td>
-                <td>$1200</td>
-              </tr>
-            </tfoot>
-          </table>
-        </div>
-      </li>
-    </ul>
-
+      </aside>
     </div>
   </body>
 </html>

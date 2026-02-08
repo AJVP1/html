@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="etiquetas-menu"><em>etiquetas para menús</em></h1>
+    <p>Las etiquetas más comunes para menús son:</p>
+    <ul>
+      <li>
+        <p>
+          &lt;datalist&gt; &lt;/datalist&gt;: Se utiliza para proporcionar una
+          lista de opciones predefinidas para un campo de entrada.
+        </p>
+        <p>
+          Usa la etiqueta &lt;input&gt; con el atributo list para asociar el
+          campo de entrada con la lista de opciones.
+        </p>
+        <p>
+          Usa la etiqueta &lt;option&gt; &lt;/option&gt; dentro de
+          &lt;datalist&gt; para definir las opciones disponibles.
+        </p>
+        <div class="code-box">
+          <div class="code-header">HTML</div>
+          <code
+            >&lt;input
+            <span style="color: red">list="navegadores" name="navegador"</span>
+            &gt; <br />
+            &lt;datalist
+            <span style="color: red">id="navegadores"</span>&gt; <br />
+            &nbsp;&nbsp;&lt;option value="Chrome"&gt;&lt;/option&gt; <br />
+            &nbsp;&nbsp;&lt;option value="Firefox"&gt;&lt;/option&gt; <br />
+            &nbsp;&nbsp;&lt;option value="Safari"&gt;&lt;/option&gt; <br />
+            &nbsp;&nbsp;&lt;option value="Edge"&gt;&lt;/option&gt; <br />
+            &nbsp;&nbsp;&lt;option value="Opera"&gt;&lt;/option&gt; <br />
+            &lt;/datalist&gt;</code
+          >
+        </div>
+
+        <div class="resultado-box">
+          <div class="resultado-header">Resultado</div>
+          <input list="navegadores" name="navegador" />
+          <datalist id="navegadores">
+            <option value="Chrome"></option>
+            <option value="Firefox"></option>
+            <option value="Safari"></option>
+            <option value="Edge"></option>
+            <option value="Opera"></option>
+          </datalist>
+        </div>
+      </li>
+
+      <li>
+        <p>
+          &lt;select&gt; &lt;/select&gt;: Se utiliza para crear un menú
+          desplegable.
+        </p>
+        <p>
+          Usa la etiqueta &lt;option&gt; &lt;/option&gt; dentro de
+          &lt;select&gt; para definir las opciones disponibles.
+        </p>
+        <div class="code-box">
+          <div class="code-header">HTML</div>
+          <code
+            >&lt;select <span style="color: red">name="frutas"</span>&gt;
+            <br />
+            &nbsp;&nbsp;&lt;option value=""&gt;--Selecciona una
+            fruta--&lt;/option&gt;
+            <br />
+            &nbsp;&nbsp;&lt;option value="manzana"&gt;Manzana&lt;/option&gt;
+            <br />
+            &nbsp;&nbsp;&lt;option value="banana"&gt;Banana&lt;/option&gt;
+            <br />
+            &nbsp;&nbsp;&lt;option value="naranja"&gt;Naranja&lt;/option&gt;
+            <br />
+            &nbsp;&nbsp;&lt;option value="pera"&gt;Pera&lt;/option&gt; <br />
+            &lt;/select&gt;
+          </code>
+        </div>
+
+        <div class="resultado-box">
+          <div class="resultado-header">Resultado</div>
+          <select name="frutas">
+            <option value="">--Selecciona una fruta--</option>
+            <option value="manzana">Manzana</option>
+            <option value="banana">Banana</option>
+            <option value="naranja">Naranja</option>
+            <option value="pera">Pera</option>
+          </select>
+        </div>
+      </li>
+    </ul>
+  </body>
+</html>

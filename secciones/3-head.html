@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="etiquetas-head"><em>Etiquetas dentro del head</em></h1>
+    <p>Algunas de las etiquetas más comunes dentro del head son:</p>
+
+    <h4 id="meta-tag">
+      <em><code>&lt;meta /&gt;</code></em>
+    </h4>
+    <p>
+      Define la semántica del navegador mediante el atributo “charset”, y
+      permite el uso de caracteres especiales mediante el valor “UFT-8”, por
+      ejemplo
+    </p>
+    <div class="code-box">
+      <div class="code-header">HTML</div>
+      <code>
+        &lt;meta <span style="color: red">charset="UTF-8"</span>/&gt;
+      </code>
+    </div>
+
+    <p>
+      Define el autor de la pagina web colocando el valor “author” en el
+      atributo name, y el nombre del autor en el atributo content, por ejemplo
+    </p>
+    <div class="code-box">
+      <div class="code-header">HTML</div>
+      <code>
+        &lt;meta
+        <span style="color: red">name="author" content="Juan Pérez"</span>/&gt;
+      </code>
+    </div>
+
+    <p>
+      Define el uso de la pagina web colocando el valor “description” en el
+      atributo name, y la descripción en el atributo content, por ejemplo
+    </p>
+    <div class="code-box">
+      <div class="code-header">HTML</div>
+      <code>
+        &lt;meta
+        <span style="color: red"
+          >name="description" content="Página web sobre HTML"</span
+        >/&gt;
+      </code>
+    </div>
+
+    <p>
+      Permite el responsive design colocando el valor “viewport” en el atributo
+      name, y el valor “width=device-width, initial-scale=1.0” en el atributo
+      content, por ejemplo
+    </p>
+    <div class="code-box">
+      <div class="code-header">HTML</div>
+      <code style="margin: 0">
+        &lt;meta
+        <span style="color: red"
+          >name="viewport" content="width=device-width, initial-scale=1.0"</span
+        >/&gt;
+      </code>
+    </div>
+
+    <p>
+      Define las palabras clave de la página web para motores de búsqueda
+      colocando el valor “keywords” en el atributo name, y las palabras clave
+      separadas por comas en el atributo content, por ejemplo
+    </p>
+    <div class="code-box">
+      <div class="code-header">HTML</div>
+      <code>
+        &lt;meta
+        <span style="color: red"
+          >name="keywords" content="HTML, etiquetas, meta"</span
+        >
+        /&gt;
+      </code>
+    </div>
+
+    <h4 id="title-tag"><em>&lt;title&gt; Titulo &lt;/title&gt;</em></h4>
+    <p>
+      Define el nombre de la ventana en el navegador colocando el valor entre
+      las etiquetas de apertura y cierre, por ejemplo
+    </p>
+    <div class="code-box">
+      <div class="code-header">HTML</div>
+      <code
+        >&lt;title&gt;
+        <span style="color: red">Página sobre HTML</span> &lt;/title&gt;</code
+      >
+    </div>
+
+    <h4 id="script-tag"><em>&lt;script&gt; &lt;/script&gt;</em></h4>
+    <p>
+      Define cual sera el archivo de JavaScript que vamos a usar sobre el
+      archivo HTML, se coloca la ruta del archivo JS dentro del atributo src y
+      se usa el atributo defer para que el JavaScript se cargue después de que
+      se haya cargado todo el archivo HTML y CSS, asi se evitan errores cuando
+      el archivo JS intenta acceder a elementos HTML que todavia no existen en
+      la pagina, por ejemplo
+    </p>
+    <div class="code-box">
+      <div class="code-header">HTML</div>
+      <code
+        >&lt;script
+        <span style="color: red">src="ruta/del/archivo.js" defer</span>&gt;
+        &lt;/script&gt;</code
+      >
+    </div>
+
+    <h4 id="link-tag"><em>&lt;link /&gt;</em></h4>
+    <p>
+      Permite importar el diseño css colocando el valor “stylesheet” en el
+      atributo rel, y la ruta del archivo css en el atributo href, por ejemplo
+    </p>
+    <div class="code-box">
+      <div class="code-header">HTML</div>
+      <code
+        >&lt;link
+        <span style="color: red"
+          >rel="stylesheet" href="ruta/del/archivo.css"</span
+        >
+        /&gt;</code
+      >
+    </div>
+
+    <p>
+      Permite agregar un icono al lado del title colocando “icon” en el atributo
+      rel y la ruta del icono en el atributo href, por ejemplo
+    </p>
+    <div class="code-box">
+      <div class="code-header">HTML</div>
+      <code
+        >&lt;link
+        <span style="color: red">rel="icon" href="ruta/del/icono.ico"</span>
+        /&gt;</code
+      >
+    </div>
+  </body>
+</html>
