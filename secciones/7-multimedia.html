@@ -1,148 +1,815 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>HTML Docs - Etiquetas multimedia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#141414",
+              "background-light": "#f7f7f7",
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .sidebar-scroll::-webkit-scrollbar {
+        width: 4px;
+      }
+      .sidebar-scroll::-webkit-scrollbar-thumb {
+        background: #e5e5e5;
+        border-radius: 10px;
+      }
+      pre,
+      code {
+        font-family:
+          "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas",
+          "Liberation Mono", "Courier New", monospace;
+      }
+    </style>
   </head>
-  <body>
-    <h1 id="etiquetas-multimedia"><em>Etiquetas multimedia</em></h1>
-    <p>
-      Estas etiquetas se utilizan para insertar y controlar contenido multimedia
-      en la página web, como imágenes, audio y video.
-    </p>
-    <p>
-      Pagina web para reducir el tamaño de las imágenes:
-      <a href="https://tinypng.com/">TinyPNG</a>
-    </p>
-    <p>
-      Pagina web para quitar los metadatos de las imágenes:
-      <a href="https://www.verexif.com/es/">VerExif</a>
-    </p>
-    <p>
-      Pagina web para descargar imágenes:
-      <a href="https://www.pexels.com/es-es/">Pexels</a>
-    </p>
-    <p>
-      <strong>Nota:</strong> el tamaño optima de una imagen es 70 KB para que
-      cargue rápido la pagina
-    </p>
-    <ul>
-      <li>
-        <p>&lt;img&gt;: Para insertar imágenes en la página web.</p>
-        <p>
-          Se puede colocar imágenes colocando la ruta/url como valor del
-          atributo src, y un texto opcional como valor del atributo alt
-        </p>
-        <p>
-          Se puede modificar la altura y anchura con los atributos width = “100”
-          y height = “200”
-        </p>
-        <p>
-          Se puede usar el atributo loading="lazy" para que se descargue la
-          imagen cuando estemos cerca del elemento
-        </p>
-        <p>
-          Se puede usar el atributo decoding="async" para procesar sin bloquear
-          el renderizado
-        </p>
-        <p>
-          <strong>Nota:</strong> Establecer dimensiones evita cambios de layout
-          inesperados mientras las imágenes cargan.
-        </p>
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <code
-            >&lt;img
-            <span style="color: red"
-              >src="ruta/de/la/imagen.jpg" alt="Texto alternativo" width="200"
-              height="150"</span
+
+  <body class="bg-white text-[#141414] antialiased font-display">
+    <!-- Top Navigation Bar -->
+    <header
+      class="sticky top-0 z-50 w-full border-b border-[#f2f2f2] bg-white/95 backdrop-blur-lg"
+    >
+      <div class="max-w-[1440px] mx-auto px-6 py-4">
+        <a class="flex items-center gap-3 w-fit" href="../index.html">
+          <div class="size-9 text-primary">
+            <svg
+              fill="none"
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
             >
-            /&gt;</code
-          >
+              <g clip-path="url(#clip0_6_330)">
+                <path
+                  clip-rule="evenodd"
+                  d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                ></path>
+              </g>
+              <defs>
+                <clipPath id="clip0_6_330">
+                  <rect fill="white" height="48" width="48"></rect>
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+          <span class="text-xl font-extrabold tracking-tight">HTML Docs</span>
+        </a>
+      </div>
+    </header>
+
+    <div class="max-w-[1440px] mx-auto flex">
+      <!-- Sidebar Navigation -->
+      <aside
+        class="hidden md:flex flex-col w-72 h-[calc(100vh-64px)] sticky top-16 border-r border-[#f2f2f2] overflow-y-auto sidebar-scroll p-6"
+      >
+        <div class="space-y-8">
+          <!-- Maquetación -->
+          <div>
+            <h5
+              class="mb-4 text-xs font-bold uppercase tracking-wider text-[#757575]"
+            >
+              Maquetación
+            </h5>
+            <ul class="space-y-1">
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="1-maquetacion.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >dashboard</span
+                  >
+                  Maquetación
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- HTML Semántico -->
+          <div>
+            <h5
+              class="mb-4 text-xs font-bold uppercase tracking-wider text-[#757575]"
+            >
+              HTML Semántico
+            </h5>
+            <ul class="space-y-1">
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="2-anatomia.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >data_object</span
+                  >
+                  Anatomía del HTML
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="3-head.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >integration_instructions</span
+                  >
+                  Etiquetas del head
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="4-contenedor.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >web</span
+                  >
+                  Contenedor
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="5-texto.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >text_fields</span
+                  >
+                  Texto
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="6-listas.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >format_list_bulleted</span
+                  >
+                  Listas
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg bg-[#f2f2f2] font-semibold transition-colors text-sm"
+                  href="7-multimedia.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >perm_media</span
+                  >
+                  Multimedia
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="8-formularios.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >edit_note</span
+                  >
+                  Formularios
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="9-menu.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >menu</span
+                  >
+                  Menús
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="10-tablas.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >table_chart</span
+                  >
+                  Tablas
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </li>
-      <li>
-        <p>&lt;audio&gt;: Para insertar contenido de audio en la página web.</p>
-        <p>Usa el atributo controls para agregarle los controles al audio</p>
-        <p>
-          Usa la etiqueta source dentro del contenido para colocar distintos
-          formatos
-        </p>
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <code
-            >&lt;audio <span style="color: red">controls</span>&gt; <br />
-            &nbsp;&nbsp;&lt;source
-            <span style="color: red"
-              >src="ruta/del/audio.mp3" type="audio/mpeg"</span
+      </aside>
+
+      <!-- Main Content Pane -->
+      <main class="flex-1 min-w-0">
+        <div class="max-w-4xl mx-auto px-6 py-10 lg:px-12">
+          <!-- Breadcrumbs -->
+          <nav aria-label="Breadcrumb" class="flex items-center gap-2 mb-8 text-sm font-medium">
+            <a class="text-[#757575] hover:text-primary" href="../index.html"
+              >Docs</a
             >
-            &gt; <br />
-            &nbsp;&nbsp;&lt;source
-            <span style="color: red"
-              >src="ruta/del/audio.ogg" type="audio/ogg"</span
+            <span class="material-symbols-outlined text-xs text-[#757575]"
+              >chevron_right</span
             >
-            &gt; <br />
-            &nbsp;&nbsp;Tu navegador no soporta el elemento de audio. <br />
-            &lt;/audio&gt;</code
+            <span class="text-primary">Multimedia</span>
+          </nav>
+
+          <!-- Page Header -->
+          <section class="mb-12">
+            <h1
+              class="text-4xl font-extrabold tracking-tight text-[#141414] mb-4"
+            >
+              Etiquetas multimedia
+            </h1>
+            <p class="text-xl text-[#757575] leading-relaxed">
+              Estas etiquetas se utilizan para insertar y controlar contenido
+              multimedia en la página web, como imágenes, audio y video.
+            </p>
+          </section>
+
+          <!-- Content -->
+          <article class="prose prose-slate max-w-none">
+            <!-- img tag -->
+            <h2 id="img-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;img&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Se utiliza para insertar imágenes en la página web. Se coloca la
+              ruta o URL como valor del atributo
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >src</code
+              >
+              y un texto alternativo como valor del atributo
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >alt</code
+              >.
+            </p>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Se puede modificar la altura y anchura con los atributos
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >width</code
+              >
+              y
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >height</code
+              >. Se puede usar el atributo
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >loading="lazy"</code
+              >
+              para que la imagen se descargue cuando estemos cerca del elemento,
+              y el atributo
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >decoding="async"</code
+              >
+              para procesar sin bloquear el renderizado. También se puede usar
+              el atributo
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >fetchpriority="high"</code
+              >
+              para indicar al navegador que priorice la descarga de imágenes
+              importantes como la imagen principal (LCP).
+            </p>
+            <div
+              class="bg-[#f7f7f7] border-l-4 border-primary p-5 my-6 rounded-r-lg"
+            >
+              <div class="flex gap-3">
+                <span class="material-symbols-outlined text-primary"
+                  >info</span
+                >
+                <div>
+                  <p class="font-bold text-sm mb-1">Nota</p>
+                  <p class="text-sm text-[#757575]">
+                    Establecer dimensiones evita cambios de layout inesperados
+                    mientras las imágenes cargan.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;img
+  <span class="text-[#f87171]">src="ruta/de/la/imagen.jpg"
+  alt="Texto alternativo"
+  width="200"
+  height="150"</span>
+/&gt;</code></pre>
+            </div>
+
+            <div
+              class="bg-[#f7f7f7] border-l-4 border-primary p-5 my-8 rounded-r-lg"
+            >
+              <div class="flex gap-3">
+                <span class="material-symbols-outlined text-primary"
+                  >lightbulb</span
+                >
+                <div>
+                  <p class="font-bold text-sm mb-1">Tip</p>
+                  <p class="text-sm text-[#757575]">
+                    Mantén las imágenes lo más ligeras posible, idealmente por
+                    debajo de 100 KB. Las imágenes pesadas ralentizan la carga
+                    de la página y afectan la experiencia del usuario.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-[#f7f7f7] border-l-4 border-primary p-5 my-8 rounded-r-lg"
+            >
+              <div class="flex gap-3">
+                <span class="material-symbols-outlined text-primary"
+                  >link</span
+                >
+                <div>
+                  <p class="font-bold text-sm mb-2">Recursos útiles</p>
+                  <ul class="text-sm text-[#757575] space-y-1">
+                    <li>
+                      Reducir el tamaño de imágenes:
+                      <a
+                        class="text-primary underline hover:no-underline"
+                        href="https://tinypng.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >TinyPNG</a
+                      >
+                    </li>
+                    <li>
+                      Quitar metadatos de imágenes:
+                      <a
+                        class="text-primary underline hover:no-underline"
+                        href="https://www.verexif.com/es/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >VerExif</a
+                      >
+                    </li>
+                    <li>
+                      Descargar imágenes gratis:
+                      <a
+                        class="text-primary underline hover:no-underline"
+                        href="https://www.pexels.com/es-es/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Pexels</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- picture tag -->
+            <h2 id="picture-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;picture&gt; &lt;/picture&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Permite definir múltiples fuentes de imagen para que el navegador
+              elija la más adecuada según el tamaño de pantalla o el formato
+              soportado. Se utiliza junto con la etiqueta
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;source&gt;</code
+              >
+              para definir las condiciones, y siempre debe incluir un
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;img&gt;</code
+              >
+              como respaldo, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;picture&gt;
+  <span class="text-[#f87171]">&lt;source srcset="imagen.avif" type="image/avif" /&gt;</span>
+  <span class="text-[#f87171]">&lt;source srcset="imagen.webp" type="image/webp" /&gt;</span>
+  <span class="text-[#f87171]">&lt;source srcset="imagen-grande.jpg" media="(min-width: 800px)" /&gt;</span>
+  &lt;img src="imagen.jpg" alt="Descripción de la imagen" /&gt;
+&lt;/picture&gt;</code></pre>
+            </div>
+
+            <!-- audio tag -->
+            <h2 id="audio-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;audio&gt; &lt;/audio&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Se utiliza para insertar contenido de audio en la página web. Usa
+              el atributo
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >controls</code
+              >
+              para agregar los controles al audio. Usa la etiqueta
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;source&gt;</code
+              >
+              dentro del contenido para colocar distintos formatos, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;audio <span class="text-[#f87171]">controls</span>&gt;
+  &lt;source src="ruta/del/audio.mp3" type="audio/mpeg" /&gt;
+  &lt;source src="ruta/del/audio.ogg" type="audio/ogg" /&gt;
+  Tu navegador no soporta el elemento de audio.
+&lt;/audio&gt;</code></pre>
+            </div>
+
+            <!-- video tag -->
+            <h2 id="video-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;video&gt; &lt;/video&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Se utiliza para insertar contenido de video en la página web.
+              Acepta los siguientes atributos:
+            </p>
+            <ul class="list-disc pl-6 mb-6 space-y-2 text-base leading-7 text-[#141414]">
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >controls</code
+                >: agrega los botones de control del video.
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >autoplay</code
+                >: el video se reproduce automáticamente.
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >loop</code
+                >: el video comienza a reproducirse de nuevo cada vez que
+                termina.
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >muted</code
+                >: el contenido se reproduce con el sonido desactivado de forma
+                predeterminada.
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >poster</code
+                >: la URL de una imagen que se mostrará antes de que se
+                reproduzca el video.
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >preload</code
+                >: indica al navegador que cargue el video de antemano.
+              </li>
+            </ul>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Usa la etiqueta
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;source&gt;</code
+              >
+              dentro del contenido para colocar distintos formatos, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;video <span class="text-[#f87171]">controls autoplay loop muted preload="auto" poster="poster.png"</span>&gt;
+  &lt;source src="ruta/del/video.mp4" type="video/mp4" /&gt;
+  &lt;source src="ruta/del/video.ogg" type="video/ogg" /&gt;
+  Tu navegador no soporta el elemento de video.
+&lt;/video&gt;</code></pre>
+            </div>
+
+            <!-- track tag -->
+            <h2 id="track-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;track&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Se utiliza dentro de
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;video&gt;</code
+              >
+              o
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;audio&gt;</code
+              >
+              para agregar subtítulos, descripciones o capítulos al contenido
+              multimedia. Mejora significativamente la accesibilidad. Acepta los
+              siguientes atributos:
+            </p>
+            <ul class="list-disc pl-6 mb-6 space-y-2 text-base leading-7 text-[#141414]">
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >src</code
+                >: ruta al archivo de subtítulos (formato
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >.vtt</code
+                >).
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >kind</code
+                >: tipo de pista (<code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >subtitles</code
+                >,
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >captions</code
+                >,
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >descriptions</code
+                >).
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >srclang</code
+                >: idioma de la pista (ej.
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >es</code
+                >,
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >en</code
+                >).
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >label</code
+                >: nombre visible para el usuario.
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >default</code
+                >: activa la pista por defecto.
+              </li>
+            </ul>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;video controls&gt;
+  &lt;source src="video.mp4" type="video/mp4" /&gt;
+  <span class="text-[#f87171]">&lt;track
+    src="subtitulos-es.vtt"
+    kind="subtitles"
+    srclang="es"
+    label="Español"
+    default
+  /&gt;</span>
+  <span class="text-[#f87171]">&lt;track
+    src="subtitulos-en.vtt"
+    kind="subtitles"
+    srclang="en"
+    label="English"
+  /&gt;</span>
+&lt;/video&gt;</code></pre>
+            </div>
+
+            <!-- iframe tag -->
+            <h2 id="iframe-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;iframe&gt; &lt;/iframe&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Permite incrustar contenido externo dentro de la página web, como
+              videos de YouTube, mapas de Google o cualquier otro sitio web.
+              Acepta los siguientes atributos:
+            </p>
+            <ul class="list-disc pl-6 mb-6 space-y-2 text-base leading-7 text-[#141414]">
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >src</code
+                >: URL del contenido a incrustar.
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >width</code
+                >
+                y
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >height</code
+                >: dimensiones del iframe.
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >title</code
+                >: descripción del contenido para accesibilidad.
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >loading="lazy"</code
+                >: carga el iframe solo cuando sea visible.
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >allow</code
+                >: permisos que se otorgan al contenido incrustado.
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >allowfullscreen</code
+                >: permite que el contenido se muestre en pantalla completa.
+              </li>
+            </ul>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;iframe
+  <span class="text-[#f87171]">src="https://www.youtube.com/embed/video-id"
+  width="560"
+  height="315"
+  title="Título del video"
+  loading="lazy"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media"
+  allowfullscreen</span>
+&gt;&lt;/iframe&gt;</code></pre>
+            </div>
+
+            <div
+              class="bg-[#f7f7f7] border-l-4 border-primary p-5 my-8 rounded-r-lg"
+            >
+              <div class="flex gap-3">
+                <span class="material-symbols-outlined text-primary"
+                  >warning</span
+                >
+                <div>
+                  <p class="font-bold text-sm mb-1">Seguridad</p>
+                  <p class="text-sm text-[#757575]">
+                    Solo incrusta contenido de fuentes confiables. El atributo
+                    <code
+                      class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono"
+                      >sandbox</code
+                    >
+                    permite restringir las acciones del contenido incrustado para
+                    mayor seguridad.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Navigation Footer -->
+          <div
+            class="mt-20 pt-10 border-t border-[#f2f2f2] flex items-center justify-between"
           >
-        </div>
-      </li>
-      <li>
-        <p>&lt;video&gt;: Para insertar contenido de video en la página web.</p>
-        <p>
-          Usa el atributo controls para agregarle los botones de control del
-          video.
-        </p>
-        <p>
-          Usa el atributo autoplay para que el video se reproduzca
-          automáticamente.
-        </p>
-        <p>
-          Usa el atributo loop, hace que el vídeo (o audio) comience a
-          reproducirse de nuevo cada vez que termina. Esto también puede ser
-          molesto, así que úselo solo si es realmente necesario.
-        </p>
-        <p>
-          Usa el atributo muted, hace que el contenido multimedia se reproduzca
-          con el sonido desactivado de forma predeterminada.
-        </p>
-        <p>
-          Usa el atributo poster, la URL de una imagen que se mostrará antes de
-          que se reproduzca el video. Está diseñado para ser utilizado para una
-          pantalla de presentación o una pantalla publicitaria.
-        </p>
-        <p>
-          Usa el atributo preload, le indica al navegador que cargue el video de
-          antemano.
-        </p>
-        <p>
-          Usa la etiqueta source dentro del contenido para colocar distintos
-          formatos.
-        </p>
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <code
-            >&lt;video
-            <span style="color: red"
-              >controls autoplay loop muted preload="auto"
-              poster="poster.png"</span
-            >&gt; <br />
-            &nbsp;&nbsp;&lt;source
-            <span style="color: red"
-              >src="ruta/del/video.mp4" type="video/mp4"</span
+            <a
+              class="group flex flex-col items-start text-left"
+              href="6-listas.html"
             >
-            &gt; <br />
-            &nbsp;&nbsp;&lt;source
-            <span style="color: red"
-              >src="ruta/del/video.ogg" type="video/ogg"</span
+              <span class="text-xs text-[#757575] mb-1">Anterior</span>
+              <div
+                class="flex items-center gap-2 font-bold text-primary group-hover:-translate-x-1 transition-transform"
+              >
+                <span class="material-symbols-outlined">arrow_back</span>
+                Listas
+              </div>
+            </a>
+            <a
+              class="group flex flex-col items-end text-right"
+              href="8-formularios.html"
             >
-            &gt; <br />
-            &nbsp;&nbsp;Tu navegador no soporta el elemento de video. <br />
-            &lt;/video&gt;</code
-          >
+              <span class="text-xs text-[#757575] mb-1">Siguiente</span>
+              <div
+                class="flex items-center gap-2 font-bold text-primary group-hover:translate-x-1 transition-transform"
+              >
+                Formularios
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </div>
+            </a>
+          </div>
         </div>
-      </li>
-    </ul>
+      </main>
+
+      <!-- Right Side Table of Contents -->
+      <aside
+        class="hidden xl:block w-64 h-[calc(100vh-64px)] sticky top-16 p-8 overflow-y-auto"
+      >
+        <h5
+          class="text-xs font-bold uppercase tracking-wider text-[#757575] mb-4"
+        >
+          En esta página
+        </h5>
+        <ul class="space-y-3 text-sm">
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#img-tag"
+              >&lt;img&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#picture-tag"
+              >&lt;picture&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#audio-tag"
+              >&lt;audio&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#video-tag"
+              >&lt;video&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#track-tag"
+              >&lt;track&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#iframe-tag"
+              >&lt;iframe&gt;</a
+            >
+          </li>
+        </ul>
+      </aside>
+    </div>
   </body>
 </html>

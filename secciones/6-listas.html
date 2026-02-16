@@ -1,136 +1,665 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>HTML Docs - Etiquetas de tipo lista</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#141414",
+              "background-light": "#f7f7f7",
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .sidebar-scroll::-webkit-scrollbar {
+        width: 4px;
+      }
+      .sidebar-scroll::-webkit-scrollbar-thumb {
+        background: #e5e5e5;
+        border-radius: 10px;
+      }
+      pre,
+      code {
+        font-family:
+          "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas",
+          "Liberation Mono", "Courier New", monospace;
+      }
+    </style>
   </head>
-  <body>
-    <h1 id="etiquetas-lista"><em>Etiquetas de tipo lista</em></h1>
-    <p>
-      Hay tres tipos de listas, las ordenadas, las desordenadas y las listas de
-      descripcion. Estas son:
-    </p>
-    <ul>
-      <li>
-        &lt;ul&gt; &lt;/ul&gt;: Para crear listas desordenadas, el navegador nos
-        muestra los elementos de la lista con viñetas. Por ejemplo:
 
-        <div class="code-box">
-          <div class="code-header">HTML</div>
+  <body class="bg-white text-[#141414] antialiased font-display">
+    <!-- Top Navigation Bar -->
+    <header
+      class="sticky top-0 z-50 w-full border-b border-[#f2f2f2] bg-white/95 backdrop-blur-lg"
+    >
+      <div class="max-w-[1440px] mx-auto px-6 py-4">
+        <a class="flex items-center gap-3 w-fit" href="../index.html">
+          <div class="size-9 text-primary">
+            <svg
+              fill="none"
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_6_330)">
+                <path
+                  clip-rule="evenodd"
+                  d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                ></path>
+              </g>
+              <defs>
+                <clipPath id="clip0_6_330">
+                  <rect fill="white" height="48" width="48"></rect>
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+          <span class="text-xl font-extrabold tracking-tight">HTML Docs</span>
+        </a>
+      </div>
+    </header>
+
+    <div class="max-w-[1440px] mx-auto flex">
+      <!-- Sidebar Navigation -->
+      <aside
+        class="hidden md:flex flex-col w-72 h-[calc(100vh-64px)] sticky top-16 border-r border-[#f2f2f2] overflow-y-auto sidebar-scroll p-6"
+      >
+        <div class="space-y-8">
+          <!-- Maquetación -->
           <div>
-            <code>
-              &lt;ul&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Elemento 1&lt;/li&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Elemento 2&lt;/li&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Elemento 3&lt;/li&gt; <br />
-              &lt;/ul&gt;
-            </code>
+            <h5
+              class="mb-4 text-xs font-bold uppercase tracking-wider text-[#757575]"
+            >
+              Maquetación
+            </h5>
+            <ul class="space-y-1">
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="1-maquetacion.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >dashboard</span
+                  >
+                  Maquetación
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- HTML Semántico -->
+          <div>
+            <h5
+              class="mb-4 text-xs font-bold uppercase tracking-wider text-[#757575]"
+            >
+              HTML Semántico
+            </h5>
+            <ul class="space-y-1">
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="2-anatomia.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >data_object</span
+                  >
+                  Anatomía del HTML
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="3-head.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >integration_instructions</span
+                  >
+                  Etiquetas del head
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="4-contenedor.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >web</span
+                  >
+                  Contenedor
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="5-texto.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >text_fields</span
+                  >
+                  Texto
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg bg-[#f2f2f2] font-semibold transition-colors text-sm"
+                  href="6-listas.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >format_list_bulleted</span
+                  >
+                  Listas
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="7-multimedia.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >perm_media</span
+                  >
+                  Multimedia
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="8-formularios.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >edit_note</span
+                  >
+                  Formularios
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="9-menu.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >menu</span
+                  >
+                  Menús
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="10-tablas.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >table_chart</span
+                  >
+                  Tablas
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
+      </aside>
 
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          <ul>
-            <li>Elemento 1</li>
-            <li>Elemento 2</li>
-            <li>Elemento 3</li>
-          </ul>
-        </div>
-      </li>
+      <!-- Main Content Pane -->
+      <main class="flex-1 min-w-0">
+        <div class="max-w-4xl mx-auto px-6 py-10 lg:px-12">
+          <!-- Breadcrumbs -->
+          <nav aria-label="Breadcrumb" class="flex items-center gap-2 mb-8 text-sm font-medium">
+            <a class="text-[#757575] hover:text-primary" href="../index.html"
+              >Docs</a
+            >
+            <span class="material-symbols-outlined text-xs text-[#757575]"
+              >chevron_right</span
+            >
+            <span class="text-primary">Listas</span>
+          </nav>
 
-      <li>
-        &lt;ol&gt; &lt;/ol&gt;: Para crear listas ordenadas, el navegador nos
-        muestra los elementos de la lista con números. Por ejemplo:
+          <!-- Page Header -->
+          <section class="mb-12">
+            <h1
+              class="text-4xl font-extrabold tracking-tight text-[#141414] mb-4"
+            >
+              Etiquetas de tipo lista
+            </h1>
+            <p class="text-xl text-[#757575] leading-relaxed">
+              Hay tres tipos de listas: las ordenadas, las desordenadas y las
+              listas de descripción.
+            </p>
+          </section>
 
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <div>
-            <code>
-              &lt;ol&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Elemento 1&lt;/li&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Elemento 2&lt;/li&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Elemento 3&lt;/li&gt; <br />
-              &lt;/ol&gt;
-            </code>
+          <!-- Content -->
+          <article class="prose prose-slate max-w-none">
+            <!-- ul tag -->
+            <h2 id="ul-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;ul&gt; &lt;/ul&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Para crear listas desordenadas, el navegador nos muestra los
+              elementos de la lista con viñetas. Por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;ul&gt;
+  &lt;li&gt;Elemento 1&lt;/li&gt;
+  &lt;li&gt;Elemento 2&lt;/li&gt;
+  &lt;li&gt;Elemento 3&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+            </div>
+
+            <div
+              class="bg-[#f7f7f7] border border-[#e8e8e8] rounded-xl p-5 mb-6"
+            >
+              <p class="text-xs font-semibold text-[#999] mb-3">Resultado</p>
+              <ul class="list-disc list-inside space-y-1 text-sm text-[#141414]">
+                <li>Elemento 1</li>
+                <li>Elemento 2</li>
+                <li>Elemento 3</li>
+              </ul>
+            </div>
+
+            <!-- ol tag -->
+            <h2 id="ol-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;ol&gt; &lt;/ol&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Para crear listas ordenadas, el navegador nos muestra los
+              elementos de la lista con números. Por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;ol&gt;
+  &lt;li&gt;Elemento 1&lt;/li&gt;
+  &lt;li&gt;Elemento 2&lt;/li&gt;
+  &lt;li&gt;Elemento 3&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+            </div>
+
+            <div
+              class="bg-[#f7f7f7] border border-[#e8e8e8] rounded-xl p-5 mb-6"
+            >
+              <p class="text-xs font-semibold text-[#999] mb-3">Resultado</p>
+              <ol class="list-decimal list-inside space-y-1 text-sm text-[#141414]">
+                <li>Elemento 1</li>
+                <li>Elemento 2</li>
+                <li>Elemento 3</li>
+              </ol>
+            </div>
+
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Podemos usar el atributo
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >start</code
+              >
+              para especificar de qué número empezar el conteo, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;ol <span class="text-[#f87171]">start="5"</span>&gt;
+  &lt;li&gt;Elemento 1&lt;/li&gt;
+  &lt;li&gt;Elemento 2&lt;/li&gt;
+  &lt;li&gt;Elemento 3&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+            </div>
+
+            <div
+              class="bg-[#f7f7f7] border border-[#e8e8e8] rounded-xl p-5 mb-6"
+            >
+              <p class="text-xs font-semibold text-[#999] mb-3">Resultado</p>
+              <ol start="5" class="list-decimal list-inside space-y-1 text-sm text-[#141414]">
+                <li>Elemento 1</li>
+                <li>Elemento 2</li>
+                <li>Elemento 3</li>
+              </ol>
+            </div>
+
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Podemos usar el atributo
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >type</code
+              >
+              para cambiar el tipo de numeración. Los valores posibles son
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >1</code
+              >
+              (números),
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >a</code
+              >
+              (letras minúsculas),
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >A</code
+              >
+              (letras mayúsculas),
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >i</code
+              >
+              (números romanos en minúscula) e
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >I</code
+              >
+              (números romanos en mayúscula), por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;ol <span class="text-[#f87171]">type="a"</span>&gt;
+  &lt;li&gt;Elemento 1&lt;/li&gt;
+  &lt;li&gt;Elemento 2&lt;/li&gt;
+  &lt;li&gt;Elemento 3&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+            </div>
+
+            <div
+              class="bg-[#f7f7f7] border border-[#e8e8e8] rounded-xl p-5 mb-6"
+            >
+              <p class="text-xs font-semibold text-[#999] mb-3">Resultado</p>
+              <ol type="a" class="list-inside space-y-1 text-sm text-[#141414]" style="list-style-type: lower-alpha;">
+                <li>Elemento 1</li>
+                <li>Elemento 2</li>
+                <li>Elemento 3</li>
+              </ol>
+            </div>
+
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              También podemos usar el atributo
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >reversed</code
+              >
+              para invertir el orden del conteo, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;ol <span class="text-[#f87171]">reversed</span>&gt;
+  &lt;li&gt;Elemento 1&lt;/li&gt;
+  &lt;li&gt;Elemento 2&lt;/li&gt;
+  &lt;li&gt;Elemento 3&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+            </div>
+
+            <div
+              class="bg-[#f7f7f7] border border-[#e8e8e8] rounded-xl p-5 mb-6"
+            >
+              <p class="text-xs font-semibold text-[#999] mb-3">Resultado</p>
+              <ol reversed class="list-decimal list-inside space-y-1 text-sm text-[#141414]">
+                <li>Elemento 1</li>
+                <li>Elemento 2</li>
+                <li>Elemento 3</li>
+              </ol>
+            </div>
+
+            <!-- dl tag -->
+            <h2 id="dl-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;dl&gt; &lt;/dl&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Para crear listas de descripción, el navegador nos muestra los
+              términos y sus descripciones. Usa
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;dt&gt;</code
+              >
+              para definir el término y
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;dd&gt;</code
+              >
+              para definir la descripción del término. Por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;dl&gt;
+  &lt;dt&gt;Término 1&lt;/dt&gt;
+    &lt;dd&gt;Descripción del término 1&lt;/dd&gt;
+  &lt;dt&gt;Término 2&lt;/dt&gt;
+    &lt;dd&gt;Descripción del término 2&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+            </div>
+
+            <div
+              class="bg-[#f7f7f7] border border-[#e8e8e8] rounded-xl p-5 mb-6"
+            >
+              <p class="text-xs font-semibold text-[#999] mb-3">Resultado</p>
+              <dl class="text-sm text-[#141414]">
+                <dt class="font-semibold">Término 1</dt>
+                <dd class="ml-6 mb-2">Descripción del término 1</dd>
+                <dt class="font-semibold">Término 2</dt>
+                <dd class="ml-6">Descripción del término 2</dd>
+              </dl>
+            </div>
+
+            <!-- li tag -->
+            <h2 id="li-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;li&gt; &lt;/li&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Define cada elemento dentro de una lista ordenada
+              (<code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;ol&gt;</code
+              >) o desordenada
+              (<code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;ul&gt;</code
+              >). Dentro de una lista ordenada, podemos usar el atributo
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >value</code
+              >
+              para asignar un número específico a un elemento, y los siguientes
+              continuarán a partir de ese valor, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;ol&gt;
+  &lt;li&gt;Elemento 1&lt;/li&gt;
+  &lt;li <span class="text-[#f87171]">value="10"</span>&gt;Elemento 2&lt;/li&gt;
+  &lt;li&gt;Elemento 3&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+            </div>
+
+            <div
+              class="bg-[#f7f7f7] border border-[#e8e8e8] rounded-xl p-5 mb-6"
+            >
+              <p class="text-xs font-semibold text-[#999] mb-3">Resultado</p>
+              <ol class="list-decimal list-inside space-y-1 text-sm text-[#141414]">
+                <li>Elemento 1</li>
+                <li value="10">Elemento 2</li>
+                <li>Elemento 3</li>
+              </ol>
+            </div>
+
+            <div
+              class="bg-[#f7f7f7] border-l-4 border-primary p-5 my-8 rounded-r-lg"
+            >
+              <div class="flex gap-3">
+                <span class="material-symbols-outlined text-primary"
+                  >lightbulb</span
+                >
+                <div>
+                  <p class="font-bold text-sm mb-1">Tip</p>
+                  <p class="text-sm text-[#757575]">
+                    Las listas se pueden anidar unas dentro de otras para crear
+                    estructuras más complejas. Por ejemplo:
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;ul&gt;
+  &lt;li&gt;Frutas
+    &lt;ol&gt;
+      &lt;li&gt;Manzana&lt;/li&gt;
+      &lt;li&gt;Naranja&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Verduras
+    &lt;ol&gt;
+      &lt;li&gt;Zanahoria&lt;/li&gt;
+      &lt;li&gt;Brócoli&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+            </div>
+
+            <div
+              class="bg-[#f7f7f7] border border-[#e8e8e8] rounded-xl p-5 mb-6"
+            >
+              <p class="text-xs font-semibold text-[#999] mb-3">Resultado</p>
+              <ul class="list-disc list-inside text-sm text-[#141414] space-y-1">
+                <li>Frutas
+                  <ol class="list-decimal list-inside ml-6 mt-1 space-y-1">
+                    <li>Manzana</li>
+                    <li>Naranja</li>
+                  </ol>
+                </li>
+                <li>Verduras
+                  <ol class="list-decimal list-inside ml-6 mt-1 space-y-1">
+                    <li>Zanahoria</li>
+                    <li>Brócoli</li>
+                  </ol>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Navigation Footer -->
+          <div
+            class="mt-20 pt-10 border-t border-[#f2f2f2] flex items-center justify-between"
+          >
+            <a
+              class="group flex flex-col items-start text-left"
+              href="5-texto.html"
+            >
+              <span class="text-xs text-[#757575] mb-1">Anterior</span>
+              <div
+                class="flex items-center gap-2 font-bold text-primary group-hover:-translate-x-1 transition-transform"
+              >
+                <span class="material-symbols-outlined">arrow_back</span>
+                Texto
+              </div>
+            </a>
+            <a
+              class="group flex flex-col items-end text-right"
+              href="7-multimedia.html"
+            >
+              <span class="text-xs text-[#757575] mb-1">Siguiente</span>
+              <div
+                class="flex items-center gap-2 font-bold text-primary group-hover:translate-x-1 transition-transform"
+              >
+                Multimedia
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </div>
+            </a>
           </div>
         </div>
+      </main>
 
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          <ol>
-            <li>Elemento 1</li>
-            <li>Elemento 2</li>
-            <li>Elemento 3</li>
-          </ol>
-        </div>
-
-        <p>
-          Podemos usar el atributo start para especificar de que numero empezar
-          el conteo, por ejemplo:
-        </p>
-
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <div>
-            <code>
-              &lt;ol <span style="color: red">start="5"</span>&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Elemento 1&lt;/li&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Elemento 2&lt;/li&gt; <br />
-              &nbsp;&nbsp;&lt;li&gt;Elemento 3&lt;/li&gt; <br />
-              &lt;/ol&gt;
-            </code>
-          </div>
-        </div>
-
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          <ol start="5">
-            <li>Elemento 1</li>
-            <li>Elemento 2</li>
-            <li>Elemento 3</li>
-          </ol>
-        </div>
-      </li>
-
-      <li>
-        <p>
-          &lt;dl&gt; &lt;/dl&gt;: Para crear listas de descripción, el navegador
-          nos muestra los términos y sus descripciones.
-        </p>
-        <p>Usa &lt;dt&gt; &lt;/dt&gt; para definir el término</p>
-        <p>
-          Usa &lt;dd&gt; &lt;/dd&gt; para definir la descripción del término.
-        </p>
-
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <div>
-            <code>
-              &lt;dl&gt; <br />
-              &nbsp;&nbsp;&lt;dt&gt;Término 1&lt;/dt&gt; <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&lt;dd&gt;Descripción del término
-              1&lt;/dd&gt;
-              <br />
-              &nbsp;&nbsp;&lt;dt&gt;Término 2&lt;/dt&gt; <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&lt;dd&gt;Descripción del término
-              2&lt;/dd&gt;
-              <br />
-              &lt;/dl&gt;
-            </code>
-          </div>
-        </div>
-
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          <dl>
-            <dt>Término 1</dt>
-            <dd>Descripción del término 1</dd>
-            <dt>Término 2</dt>
-            <dd>Descripción del término 2</dd>
-          </dl>
-        </div>
-      </li>
-    </ul>
+      <!-- Right Side Table of Contents -->
+      <aside
+        class="hidden xl:block w-64 h-[calc(100vh-64px)] sticky top-16 p-8 overflow-y-auto"
+      >
+        <h5
+          class="text-xs font-bold uppercase tracking-wider text-[#757575] mb-4"
+        >
+          En esta página
+        </h5>
+        <ul class="space-y-3 text-sm">
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#ul-tag"
+              >&lt;ul&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#ol-tag"
+              >&lt;ol&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#dl-tag"
+              >&lt;dl&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#li-tag"
+              >&lt;li&gt;</a
+            >
+          </li>
+        </ul>
+      </aside>
+    </div>
   </body>
 </html>

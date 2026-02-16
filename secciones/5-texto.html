@@ -1,260 +1,834 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>HTML Docs - Etiquetas de texto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#141414",
+              "background-light": "#f7f7f7",
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .sidebar-scroll::-webkit-scrollbar {
+        width: 4px;
+      }
+      .sidebar-scroll::-webkit-scrollbar-thumb {
+        background: #e5e5e5;
+        border-radius: 10px;
+      }
+      pre,
+      code {
+        font-family:
+          "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas",
+          "Liberation Mono", "Courier New", monospace;
+      }
+    </style>
   </head>
-  <body>
-    <h1 id="etiquetas-texto"><em>Etiquetas de tipo texto</em></h1>
-    <p>
-      Estas etiquetas se utilizan para dar formato y estructura al texto dentro
-      de la página web.
-    </p>
-    <ul>
-      <li>
-        &lt;h1&gt; a &lt;h6&gt;: Define los encabezados de diferentes niveles,
-        siendo &lt;h1&gt; el más importante y &lt;h6&gt; el menos importante.
-      </li>
-      <li>&lt;p&gt; &lt;/p&gt;: Define un párrafo de texto.</li>
-      <li>
-        &lt;strong&gt; &lt;/strong&gt;: Define texto en negrita, indicando
-        énfasis fuerte.
-      </li>
-      <li>
-        &lt;em&gt; &lt;/em&gt;: Define texto en cursiva, indicando énfasis
-        moderado.
-      </li>
-      <li>
-        &lt;span&gt; &lt;/span&gt;: Sirve para colocar dentro de texto, esta
-        etiqueta nos permite identificar una pequeña parte del texto para
-        cambiarle el estilo.
-      </li>
-      <li>
-        &lt;br /&gt;: Sirve para insertar un salto de línea dentro de un
-        párrafo.
-      </li>
-      <li>
-        &lt;hr /&gt;: Sirve para insertar una línea horizontal que puede ser
-        utilizada como un separador de contenido.
-      </li>
-      <li>
-        &lt;blockquote&gt; &lt;/blockquote&gt;: Define una cita en bloque,
-        generalmente se utiliza para citas largas o extractos de texto. Por
-        ejemplo
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <div>
-            <code
-              >&lt;blockquote cite="url"&gt;Esta es una cita en
-              bloque.&lt;/blockquote&gt; &lt;cite&gt;MDN
-              Documentation&lt;/cite&gt;
-            </code>
-          </div>
-        </div>
 
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          <blockquote cite="url">Esta es una cita en bloque.</blockquote>
-          <cite>MDN Documentation</cite>
-        </div>
-      </li>
-
-      <li>
-        &lt;q&gt; &lt;/q&gt;: Es una cita a nivel de linea y no de parrafo. El
-        navegador la muestra entre comillas. Por ejemplo:
-
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <div>
-            <code
-              >&lt;q cite="url"&gt;Esta es una cita en línea.&lt;/q&gt;
-            </code>
-          </div>
-        </div>
-
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          <q cite="url"> Esta es una cita en línea. </q>
-        </div>
-      </li>
-      <li>
-        &lt;abbr&gt; &lt;/abbr&gt;: Para abreviaciones, el navegador nos muestra
-        el texto subrayado con puntos y cuando hacemos hover nos muestra el
-        significado. Por ejemplo:
-
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <div>
-            <code
-              >&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;
-            </code>
-          </div>
-        </div>
-
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          <abbr title="HyperText Markup Language"> HTML </abbr>
-        </div>
-      </li>
-
-      <li>
-        &lt;address&gt; &lt;/address&gt;: Para direcciones, el navegador nos
-        muestra el texto en cursiva. Por ejemplo:
-
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <div>
-            <code
-              >&lt;address&gt;123 Main St, Anytown, USA&lt;/address&gt;
-            </code>
-          </div>
-        </div>
-
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          <address>123 Main St, Anytown, USA</address>
-        </div>
-      </li>
-
-      <li>
-        &lt;sup&gt; &lt;/sup&gt;: Para superíndices, el navegador nos muestra el
-        texto en superíndice. Por ejemplo:
-
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <div>
-            <code>10&lt;sup&gt;2&lt;/sup&gt; </code>
-          </div>
-        </div>
-
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          10<sup>2</sup>
-        </div>
-      </li>
-
-      <li>
-        &lt;sub&gt; &lt;/sub&gt;: Para subíndices, el navegador nos muestra el
-        texto en subíndice. Por ejemplo:
-
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <div>
-            <code>H&lt;sub&gt;2&lt;/sub&gt;O</code>
-          </div>
-        </div>
-
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          H<sub>2</sub>O
-        </div>
-      </li>
-
-      <li>
-        <p>
-          &lt;time&gt; &lt;/time&gt;: Para representar fechas y horas, el
-          navegador nos muestra el texto en un formato específico.
-        </p>
-        <p>
-          Usa el atributo datetime para especificar la fecha y hora en formato
-          ISO 8601.
-        </p>
-
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <div>
-            <code
-              >hoy &lt; time
-              <span style="color: red">datetime="2023-03-15"</span> &gt; 15 de
-              marzo de 2023&lt;/time&gt; se celebra el cumpleaños de Ana.</code
+  <body class="bg-white text-[#141414] antialiased font-display">
+    <!-- Top Navigation Bar -->
+    <header
+      class="sticky top-0 z-50 w-full border-b border-[#f2f2f2] bg-white/95 backdrop-blur-lg"
+    >
+      <div class="max-w-[1440px] mx-auto px-6 py-4">
+        <a class="flex items-center gap-3 w-fit" href="../index.html">
+          <div class="size-9 text-primary">
+            <svg
+              fill="none"
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
             >
+              <g clip-path="url(#clip0_6_330)">
+                <path
+                  clip-rule="evenodd"
+                  d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                ></path>
+              </g>
+              <defs>
+                <clipPath id="clip0_6_330">
+                  <rect fill="white" height="48" width="48"></rect>
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+          <span class="text-xl font-extrabold tracking-tight">HTML Docs</span>
+        </a>
+      </div>
+    </header>
+
+    <div class="max-w-[1440px] mx-auto flex">
+      <!-- Sidebar Navigation -->
+      <aside
+        class="hidden md:flex flex-col w-72 h-[calc(100vh-64px)] sticky top-16 border-r border-[#f2f2f2] overflow-y-auto sidebar-scroll p-6"
+      >
+        <div class="space-y-8">
+          <!-- Maquetación -->
+          <div>
+            <h5
+              class="mb-4 text-xs font-bold uppercase tracking-wider text-[#757575]"
+            >
+              Maquetación
+            </h5>
+            <ul class="space-y-1">
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="1-maquetacion.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >dashboard</span
+                  >
+                  Maquetación
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- HTML Semántico -->
+          <div>
+            <h5
+              class="mb-4 text-xs font-bold uppercase tracking-wider text-[#757575]"
+            >
+              HTML Semántico
+            </h5>
+            <ul class="space-y-1">
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="2-anatomia.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >data_object</span
+                  >
+                  Anatomía del HTML
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="3-head.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >integration_instructions</span
+                  >
+                  Etiquetas del head
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="4-contenedor.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >web</span
+                  >
+                  Contenedor
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg bg-[#f2f2f2] font-semibold transition-colors text-sm"
+                  href="5-texto.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >text_fields</span
+                  >
+                  Texto
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="6-listas.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >format_list_bulleted</span
+                  >
+                  Listas
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="7-multimedia.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >perm_media</span
+                  >
+                  Multimedia
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="8-formularios.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >edit_note</span
+                  >
+                  Formularios
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="9-menu.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >menu</span
+                  >
+                  Menús
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="10-tablas.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >table_chart</span
+                  >
+                  Tablas
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
+      </aside>
 
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          hoy <time datetime="2023-03-15">15 de marzo de 2023</time> se celebra
-          el cumpleaños de Ana.
-        </div>
-      </li>
+      <!-- Main Content Pane -->
+      <main class="flex-1 min-w-0">
+        <div class="max-w-4xl mx-auto px-6 py-10 lg:px-12">
+          <!-- Breadcrumbs -->
+          <nav aria-label="Breadcrumb" class="flex items-center gap-2 mb-8 text-sm font-medium">
+            <a class="text-[#757575] hover:text-primary" href="../index.html"
+              >Docs</a
+            >
+            <span class="material-symbols-outlined text-xs text-[#757575]"
+              >chevron_right</span
+            >
+            <span class="text-primary">Texto</span>
+          </nav>
 
-      <li>
-        <p>
-          &lt;details&gt; &lt;/details&gt;: Para representar información
-          adicional que el usuario puede mostrar u ocultar, el navegador nos
-          muestra un cuadro desplegable.
-        </p>
-        <p>
-          Usa la etiqueta &lt;summary&gt; para definir el encabezado del cuadro
-          desplegable.
-        </p>
+          <!-- Page Header -->
+          <section class="mb-12">
+            <h1
+              class="text-4xl font-extrabold tracking-tight text-[#141414] mb-4"
+            >
+              Etiquetas de tipo texto
+            </h1>
+            <p class="text-xl text-[#757575] leading-relaxed">
+              Estas etiquetas se utilizan para dar formato y estructura al texto
+              dentro de la página web.
+            </p>
+          </section>
 
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <div>
-            <code>
-              <span>&lt;details&gt;</span> <br />
-              <span style="color: red"
-                >&lt;summary&gt;Más información&lt;/summary&gt;</span
+          <!-- Content -->
+          <article class="prose prose-slate max-w-none">
+            <!-- headings tag -->
+            <h2 id="headings-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;h1&gt; a &lt;h6&gt;</code
               >
-              <br />
-              <span>&lt;p&gt; Rodar sobre sal por media hora &lt;/p&gt;</span>
-              <br />
-              <span>&lt;/details&gt;</span>
-            </code>
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Define los encabezados de diferentes niveles, siendo
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;h1&gt;</code
+              >
+              el más importante y
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;h6&gt;</code
+              >
+              el menos importante, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-4">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;h1&gt;Encabezado nivel 1&lt;/h1&gt;
+&lt;h2&gt;Encabezado nivel 2&lt;/h2&gt;
+&lt;h3&gt;Encabezado nivel 3&lt;/h3&gt;
+&lt;h4&gt;Encabezado nivel 4&lt;/h4&gt;
+&lt;h5&gt;Encabezado nivel 5&lt;/h5&gt;
+&lt;h6&gt;Encabezado nivel 6&lt;/h6&gt;</code></pre>
+            </div>
+            <div class="bg-[#f7f7f7] rounded-xl overflow-hidden mb-6 p-5">
+              <p class="text-xs font-semibold text-[#999] mb-3">Resultado</p>
+              <h1 class="text-3xl font-bold">Encabezado nivel 1</h1>
+              <h2 class="text-2xl font-bold">Encabezado nivel 2</h2>
+              <h3 class="text-xl font-bold">Encabezado nivel 3</h3>
+              <h4 class="text-lg font-bold">Encabezado nivel 4</h4>
+              <h5 class="text-base font-bold">Encabezado nivel 5</h5>
+              <h6 class="text-sm font-bold">Encabezado nivel 6</h6>
+            </div>
+
+            <!-- p tag -->
+            <h2 id="p-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;p&gt; &lt;/p&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Define un párrafo de texto. El navegador agrega
+              automáticamente un espacio antes y después de cada párrafo, por
+              ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;p&gt;Este es un párrafo de texto.&lt;/p&gt;
+&lt;p&gt;Este es otro párrafo de texto.&lt;/p&gt;</code></pre>
+            </div>
+
+            <!-- strong tag -->
+            <h2 id="strong-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;strong&gt; &lt;/strong&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Define texto con énfasis fuerte. El navegador lo muestra en
+              <strong>negrita</strong>, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-4">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;p&gt;Este texto es &lt;strong&gt;<span class="text-[#f87171]">muy importante</span>&lt;/strong&gt;.&lt;/p&gt;</code></pre>
+            </div>
+            <div class="bg-[#f7f7f7] rounded-xl overflow-hidden mb-6 p-5">
+              <p class="text-xs font-semibold text-[#999] mb-3">Resultado</p>
+              <p>Este texto es <strong>muy importante</strong>.</p>
+            </div>
+
+            <!-- em tag -->
+            <h2 id="em-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;em&gt; &lt;/em&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Define texto con énfasis moderado. El navegador lo muestra en
+              <em>cursiva</em>, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-4">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;p&gt;Este texto tiene &lt;em&gt;<span class="text-[#f87171]">énfasis</span>&lt;/em&gt;.&lt;/p&gt;</code></pre>
+            </div>
+            <div class="bg-[#f7f7f7] rounded-xl overflow-hidden mb-6 p-5">
+              <p class="text-xs font-semibold text-[#999] mb-3">Resultado</p>
+              <p>Este texto tiene <em>énfasis</em>.</p>
+            </div>
+
+            <!-- span tag -->
+            <h2 id="span-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;span&gt; &lt;/span&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Es un contenedor en línea sin significado semántico. Permite
+              identificar una pequeña parte del texto para cambiarle el estilo,
+              por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;p&gt;El precio es &lt;span <span class="text-[#f87171]">style="color: red;"</span>&gt;$99.99&lt;/span&gt;&lt;/p&gt;</code></pre>
+            </div>
+
+            <!-- br tag -->
+            <h2 id="br-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;br /&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Inserta un salto de línea dentro de un párrafo, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;p&gt;Primera línea<span class="text-[#f87171]">&lt;br /&gt;</span>Segunda línea&lt;/p&gt;</code></pre>
+            </div>
+
+            <!-- hr tag -->
+            <h2 id="hr-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;hr /&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Inserta una línea horizontal que sirve como separador de
+              contenido, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-4">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;p&gt;Sección uno&lt;/p&gt;
+<span class="text-[#f87171]">&lt;hr /&gt;</span>
+&lt;p&gt;Sección dos&lt;/p&gt;</code></pre>
+            </div>
+            <div class="bg-[#f7f7f7] rounded-xl overflow-hidden mb-6 p-5">
+              <p class="text-xs font-semibold text-[#999] mb-3">Resultado</p>
+              <p>Sección uno</p>
+              <hr class="my-2 border-[#d4d4d4]" />
+              <p>Sección dos</p>
+            </div>
+
+            <!-- blockquote tag -->
+            <h2 id="blockquote-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;blockquote&gt; &lt;/blockquote&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Define una cita en bloque, generalmente se utiliza para citas
+              largas o extractos de texto. El atributo
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >cite</code
+              >
+              permite indicar la fuente de la cita. Se puede usar junto con la
+              etiqueta
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;cite&gt;</code
+              >
+              para mostrar la referencia visible, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-4">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;blockquote <span class="text-[#f87171]">cite="https://ejemplo.com"</span>&gt;
+  Esta es una cita en bloque.
+&lt;/blockquote&gt;
+&lt;cite&gt;MDN Documentation&lt;/cite&gt;</code></pre>
+            </div>
+            <div class="bg-[#f7f7f7] rounded-xl overflow-hidden mb-6 p-5">
+              <p class="text-xs font-semibold text-[#999] mb-3">Resultado</p>
+              <blockquote class="border-l-4 border-[#d4d4d4] pl-4 italic text-[#555]">
+                Esta es una cita en bloque.
+              </blockquote>
+              <cite class="text-sm text-[#757575]">MDN Documentation</cite>
+            </div>
+
+            <!-- q tag -->
+            <h2 id="q-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;q&gt; &lt;/q&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Es una cita a nivel de línea y no de párrafo. El navegador la
+              muestra entre comillas automáticamente, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-4">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;p&gt;El autor dijo &lt;q <span class="text-[#f87171]">cite="https://ejemplo.com"</span>&gt;Esta es una cita en línea.&lt;/q&gt;&lt;/p&gt;</code></pre>
+            </div>
+            <div class="bg-[#f7f7f7] rounded-xl overflow-hidden mb-6 p-5">
+              <p class="text-xs font-semibold text-[#999] mb-3">Resultado</p>
+              <p>El autor dijo <q>Esta es una cita en línea.</q></p>
+            </div>
+
+            <!-- abbr tag -->
+            <h2 id="abbr-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;abbr&gt; &lt;/abbr&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Para abreviaciones. El navegador muestra el texto subrayado con
+              puntos y al pasar el cursor muestra el significado completo
+              mediante el atributo
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >title</code
+              >, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-4">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;abbr <span class="text-[#f87171]">title="HyperText Markup Language"</span>&gt;HTML&lt;/abbr&gt;</code></pre>
+            </div>
+            <div class="bg-[#f7f7f7] rounded-xl overflow-hidden mb-6 p-5">
+              <p class="text-xs font-semibold text-[#999] mb-3">Resultado</p>
+              <p><abbr title="HyperText Markup Language">HTML</abbr></p>
+            </div>
+
+            <!-- address tag -->
+            <h2 id="address-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;address&gt; &lt;/address&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Para direcciones o información de contacto. El navegador muestra
+              el texto en cursiva, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-4">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;address&gt;123 Main St, Anytown, USA&lt;/address&gt;</code></pre>
+            </div>
+            <div class="bg-[#f7f7f7] rounded-xl overflow-hidden mb-6 p-5">
+              <p class="text-xs font-semibold text-[#999] mb-3">Resultado</p>
+              <address>123 Main St, Anytown, USA</address>
+            </div>
+
+            <!-- sup tag -->
+            <h2 id="sup-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;sup&gt; &lt;/sup&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Para superíndices. El navegador muestra el texto elevado y en un
+              tamaño menor, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-4">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>10&lt;sup&gt;<span class="text-[#f87171]">2</span>&lt;/sup&gt;</code></pre>
+            </div>
+            <div class="bg-[#f7f7f7] rounded-xl overflow-hidden mb-6 p-5">
+              <p class="text-xs font-semibold text-[#999] mb-3">Resultado</p>
+              <p class="text-lg">10<sup>2</sup></p>
+            </div>
+
+            <!-- sub tag -->
+            <h2 id="sub-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;sub&gt; &lt;/sub&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Para subíndices. El navegador muestra el texto hundido y en un
+              tamaño menor, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-4">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>H&lt;sub&gt;<span class="text-[#f87171]">2</span>&lt;/sub&gt;O</code></pre>
+            </div>
+            <div class="bg-[#f7f7f7] rounded-xl overflow-hidden mb-6 p-5">
+              <p class="text-xs font-semibold text-[#999] mb-3">Resultado</p>
+              <p class="text-lg">H<sub>2</sub>O</p>
+            </div>
+
+            <!-- time tag -->
+            <h2 id="time-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;time&gt; &lt;/time&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Para representar fechas y horas. Usa el atributo
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >datetime</code
+              >
+              para especificar la fecha y hora en formato ISO 8601, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-4">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;p&gt;Hoy &lt;time <span class="text-[#f87171]">datetime="2023-03-15"</span>&gt;15 de marzo de 2023&lt;/time&gt; se celebra el cumpleaños de Ana.&lt;/p&gt;</code></pre>
+            </div>
+            <div class="bg-[#f7f7f7] rounded-xl overflow-hidden mb-6 p-5">
+              <p class="text-xs font-semibold text-[#999] mb-3">Resultado</p>
+              <p>Hoy <time datetime="2023-03-15">15 de marzo de 2023</time> se celebra el cumpleaños de Ana.</p>
+            </div>
+
+            <!-- a tag -->
+            <h2 id="a-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;a&gt; &lt;/a&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Crea enlaces (hipervínculos). Usa el atributo
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >href</code
+              >
+              para especificar la URL del enlace. También puede usarse con
+              protocolos especiales como
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >mailto:</code
+              >
+              o
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >tel:</code
+              >, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-4">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;a <span class="text-[#f87171]">href="https://www.ejemplo.com"</span>&gt;Visitar ejemplo.com&lt;/a&gt;
+
+&lt;a <span class="text-[#f87171]">href="https://wa.me/5700000"</span>&gt;Enviar WhatsApp&lt;/a&gt;</code></pre>
+            </div>
+            <div class="bg-[#f7f7f7] rounded-xl overflow-hidden mb-6 p-5">
+              <p class="text-xs font-semibold text-[#999] mb-3">Resultado</p>
+              <p><a class="text-blue-600 underline" href="#">Visitar ejemplo.com</a></p>
+            </div>
+
+            <h3 class="text-lg font-semibold mt-8 mb-3">Abrir en nueva pestaña</h3>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Usa el atributo
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >target="_blank"</code
+              >
+              para abrir el enlace en una nueva pestaña. Si usas
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >_blank</code
+              >, es necesario agregar
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >rel="noopener noreferrer"</code
+              >
+              por temas de seguridad, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;a href="https://www.ejemplo.com" <span class="text-[#f87171]">target="_blank" rel="noopener noreferrer"</span>&gt;
+  Abrir en nueva pestaña
+&lt;/a&gt;</code></pre>
+            </div>
+
+            <div
+              class="bg-[#f7f7f7] border-l-4 border-primary p-5 my-8 rounded-r-lg"
+            >
+              <div class="flex gap-3">
+                <span class="material-symbols-outlined text-primary"
+                  >lightbulb</span
+                >
+                <div>
+                  <p class="font-bold text-sm mb-1">Tip</p>
+                  <p class="text-sm text-[#757575]">
+                    El uso correcto de etiquetas de texto es muy importante para
+                    el SEO. Los motores de búsqueda usan etiquetas como
+                    <code
+                      class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono"
+                      >&lt;h1&gt;</code
+                    >,
+                    <code
+                      class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono"
+                      >&lt;strong&gt;</code
+                    >
+                    y
+                    <code
+                      class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono"
+                      >&lt;a&gt;</code
+                    >
+                    para entender la estructura y relevancia del contenido.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Navigation Footer -->
+          <div
+            class="mt-20 pt-10 border-t border-[#f2f2f2] flex items-center justify-between"
+          >
+            <a
+              class="group flex flex-col items-start text-left"
+              href="4-contenedor.html"
+            >
+              <span class="text-xs text-[#757575] mb-1">Anterior</span>
+              <div
+                class="flex items-center gap-2 font-bold text-primary group-hover:-translate-x-1 transition-transform"
+              >
+                <span class="material-symbols-outlined">arrow_back</span>
+                Contenedor
+              </div>
+            </a>
+            <a
+              class="group flex flex-col items-end text-right"
+              href="6-listas.html"
+            >
+              <span class="text-xs text-[#757575] mb-1">Siguiente</span>
+              <div
+                class="flex items-center gap-2 font-bold text-primary group-hover:translate-x-1 transition-transform"
+              >
+                Listas
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </div>
+            </a>
           </div>
         </div>
+      </main>
 
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          <details>
-            <summary>Más información</summary>
-            Rodar sobre sal por media hora
-          </details>
-        </div>
-      </li>
-
-      <li>
-        <p>
-          &lt;a&gt; &lt;/a&gt;: Para crear enlaces, el navegador nos muestra el
-          texto como un hipervínculo.
-        </p>
-        <p>Usa el atributo href para especificar la url del enlace.</p>
-        <p>
-          Puede usar href como "https://wa.me/5700000" para enviar un whatsapp
-          por ejemplo
-        </p>
-        <p>
-          Usa el atributo target="_blank" para abrir una nueva pestana con la
-          url.
-        </p>
-        <p>
-          Si usa "_blank", es necesario agregar rel="noopener nofererrer" por
-          temas de seguridad.
-        </p>
-
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <div>
-            <code>
-              Visitar &lt;a
-              <span style="color: red"> href="https://www.ejemplo.com"</span
-              >&gt;ejemplo.com&lt;/a&gt;
-            </code>
-          </div>
-        </div>
-
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          Visitar <a href="https://www.ejemplo.com">ejemplo.com </a>
-        </div>
-      </li>
-    </ul>
-
-    <p>
-      <strong>Nota:</strong> El uso de estas etiquetas es muy importante para el
-      SEO
-    </p>
+      <!-- Right Side Table of Contents -->
+      <aside
+        class="hidden xl:block w-64 h-[calc(100vh-64px)] sticky top-16 p-8 overflow-y-auto"
+      >
+        <h5
+          class="text-xs font-bold uppercase tracking-wider text-[#757575] mb-4"
+        >
+          En esta página
+        </h5>
+        <ul class="space-y-3 text-sm">
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#headings-tag"
+              >&lt;h1&gt; a &lt;h6&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#p-tag"
+              >&lt;p&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#strong-tag"
+              >&lt;strong&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#em-tag"
+              >&lt;em&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#span-tag"
+              >&lt;span&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#br-tag"
+              >&lt;br /&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#hr-tag"
+              >&lt;hr /&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#blockquote-tag"
+              >&lt;blockquote&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#q-tag"
+              >&lt;q&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#abbr-tag"
+              >&lt;abbr&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#address-tag"
+              >&lt;address&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#sup-tag"
+              >&lt;sup&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#sub-tag"
+              >&lt;sub&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#time-tag"
+              >&lt;time&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#a-tag"
+              >&lt;a&gt;</a
+            >
+          </li>
+        </ul>
+      </aside>
+    </div>
   </body>
 </html>

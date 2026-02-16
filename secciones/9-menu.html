@@ -1,96 +1,828 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>HTML Docs - Menús</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#141414",
+              "background-light": "#f7f7f7",
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .sidebar-scroll::-webkit-scrollbar {
+        width: 4px;
+      }
+      .sidebar-scroll::-webkit-scrollbar-thumb {
+        background: #e5e5e5;
+        border-radius: 10px;
+      }
+      pre,
+      code {
+        font-family:
+          "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas",
+          "Liberation Mono", "Courier New", monospace;
+      }
+    </style>
   </head>
-  <body>
-    <h1 id="etiquetas-menu"><em>etiquetas para menús</em></h1>
-    <p>Las etiquetas más comunes para menús son:</p>
-    <ul>
-      <li>
-        <p>
-          &lt;datalist&gt; &lt;/datalist&gt;: Se utiliza para proporcionar una
-          lista de opciones predefinidas para un campo de entrada.
-        </p>
-        <p>
-          Usa la etiqueta &lt;input&gt; con el atributo list para asociar el
-          campo de entrada con la lista de opciones.
-        </p>
-        <p>
-          Usa la etiqueta &lt;option&gt; &lt;/option&gt; dentro de
-          &lt;datalist&gt; para definir las opciones disponibles.
-        </p>
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <code
-            >&lt;input
-            <span style="color: red">list="navegadores" name="navegador"</span>
-            &gt; <br />
-            &lt;datalist
-            <span style="color: red">id="navegadores"</span>&gt; <br />
-            &nbsp;&nbsp;&lt;option value="Chrome"&gt;&lt;/option&gt; <br />
-            &nbsp;&nbsp;&lt;option value="Firefox"&gt;&lt;/option&gt; <br />
-            &nbsp;&nbsp;&lt;option value="Safari"&gt;&lt;/option&gt; <br />
-            &nbsp;&nbsp;&lt;option value="Edge"&gt;&lt;/option&gt; <br />
-            &nbsp;&nbsp;&lt;option value="Opera"&gt;&lt;/option&gt; <br />
-            &lt;/datalist&gt;</code
+
+  <body class="bg-white text-[#141414] antialiased font-display">
+    <!-- Top Navigation Bar -->
+    <header
+      class="sticky top-0 z-50 w-full border-b border-[#f2f2f2] bg-white/95 backdrop-blur-lg"
+    >
+      <div class="max-w-[1440px] mx-auto px-6 py-4">
+        <a class="flex items-center gap-3 w-fit" href="../index.html">
+          <div class="size-9 text-primary">
+            <svg
+              fill="none"
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_6_330)">
+                <path
+                  clip-rule="evenodd"
+                  d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                ></path>
+              </g>
+              <defs>
+                <clipPath id="clip0_6_330">
+                  <rect fill="white" height="48" width="48"></rect>
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+          <span class="text-xl font-extrabold tracking-tight">HTML Docs</span>
+        </a>
+      </div>
+    </header>
+
+    <div class="max-w-[1440px] mx-auto flex">
+      <!-- Sidebar Navigation -->
+      <aside
+        class="hidden md:flex flex-col w-72 h-[calc(100vh-64px)] sticky top-16 border-r border-[#f2f2f2] overflow-y-auto sidebar-scroll p-6"
+      >
+        <div class="space-y-8">
+          <!-- Maquetación -->
+          <div>
+            <h5
+              class="mb-4 text-xs font-bold uppercase tracking-wider text-[#757575]"
+            >
+              Maquetación
+            </h5>
+            <ul class="space-y-1">
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="1-maquetacion.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >dashboard</span
+                  >
+                  Maquetación
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- HTML Semántico -->
+          <div>
+            <h5
+              class="mb-4 text-xs font-bold uppercase tracking-wider text-[#757575]"
+            >
+              HTML Semántico
+            </h5>
+            <ul class="space-y-1">
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="2-anatomia.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >data_object</span
+                  >
+                  Anatomía del HTML
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="3-head.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >integration_instructions</span
+                  >
+                  Etiquetas del head
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="4-contenedor.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >web</span
+                  >
+                  Contenedor
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="5-texto.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >text_fields</span
+                  >
+                  Texto
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="6-listas.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >format_list_bulleted</span
+                  >
+                  Listas
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="7-multimedia.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >perm_media</span
+                  >
+                  Multimedia
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="8-formularios.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >edit_note</span
+                  >
+                  Formularios
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg bg-[#f2f2f2] font-semibold transition-colors text-sm"
+                  href="9-menu.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >menu</span
+                  >
+                  Menús
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="10-tablas.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >table_chart</span
+                  >
+                  Tablas
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content Pane -->
+      <main class="flex-1 min-w-0">
+        <div class="max-w-4xl mx-auto px-6 py-10 lg:px-12">
+          <!-- Breadcrumbs -->
+          <nav aria-label="Breadcrumb" class="flex items-center gap-2 mb-8 text-sm font-medium">
+            <a class="text-[#757575] hover:text-primary" href="../index.html"
+              >Docs</a
+            >
+            <span class="material-symbols-outlined text-xs text-[#757575]"
+              >chevron_right</span
+            >
+            <span class="text-primary">Menús</span>
+          </nav>
+
+          <!-- Page Header -->
+          <section class="mb-12">
+            <h1
+              class="text-4xl font-extrabold tracking-tight text-[#141414] mb-4"
+            >
+              Etiquetas para menús
+            </h1>
+            <p class="text-xl text-[#757575] leading-relaxed">
+              Estas etiquetas permiten crear elementos de selección interactivos
+              para que los usuarios puedan elegir entre diferentes opciones.
+            </p>
+          </section>
+
+          <!-- Content -->
+          <article class="prose prose-slate max-w-none">
+            <!-- datalist tag -->
+            <h2 id="datalist-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;datalist&gt; &lt;/datalist&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Se utiliza para proporcionar una lista de opciones predefinidas
+              para un campo de entrada. El usuario puede escribir libremente
+              o seleccionar de las opciones sugeridas.
+            </p>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Usa la etiqueta
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;input&gt;</code
+              >
+              con el atributo
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >list</code
+              >
+              para asociar el campo de entrada con la lista de opciones. El
+              valor del atributo
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >list</code
+              >
+              debe coincidir con el
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >id</code
+              >
+              del
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;datalist&gt;</code
+              >.
+            </p>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Usa la etiqueta
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;option&gt;</code
+              >
+              dentro de
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;datalist&gt;</code
+              >
+              para definir las opciones disponibles, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;input <span class="text-[#f87171]">list="navegadores" name="navegador"</span> /&gt;
+&lt;datalist <span class="text-[#f87171]">id="navegadores"</span>&gt;
+  &lt;option value="Chrome"&gt;&lt;/option&gt;
+  &lt;option value="Firefox"&gt;&lt;/option&gt;
+  &lt;option value="Safari"&gt;&lt;/option&gt;
+  &lt;option value="Edge"&gt;&lt;/option&gt;
+  &lt;option value="Opera"&gt;&lt;/option&gt;
+&lt;/datalist&gt;</code></pre>
+            </div>
+
+            <div class="bg-[#f7f7f7] border border-[#e5e5e5] rounded-xl p-6 mb-8">
+              <div class="text-sm font-semibold text-[#757575] mb-4">Resultado</div>
+              <input
+                list="navegadores"
+                name="navegador"
+                class="px-4 py-2 border border-[#e5e5e5] rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                placeholder="Selecciona un navegador"
+              />
+              <datalist id="navegadores">
+                <option value="Chrome"></option>
+                <option value="Firefox"></option>
+                <option value="Safari"></option>
+                <option value="Edge"></option>
+                <option value="Opera"></option>
+              </datalist>
+            </div>
+
+            <!-- select tag -->
+            <h2 id="select-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;select&gt; &lt;/select&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Se utiliza para crear un menú desplegable donde el usuario debe
+              seleccionar una opción de la lista.
+            </p>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Usa la etiqueta
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;option&gt;</code
+              >
+              dentro de
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;select&gt;</code
+              >
+              para definir las opciones disponibles. El atributo
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >value</code
+              >
+              define el valor que se enviará al servidor, mientras que el
+              contenido de texto es lo que verá el usuario, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;select <span class="text-[#f87171]">name="frutas"</span>&gt;
+  &lt;option value=""&gt;--Selecciona una fruta--&lt;/option&gt;
+  &lt;option value="manzana"&gt;Manzana&lt;/option&gt;
+  &lt;option value="banana"&gt;Banana&lt;/option&gt;
+  &lt;option value="naranja"&gt;Naranja&lt;/option&gt;
+  &lt;option value="pera"&gt;Pera&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+            </div>
+
+            <div class="bg-[#f7f7f7] border border-[#e5e5e5] rounded-xl p-6 mb-8">
+              <div class="text-sm font-semibold text-[#757575] mb-4">Resultado</div>
+              <select
+                name="frutas"
+                class="px-4 py-2 border border-[#e5e5e5] rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+              >
+                <option value="">--Selecciona una fruta--</option>
+                <option value="manzana">Manzana</option>
+                <option value="banana">Banana</option>
+                <option value="naranja">Naranja</option>
+                <option value="pera">Pera</option>
+              </select>
+            </div>
+
+            <!-- optgroup tag -->
+            <h2 id="optgroup-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;optgroup&gt; &lt;/optgroup&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Se utiliza para agrupar opciones relacionadas dentro de un
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;select&gt;</code
+              >.
+              Esto ayuda a organizar listas largas de opciones y mejora la
+              experiencia del usuario. El atributo
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >label</code
+              >
+              define el nombre del grupo que se mostrará al usuario, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;select name="vehiculo"&gt;
+  &lt;option value=""&gt;--Selecciona un vehículo--&lt;/option&gt;
+  <span class="text-[#f87171]">&lt;optgroup label="Autos"&gt;</span>
+    &lt;option value="sedan"&gt;Sedán&lt;/option&gt;
+    &lt;option value="suv"&gt;SUV&lt;/option&gt;
+    &lt;option value="coupe"&gt;Coupé&lt;/option&gt;
+  &lt;/optgroup&gt;
+  <span class="text-[#f87171]">&lt;optgroup label="Motocicletas"&gt;</span>
+    &lt;option value="deportiva"&gt;Deportiva&lt;/option&gt;
+    &lt;option value="cruiser"&gt;Cruiser&lt;/option&gt;
+    &lt;option value="touring"&gt;Touring&lt;/option&gt;
+  &lt;/optgroup&gt;
+&lt;/select&gt;</code></pre>
+            </div>
+
+            <div class="bg-[#f7f7f7] border border-[#e5e5e5] rounded-xl p-6 mb-8">
+              <div class="text-sm font-semibold text-[#757575] mb-4">Resultado</div>
+              <select
+                name="vehiculo"
+                class="px-4 py-2 border border-[#e5e5e5] rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+              >
+                <option value="">--Selecciona un vehículo--</option>
+                <optgroup label="Autos">
+                  <option value="sedan">Sedán</option>
+                  <option value="suv">SUV</option>
+                  <option value="coupe">Coupé</option>
+                </optgroup>
+                <optgroup label="Motocicletas">
+                  <option value="deportiva">Deportiva</option>
+                  <option value="cruiser">Cruiser</option>
+                  <option value="touring">Touring</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <!-- Atributos importantes -->
+            <h2 id="atributos-tag" class="text-2xl font-bold mt-12 mb-4">
+              Atributos importantes
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Los elementos de menú soportan varios atributos que modifican su
+              comportamiento:
+            </p>
+
+            <!-- selected attribute -->
+            <h3 id="selected-attr" class="text-xl font-bold mt-8 mb-3">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-lg font-mono"
+                >selected</code
+              >
+            </h3>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Marca una opción como seleccionada por defecto cuando la página
+              carga. Solo debe haber una opción con este atributo en un
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;select&gt;</code
+              >
+              simple, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;select name="pais"&gt;
+  &lt;option value="mx" <span class="text-[#f87171]">selected</span>&gt;México&lt;/option&gt;
+  &lt;option value="es"&gt;España&lt;/option&gt;
+  &lt;option value="ar"&gt;Argentina&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+            </div>
+
+            <div class="bg-[#f7f7f7] border border-[#e5e5e5] rounded-xl p-6 mb-8">
+              <div class="text-sm font-semibold text-[#757575] mb-4">Resultado</div>
+              <select
+                name="pais"
+                class="px-4 py-2 border border-[#e5e5e5] rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+              >
+                <option value="mx" selected>México</option>
+                <option value="es">España</option>
+                <option value="ar">Argentina</option>
+              </select>
+            </div>
+
+            <!-- disabled attribute -->
+            <h3 id="disabled-attr" class="text-xl font-bold mt-8 mb-3">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-lg font-mono"
+                >disabled</code
+              >
+            </h3>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Deshabilita una opción específica para que no pueda ser
+              seleccionada, o deshabilita el
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;select&gt;</code
+              >
+              completo. Es útil para opciones que no están disponibles
+              temporalmente, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;select name="talla"&gt;
+  &lt;option value=""&gt;--Selecciona una talla--&lt;/option&gt;
+  &lt;option value="s"&gt;S - Pequeña&lt;/option&gt;
+  &lt;option value="m" <span class="text-[#f87171]">disabled</span>&gt;M - Mediana (Agotada)&lt;/option&gt;
+  &lt;option value="l"&gt;L - Grande&lt;/option&gt;
+  &lt;option value="xl"&gt;XL - Extra grande&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+            </div>
+
+            <div class="bg-[#f7f7f7] border border-[#e5e5e5] rounded-xl p-6 mb-8">
+              <div class="text-sm font-semibold text-[#757575] mb-4">Resultado</div>
+              <select
+                name="talla"
+                class="px-4 py-2 border border-[#e5e5e5] rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+              >
+                <option value="">--Selecciona una talla--</option>
+                <option value="s">S - Pequeña</option>
+                <option value="m" disabled>M - Mediana (Agotada)</option>
+                <option value="l">L - Grande</option>
+                <option value="xl">XL - Extra grande</option>
+              </select>
+            </div>
+
+            <!-- multiple attribute -->
+            <h3 id="multiple-attr" class="text-xl font-bold mt-8 mb-3">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-lg font-mono"
+                >multiple</code
+              >
+            </h3>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Permite al usuario seleccionar múltiples opciones. El usuario
+              puede mantener presionada la tecla Ctrl (Windows/Linux) o Cmd
+              (Mac) para seleccionar varias opciones, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;select name="idiomas" <span class="text-[#f87171]">multiple</span>&gt;
+  &lt;option value="es"&gt;Español&lt;/option&gt;
+  &lt;option value="en"&gt;Inglés&lt;/option&gt;
+  &lt;option value="fr"&gt;Francés&lt;/option&gt;
+  &lt;option value="de"&gt;Alemán&lt;/option&gt;
+  &lt;option value="it"&gt;Italiano&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+            </div>
+
+            <div class="bg-[#f7f7f7] border border-[#e5e5e5] rounded-xl p-6 mb-8">
+              <div class="text-sm font-semibold text-[#757575] mb-4">Resultado</div>
+              <select
+                name="idiomas"
+                multiple
+                class="px-4 py-2 border border-[#e5e5e5] rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+              >
+                <option value="es">Español</option>
+                <option value="en">Inglés</option>
+                <option value="fr">Francés</option>
+                <option value="de">Alemán</option>
+                <option value="it">Italiano</option>
+              </select>
+            </div>
+
+            <!-- size attribute -->
+            <h3 id="size-attr" class="text-xl font-bold mt-8 mb-3">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-lg font-mono"
+                >size</code
+              >
+            </h3>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Define cuántas opciones visibles se mostrarán a la vez. Por
+              defecto, un
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;select&gt;</code
+              >
+              muestra solo una opción y se despliega al hacer clic. Con
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >size</code
+              >, puedes mostrar múltiples opciones simultáneamente, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;select name="color" <span class="text-[#f87171]">size="4"</span>&gt;
+  &lt;option value="rojo"&gt;Rojo&lt;/option&gt;
+  &lt;option value="azul"&gt;Azul&lt;/option&gt;
+  &lt;option value="verde"&gt;Verde&lt;/option&gt;
+  &lt;option value="amarillo"&gt;Amarillo&lt;/option&gt;
+  &lt;option value="morado"&gt;Morado&lt;/option&gt;
+  &lt;option value="naranja"&gt;Naranja&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+            </div>
+
+            <div class="bg-[#f7f7f7] border border-[#e5e5e5] rounded-xl p-6 mb-8">
+              <div class="text-sm font-semibold text-[#757575] mb-4">Resultado</div>
+              <select
+                name="color"
+                size="4"
+                class="px-4 py-2 border border-[#e5e5e5] rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+              >
+                <option value="rojo">Rojo</option>
+                <option value="azul">Azul</option>
+                <option value="verde">Verde</option>
+                <option value="amarillo">Amarillo</option>
+                <option value="morado">Morado</option>
+                <option value="naranja">Naranja</option>
+              </select>
+            </div>
+
+            <!-- required attribute -->
+            <h3 id="required-attr" class="text-xl font-bold mt-8 mb-3">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-lg font-mono"
+                >required</code
+              >
+            </h3>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Hace que el campo sea obligatorio. El formulario no se enviará
+              hasta que el usuario seleccione una opción válida (diferente de
+              la vacía), por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;form&gt;
+  &lt;label for="categoria"&gt;Categoría:&lt;/label&gt;
+  &lt;select name="categoria" id="categoria" <span class="text-[#f87171]">required</span>&gt;
+    &lt;option value=""&gt;--Selecciona una categoría--&lt;/option&gt;
+    &lt;option value="tech"&gt;Tecnología&lt;/option&gt;
+    &lt;option value="design"&gt;Diseño&lt;/option&gt;
+    &lt;option value="marketing"&gt;Marketing&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+            </div>
+
+            <div class="bg-[#f7f7f7] border border-[#e5e5e5] rounded-xl p-6 mb-8">
+              <div class="text-sm font-semibold text-[#757575] mb-4">Resultado</div>
+              <form class="flex flex-col gap-4">
+                <div class="flex flex-col gap-2">
+                  <label for="categoria" class="text-sm font-semibold">Categoría:</label>
+                  <select
+                    name="categoria"
+                    id="categoria"
+                    required
+                    class="px-4 py-2 border border-[#e5e5e5] rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                  >
+                    <option value="">--Selecciona una categoría--</option>
+                    <option value="tech">Tecnología</option>
+                    <option value="design">Diseño</option>
+                    <option value="marketing">Marketing</option>
+                  </select>
+                </div>
+                <button
+                  type="submit"
+                  class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-opacity-90 transition-colors w-fit"
+                >
+                  Enviar
+                </button>
+              </form>
+            </div>
+
+            <div
+              class="bg-[#f7f7f7] border-l-4 border-primary p-5 my-8 rounded-r-lg"
+            >
+              <div class="flex gap-3">
+                <span class="material-symbols-outlined text-primary"
+                  >lightbulb</span
+                >
+                <div>
+                  <p class="font-bold text-sm mb-1">Tip</p>
+                  <p class="text-sm text-[#757575]">
+                    La diferencia principal es que
+                    <code
+                      class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono"
+                      >&lt;datalist&gt;</code
+                    >
+                    permite al usuario escribir libremente y solo sugiere
+                    opciones, mientras que
+                    <code
+                      class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono"
+                      >&lt;select&gt;</code
+                    >
+                    limita al usuario a seleccionar solo de las opciones
+                    disponibles.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Navigation Footer -->
+          <div
+            class="mt-20 pt-10 border-t border-[#f2f2f2] flex items-center justify-between"
           >
+            <a
+              class="group flex flex-col items-start text-left"
+              href="8-formularios.html"
+            >
+              <span class="text-xs text-[#757575] mb-1">Anterior</span>
+              <div
+                class="flex items-center gap-2 font-bold text-primary group-hover:-translate-x-1 transition-transform"
+              >
+                <span class="material-symbols-outlined">arrow_back</span>
+                Formularios
+              </div>
+            </a>
+            <a
+              class="group flex flex-col items-end text-right"
+              href="10-tablas.html"
+            >
+              <span class="text-xs text-[#757575] mb-1">Siguiente</span>
+              <div
+                class="flex items-center gap-2 font-bold text-primary group-hover:translate-x-1 transition-transform"
+              >
+                Tablas
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </div>
+            </a>
+          </div>
         </div>
+      </main>
 
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          <input list="navegadores" name="navegador" />
-          <datalist id="navegadores">
-            <option value="Chrome"></option>
-            <option value="Firefox"></option>
-            <option value="Safari"></option>
-            <option value="Edge"></option>
-            <option value="Opera"></option>
-          </datalist>
-        </div>
-      </li>
-
-      <li>
-        <p>
-          &lt;select&gt; &lt;/select&gt;: Se utiliza para crear un menú
-          desplegable.
-        </p>
-        <p>
-          Usa la etiqueta &lt;option&gt; &lt;/option&gt; dentro de
-          &lt;select&gt; para definir las opciones disponibles.
-        </p>
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <code
-            >&lt;select <span style="color: red">name="frutas"</span>&gt;
-            <br />
-            &nbsp;&nbsp;&lt;option value=""&gt;--Selecciona una
-            fruta--&lt;/option&gt;
-            <br />
-            &nbsp;&nbsp;&lt;option value="manzana"&gt;Manzana&lt;/option&gt;
-            <br />
-            &nbsp;&nbsp;&lt;option value="banana"&gt;Banana&lt;/option&gt;
-            <br />
-            &nbsp;&nbsp;&lt;option value="naranja"&gt;Naranja&lt;/option&gt;
-            <br />
-            &nbsp;&nbsp;&lt;option value="pera"&gt;Pera&lt;/option&gt; <br />
-            &lt;/select&gt;
-          </code>
-        </div>
-
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          <select name="frutas">
-            <option value="">--Selecciona una fruta--</option>
-            <option value="manzana">Manzana</option>
-            <option value="banana">Banana</option>
-            <option value="naranja">Naranja</option>
-            <option value="pera">Pera</option>
-          </select>
-        </div>
-      </li>
-    </ul>
+      <!-- Right Side Table of Contents -->
+      <aside
+        class="hidden xl:block w-64 h-[calc(100vh-64px)] sticky top-16 p-8 overflow-y-auto"
+      >
+        <h5
+          class="text-xs font-bold uppercase tracking-wider text-[#757575] mb-4"
+        >
+          En esta página
+        </h5>
+        <ul class="space-y-3 text-sm">
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#datalist-tag"
+              >&lt;datalist&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#select-tag"
+              >&lt;select&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#optgroup-tag"
+              >&lt;optgroup&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#atributos-tag"
+              >Atributos</a
+            >
+            <ul class="ml-4 mt-2 space-y-2">
+              <li>
+                <a class="text-[#999] hover:text-primary text-xs" href="#selected-attr"
+                  >selected</a
+                >
+              </li>
+              <li>
+                <a class="text-[#999] hover:text-primary text-xs" href="#disabled-attr"
+                  >disabled</a
+                >
+              </li>
+              <li>
+                <a class="text-[#999] hover:text-primary text-xs" href="#multiple-attr"
+                  >multiple</a
+                >
+              </li>
+              <li>
+                <a class="text-[#999] hover:text-primary text-xs" href="#size-attr"
+                  >size</a
+                >
+              </li>
+              <li>
+                <a class="text-[#999] hover:text-primary text-xs" href="#required-attr"
+                  >required</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </aside>
+    </div>
   </body>
 </html>

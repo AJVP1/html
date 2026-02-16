@@ -1,122 +1,935 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>HTML Docs - Tablas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#141414",
+              "background-light": "#f7f7f7",
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .sidebar-scroll::-webkit-scrollbar {
+        width: 4px;
+      }
+      .sidebar-scroll::-webkit-scrollbar-thumb {
+        background: #e5e5e5;
+        border-radius: 10px;
+      }
+      pre,
+      code {
+        font-family:
+          "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas",
+          "Liberation Mono", "Courier New", monospace;
+      }
+    </style>
   </head>
-  <body>
-    <h4 id="etiquetas-tablas"><em>etiquetas para tablas</em></h4>
-    <p>Las etiquetas más comunes para crear tablas en HTML son:</p>
 
-    <ul>
-      <li>
-        <p>
-          &lt;table&gt; &lt;/table&gt;: Define la estructura principal de una
-          tabla.
-        </p>
-        <p>
-          Dentro de ella se utilizan filas (&lt;tr&gt;) y celdas (&lt;th&gt;).
-        </p>
+  <body class="bg-white text-[#141414] antialiased font-display">
+    <!-- Top Navigation Bar -->
+    <header
+      class="sticky top-0 z-50 w-full border-b border-[#f2f2f2] bg-white/95 backdrop-blur-lg"
+    >
+      <div class="max-w-[1440px] mx-auto px-6 py-4">
+        <a class="flex items-center gap-3 w-fit" href="../index.html">
+          <div class="size-9 text-primary">
+            <svg
+              fill="none"
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_6_330)">
+                <path
+                  clip-rule="evenodd"
+                  d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                ></path>
+              </g>
+              <defs>
+                <clipPath id="clip0_6_330">
+                  <rect fill="white" height="48" width="48"></rect>
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+          <span class="text-xl font-extrabold tracking-tight">HTML Docs</span>
+        </a>
+      </div>
+    </header>
 
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <code>
-            &lt;table <span style="color: red">border="1"</span>&gt; <br />
-            &nbsp;&nbsp;&lt;tr&gt; <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Nombre&lt;/th&gt; <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Edad&lt;/th&gt; <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;País&lt;/th&gt; <br />
-            &nbsp;&nbsp;&lt;/tr&gt; <br />
-            &nbsp;&nbsp;&lt;tr&gt; <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Ana&lt;/td&gt; <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;25&lt;/td&gt; <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Argentina&lt;/td&gt; <br />
-            &nbsp;&nbsp;&lt;/tr&gt; <br />
-            &lt;/table&gt;
-          </code>
+    <div class="max-w-[1440px] mx-auto flex">
+      <!-- Sidebar Navigation -->
+      <aside
+        class="hidden md:flex flex-col w-72 h-[calc(100vh-64px)] sticky top-16 border-r border-[#f2f2f2] overflow-y-auto sidebar-scroll p-6"
+      >
+        <div class="space-y-8">
+          <!-- Maquetación -->
+          <div>
+            <h5
+              class="mb-4 text-xs font-bold uppercase tracking-wider text-[#757575]"
+            >
+              Maquetación
+            </h5>
+            <ul class="space-y-1">
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="1-maquetacion.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >dashboard</span
+                  >
+                  Maquetación
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- HTML Semántico -->
+          <div>
+            <h5
+              class="mb-4 text-xs font-bold uppercase tracking-wider text-[#757575]"
+            >
+              HTML Semántico
+            </h5>
+            <ul class="space-y-1">
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="2-anatomia.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >data_object</span
+                  >
+                  Anatomía del HTML
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="3-head.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >integration_instructions</span
+                  >
+                  Etiquetas del head
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="4-contenedor.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >web</span
+                  >
+                  Contenedor
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="5-texto.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >text_fields</span
+                  >
+                  Texto
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="6-listas.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >format_list_bulleted</span
+                  >
+                  Listas
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="7-multimedia.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >perm_media</span
+                  >
+                  Multimedia
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="8-formularios.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >edit_note</span
+                  >
+                  Formularios
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="9-menu.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >menu</span
+                  >
+                  Menús
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg bg-[#f2f2f2] font-semibold transition-colors text-sm"
+                  href="10-tablas.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >table_chart</span
+                  >
+                  Tablas
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
+      </aside>
 
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          <table border="1">
-            <tr>
-              <th>Nombre</th>
-              <th>Edad</th>
-              <th>País</th>
-            </tr>
-            <tr>
-              <td>Ana</td>
-              <td>25</td>
-              <td>Argentina</td>
-            </tr>
-          </table>
+      <!-- Main Content Pane -->
+      <main class="flex-1 min-w-0">
+        <div class="max-w-4xl mx-auto px-6 py-10 lg:px-12">
+          <!-- Breadcrumbs -->
+          <nav aria-label="Breadcrumb" class="flex items-center gap-2 mb-8 text-sm font-medium">
+            <a class="text-[#757575] hover:text-primary" href="../index.html"
+              >Docs</a
+            >
+            <span class="material-symbols-outlined text-xs text-[#757575]"
+              >chevron_right</span
+            >
+            <span class="text-primary">Tablas</span>
+          </nav>
+
+          <!-- Page Header -->
+          <section class="mb-12">
+            <h1
+              class="text-4xl font-extrabold tracking-tight text-[#141414] mb-4"
+            >
+              Etiquetas para tablas
+            </h1>
+            <p class="text-xl text-[#757575] leading-relaxed">
+              Las tablas en HTML permiten organizar y presentar datos de forma
+              estructurada en filas y columnas. Son esenciales para mostrar
+              información tabular de manera clara y accesible.
+            </p>
+          </section>
+
+          <!-- Content -->
+          <article class="prose prose-slate max-w-none">
+            <!-- table tag -->
+            <h2 id="table-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;table&gt; &lt;/table&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Define la estructura principal de una tabla. Dentro de ella se
+              utilizan filas
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;tr&gt;</code
+              >, celdas de encabezado
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;th&gt;</code
+              >
+              y celdas de datos
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;td&gt;</code
+              >, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Nombre&lt;/th&gt;
+    &lt;th&gt;Edad&lt;/th&gt;
+    &lt;th&gt;País&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Ana&lt;/td&gt;
+    &lt;td&gt;25&lt;/td&gt;
+    &lt;td&gt;Argentina&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Carlos&lt;/td&gt;
+    &lt;td&gt;30&lt;/td&gt;
+    &lt;td&gt;México&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+            </div>
+
+            <div class="bg-[#f7f7f7] border border-[#e5e5e5] rounded-xl p-6 mb-8 overflow-x-auto">
+              <div class="text-sm font-semibold text-[#757575] mb-4">Resultado</div>
+              <table class="min-w-full border-collapse border border-[#e5e5e5]">
+                <tr class="bg-[#f9f9f9]">
+                  <th class="border border-[#e5e5e5] px-4 py-2 text-left font-semibold">Nombre</th>
+                  <th class="border border-[#e5e5e5] px-4 py-2 text-left font-semibold">Edad</th>
+                  <th class="border border-[#e5e5e5] px-4 py-2 text-left font-semibold">País</th>
+                </tr>
+                <tr class="hover:bg-[#f0f0f0] transition-colors">
+                  <td class="border border-[#e5e5e5] px-4 py-2">Ana</td>
+                  <td class="border border-[#e5e5e5] px-4 py-2">25</td>
+                  <td class="border border-[#e5e5e5] px-4 py-2">Argentina</td>
+                </tr>
+                <tr class="bg-[#f9f9f9] hover:bg-[#f0f0f0] transition-colors">
+                  <td class="border border-[#e5e5e5] px-4 py-2">Carlos</td>
+                  <td class="border border-[#e5e5e5] px-4 py-2">30</td>
+                  <td class="border border-[#e5e5e5] px-4 py-2">México</td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- tr tag -->
+            <h2 id="tr-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;tr&gt; &lt;/tr&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Define una fila (row) dentro de una tabla. Cada fila contiene
+              celdas que pueden ser de encabezado
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;th&gt;</code
+              >
+              o de datos
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;td&gt;</code
+              >. Es el contenedor horizontal que estructura la información en
+              columnas, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;table&gt;
+  <span class="text-[#f87171]">&lt;tr&gt;</span>
+    &lt;th&gt;Producto&lt;/th&gt;
+    &lt;th&gt;Stock&lt;/th&gt;
+  &lt;/tr&gt;
+  <span class="text-[#f87171]">&lt;tr&gt;</span>
+    &lt;td&gt;Teclado&lt;/td&gt;
+    &lt;td&gt;45&lt;/td&gt;
+  &lt;/tr&gt;
+  <span class="text-[#f87171]">&lt;tr&gt;</span>
+    &lt;td&gt;Mouse&lt;/td&gt;
+    &lt;td&gt;68&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+            </div>
+
+            <div class="bg-[#f7f7f7] border border-[#e5e5e5] rounded-xl p-6 mb-8 overflow-x-auto">
+              <div class="text-sm font-semibold text-[#757575] mb-4">Resultado</div>
+              <table class="min-w-full border-collapse border border-[#e5e5e5]">
+                <tr class="bg-[#f0f0f0]">
+                  <th class="border border-[#e5e5e5] px-4 py-2 text-left font-semibold">Producto</th>
+                  <th class="border border-[#e5e5e5] px-4 py-2 text-left font-semibold">Stock</th>
+                </tr>
+                <tr class="hover:bg-[#f9f9f9] transition-colors">
+                  <td class="border border-[#e5e5e5] px-4 py-2">Teclado</td>
+                  <td class="border border-[#e5e5e5] px-4 py-2">45</td>
+                </tr>
+                <tr class="hover:bg-[#f9f9f9] transition-colors">
+                  <td class="border border-[#e5e5e5] px-4 py-2">Mouse</td>
+                  <td class="border border-[#e5e5e5] px-4 py-2">68</td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- th tag -->
+            <h2 id="th-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;th&gt; &lt;/th&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Define una celda de encabezado (header) en una tabla. Por defecto,
+              el texto se muestra en negrita y centrado. Es importante usar el
+              atributo
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >scope</code
+              >
+              para mejorar la accesibilidad, indicando si el encabezado aplica a
+              una columna
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >scope="col"</code
+              >
+              o a una fila
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >scope="row"</code
+              >, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th <span class="text-[#f87171]">scope="col"</span>&gt;Mes&lt;/th&gt;
+      &lt;th <span class="text-[#f87171]">scope="col"</span>&gt;Ingresos&lt;/th&gt;
+      &lt;th <span class="text-[#f87171]">scope="col"</span>&gt;Gastos&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th <span class="text-[#f87171]">scope="row"</span>&gt;Enero&lt;/th&gt;
+      &lt;td&gt;$50,000&lt;/td&gt;
+      &lt;td&gt;$30,000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th <span class="text-[#f87171]">scope="row"</span>&gt;Febrero&lt;/th&gt;
+      &lt;td&gt;$55,000&lt;/td&gt;
+      &lt;td&gt;$32,000&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+            </div>
+
+            <div class="bg-[#f7f7f7] border border-[#e5e5e5] rounded-xl p-6 mb-8 overflow-x-auto">
+              <div class="text-sm font-semibold text-[#757575] mb-4">Resultado</div>
+              <table class="min-w-full border-collapse border border-[#e5e5e5]">
+                <thead>
+                  <tr class="bg-[#f0f0f0]">
+                    <th scope="col" class="border border-[#e5e5e5] px-4 py-2 text-left font-semibold">Mes</th>
+                    <th scope="col" class="border border-[#e5e5e5] px-4 py-2 text-left font-semibold">Ingresos</th>
+                    <th scope="col" class="border border-[#e5e5e5] px-4 py-2 text-left font-semibold">Gastos</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="hover:bg-[#f9f9f9] transition-colors">
+                    <th scope="row" class="border border-[#e5e5e5] px-4 py-2 text-left font-semibold bg-[#f9f9f9]">Enero</th>
+                    <td class="border border-[#e5e5e5] px-4 py-2">$50,000</td>
+                    <td class="border border-[#e5e5e5] px-4 py-2">$30,000</td>
+                  </tr>
+                  <tr class="hover:bg-[#f9f9f9] transition-colors">
+                    <th scope="row" class="border border-[#e5e5e5] px-4 py-2 text-left font-semibold bg-[#f9f9f9]">Febrero</th>
+                    <td class="border border-[#e5e5e5] px-4 py-2">$55,000</td>
+                    <td class="border border-[#e5e5e5] px-4 py-2">$32,000</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- td tag -->
+            <h2 id="td-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;td&gt; &lt;/td&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Define una celda de datos (data) estándar en una tabla. Contiene
+              el contenido regular de la tabla. Por defecto, el texto se alinea
+              a la izquierda y no está en negrita. Puede contener cualquier tipo
+              de contenido HTML como texto, imágenes, enlaces, etc., por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Usuario&lt;/th&gt;
+    &lt;th&gt;Email&lt;/th&gt;
+    &lt;th&gt;Estado&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;María García&lt;/td&gt;
+    &lt;td&gt;maria@email.com&lt;/td&gt;
+    &lt;td&gt;Activo&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Juan Pérez&lt;/td&gt;
+    &lt;td&gt;juan@email.com&lt;/td&gt;
+    &lt;td&gt;Inactivo&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+            </div>
+
+            <div class="bg-[#f7f7f7] border border-[#e5e5e5] rounded-xl p-6 mb-8 overflow-x-auto">
+              <div class="text-sm font-semibold text-[#757575] mb-4">Resultado</div>
+              <table class="min-w-full border-collapse border border-[#e5e5e5]">
+                <tr class="bg-[#f0f0f0]">
+                  <th class="border border-[#e5e5e5] px-4 py-2 text-left font-semibold">Usuario</th>
+                  <th class="border border-[#e5e5e5] px-4 py-2 text-left font-semibold">Email</th>
+                  <th class="border border-[#e5e5e5] px-4 py-2 text-left font-semibold">Estado</th>
+                </tr>
+                <tr class="hover:bg-[#f9f9f9] transition-colors">
+                  <td class="border border-[#e5e5e5] px-4 py-2">María García</td>
+                  <td class="border border-[#e5e5e5] px-4 py-2">maria@email.com</td>
+                  <td class="border border-[#e5e5e5] px-4 py-2">Activo</td>
+                </tr>
+                <tr class="hover:bg-[#f9f9f9] transition-colors">
+                  <td class="border border-[#e5e5e5] px-4 py-2">Juan Pérez</td>
+                  <td class="border border-[#e5e5e5] px-4 py-2">juan@email.com</td>
+                  <td class="border border-[#e5e5e5] px-4 py-2">Inactivo</td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- thead, tbody, tfoot tags -->
+            <h2 id="structure-tags" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Permiten organizar la tabla en tres secciones semánticas:
+              encabezado, cuerpo y pie. Esto mejora la legibilidad,
+              accesibilidad y permite que los navegadores apliquen estilos
+              específicos a cada sección. El
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;tfoot&gt;</code
+              >
+              se usa típicamente para totales o resúmenes, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;table&gt;
+  <span class="text-[#f87171]">&lt;thead&gt;</span>
+    &lt;tr&gt;
+      &lt;th&gt;Producto&lt;/th&gt;
+      &lt;th&gt;Cantidad&lt;/th&gt;
+      &lt;th&gt;Precio&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  <span class="text-[#f87171]">&lt;tbody&gt;</span>
+    &lt;tr&gt;
+      &lt;td&gt;Laptop&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;$2,400&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Mouse&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;$100&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  <span class="text-[#f87171]">&lt;tfoot&gt;</span>
+    &lt;tr&gt;
+      &lt;td colspan="2"&gt;Total&lt;/td&gt;
+      &lt;td&gt;$2,500&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+            </div>
+
+            <div class="bg-[#f7f7f7] border border-[#e5e5e5] rounded-xl p-6 mb-8 overflow-x-auto">
+              <div class="text-sm font-semibold text-[#757575] mb-4">Resultado</div>
+              <table class="min-w-full border-collapse border border-[#e5e5e5]">
+                <thead>
+                  <tr class="bg-[#f0f0f0]">
+                    <th class="border border-[#e5e5e5] px-4 py-2 text-left font-semibold">Producto</th>
+                    <th class="border border-[#e5e5e5] px-4 py-2 text-left font-semibold">Cantidad</th>
+                    <th class="border border-[#e5e5e5] px-4 py-2 text-left font-semibold">Precio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="hover:bg-[#f9f9f9] transition-colors">
+                    <td class="border border-[#e5e5e5] px-4 py-2">Laptop</td>
+                    <td class="border border-[#e5e5e5] px-4 py-2">2</td>
+                    <td class="border border-[#e5e5e5] px-4 py-2">$2,400</td>
+                  </tr>
+                  <tr class="bg-[#f9f9f9] hover:bg-[#f0f0f0] transition-colors">
+                    <td class="border border-[#e5e5e5] px-4 py-2">Mouse</td>
+                    <td class="border border-[#e5e5e5] px-4 py-2">5</td>
+                    <td class="border border-[#e5e5e5] px-4 py-2">$100</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr class="bg-[#e8e8e8] font-semibold">
+                    <td colspan="2" class="border border-[#e5e5e5] px-4 py-2">Total</td>
+                    <td class="border border-[#e5e5e5] px-4 py-2">$2,500</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+
+            <!-- caption tag -->
+            <h2 id="caption-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;caption&gt; &lt;/caption&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Proporciona un título o descripción para la tabla. Debe ser el
+              primer elemento hijo de
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;table&gt;</code
+              >. Mejora la accesibilidad al darle contexto a los lectores de
+              pantalla, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;table&gt;
+  <span class="text-[#f87171]">&lt;caption&gt;Ventas del primer trimestre 2025&lt;/caption&gt;</span>
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Mes&lt;/th&gt;
+      &lt;th&gt;Ventas&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Enero&lt;/td&gt;
+      &lt;td&gt;$15,000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Febrero&lt;/td&gt;
+      &lt;td&gt;$18,500&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+            </div>
+
+            <div class="bg-[#f7f7f7] border border-[#e5e5e5] rounded-xl p-6 mb-8 overflow-x-auto">
+              <div class="text-sm font-semibold text-[#757575] mb-4">Resultado</div>
+              <table class="min-w-full border-collapse border border-[#e5e5e5]">
+                <caption class="mb-2 text-sm font-semibold text-[#141414]">
+                  Ventas del primer trimestre 2025
+                </caption>
+                <thead>
+                  <tr class="bg-[#f0f0f0]">
+                    <th class="border border-[#e5e5e5] px-4 py-2 text-left font-semibold">Mes</th>
+                    <th class="border border-[#e5e5e5] px-4 py-2 text-left font-semibold">Ventas</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="hover:bg-[#f9f9f9] transition-colors">
+                    <td class="border border-[#e5e5e5] px-4 py-2">Enero</td>
+                    <td class="border border-[#e5e5e5] px-4 py-2">$15,000</td>
+                  </tr>
+                  <tr class="bg-[#f9f9f9] hover:bg-[#f0f0f0] transition-colors">
+                    <td class="border border-[#e5e5e5] px-4 py-2">Febrero</td>
+                    <td class="border border-[#e5e5e5] px-4 py-2">$18,500</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Atributos importantes -->
+            <h2 id="atributos-tag" class="text-2xl font-bold mt-12 mb-4">
+              Atributos importantes
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Las tablas soportan atributos especiales que permiten fusionar
+              celdas y mejorar la estructura:
+            </p>
+
+            <!-- colspan attribute -->
+            <h3 id="colspan-attr" class="text-xl font-bold mt-8 mb-3">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-lg font-mono"
+                >colspan</code
+              >
+            </h3>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Permite que una celda se extienda sobre múltiples columnas. El
+              valor indica cuántas columnas debe ocupar. Es útil para crear
+              encabezados que abarquen varias columnas, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th <span class="text-[#f87171]">colspan="3"</span>&gt;Información del estudiante&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Nombre&lt;/th&gt;
+    &lt;th&gt;Edad&lt;/th&gt;
+    &lt;th&gt;Calificación&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;María&lt;/td&gt;
+    &lt;td&gt;22&lt;/td&gt;
+    &lt;td&gt;9.5&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+            </div>
+
+            <div class="bg-[#f7f7f7] border border-[#e5e5e5] rounded-xl p-6 mb-8 overflow-x-auto">
+              <div class="text-sm font-semibold text-[#757575] mb-4">Resultado</div>
+              <table class="min-w-full border-collapse border border-[#e5e5e5]">
+                <tr>
+                  <th colspan="3" class="border border-[#e5e5e5] px-4 py-3 text-center font-bold bg-[#e8e8e8]">
+                    Información del estudiante
+                  </th>
+                </tr>
+                <tr class="bg-[#f0f0f0]">
+                  <th class="border border-[#e5e5e5] px-4 py-2 text-left font-semibold">Nombre</th>
+                  <th class="border border-[#e5e5e5] px-4 py-2 text-left font-semibold">Edad</th>
+                  <th class="border border-[#e5e5e5] px-4 py-2 text-left font-semibold">Calificación</th>
+                </tr>
+                <tr class="hover:bg-[#f9f9f9] transition-colors">
+                  <td class="border border-[#e5e5e5] px-4 py-2">María</td>
+                  <td class="border border-[#e5e5e5] px-4 py-2">22</td>
+                  <td class="border border-[#e5e5e5] px-4 py-2">9.5</td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- rowspan attribute -->
+            <h3 id="rowspan-attr" class="text-xl font-bold mt-8 mb-3">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-lg font-mono"
+                >rowspan</code
+              >
+            </h3>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Permite que una celda se extienda sobre múltiples filas. El valor
+              indica cuántas filas debe ocupar. Es útil cuando se necesita
+              agrupar información verticalmente, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Departamento&lt;/th&gt;
+    &lt;th&gt;Empleado&lt;/th&gt;
+    &lt;th&gt;Cargo&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td <span class="text-[#f87171]">rowspan="2"</span>&gt;Ventas&lt;/td&gt;
+    &lt;td&gt;Juan Pérez&lt;/td&gt;
+    &lt;td&gt;Gerente&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Ana García&lt;/td&gt;
+    &lt;td&gt;Vendedora&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td <span class="text-[#f87171]">rowspan="2"</span>&gt;IT&lt;/td&gt;
+    &lt;td&gt;Carlos López&lt;/td&gt;
+    &lt;td&gt;Desarrollador&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Laura Martín&lt;/td&gt;
+    &lt;td&gt;DBA&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+            </div>
+
+            <div class="bg-[#f7f7f7] border border-[#e5e5e5] rounded-xl p-6 mb-8 overflow-x-auto">
+              <div class="text-sm font-semibold text-[#757575] mb-4">Resultado</div>
+              <table class="min-w-full border-collapse border border-[#e5e5e5]">
+                <tr class="bg-[#f0f0f0]">
+                  <th class="border border-[#e5e5e5] px-4 py-2 text-left font-semibold">Departamento</th>
+                  <th class="border border-[#e5e5e5] px-4 py-2 text-left font-semibold">Empleado</th>
+                  <th class="border border-[#e5e5e5] px-4 py-2 text-left font-semibold">Cargo</th>
+                </tr>
+                <tr class="hover:bg-[#f9f9f9] transition-colors">
+                  <td rowspan="2" class="border border-[#e5e5e5] px-4 py-2 bg-[#f9f9f9] font-semibold align-top">Ventas</td>
+                  <td class="border border-[#e5e5e5] px-4 py-2">Juan Pérez</td>
+                  <td class="border border-[#e5e5e5] px-4 py-2">Gerente</td>
+                </tr>
+                <tr class="hover:bg-[#f9f9f9] transition-colors">
+                  <td class="border border-[#e5e5e5] px-4 py-2">Ana García</td>
+                  <td class="border border-[#e5e5e5] px-4 py-2">Vendedora</td>
+                </tr>
+                <tr class="bg-[#f9f9f9] hover:bg-[#f0f0f0] transition-colors">
+                  <td rowspan="2" class="border border-[#e5e5e5] px-4 py-2 bg-[#f0f0f0] font-semibold align-top">IT</td>
+                  <td class="border border-[#e5e5e5] px-4 py-2">Carlos López</td>
+                  <td class="border border-[#e5e5e5] px-4 py-2">Desarrollador</td>
+                </tr>
+                <tr class="bg-[#f9f9f9] hover:bg-[#f0f0f0] transition-colors">
+                  <td class="border border-[#e5e5e5] px-4 py-2">Laura Martín</td>
+                  <td class="border border-[#e5e5e5] px-4 py-2">DBA</td>
+                </tr>
+              </table>
+            </div>
+
+            <div
+              class="bg-[#f7f7f7] border-l-4 border-primary p-5 my-8 rounded-r-lg"
+            >
+              <div class="flex gap-3">
+                <span class="material-symbols-outlined text-primary"
+                  >lightbulb</span
+                >
+                <div>
+                  <p class="font-bold text-sm mb-1">Tip</p>
+                  <p class="text-sm text-[#757575]">
+                    Usar
+                    <code
+                      class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono"
+                      >&lt;thead&gt;</code
+                    >,
+                    <code
+                      class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono"
+                      >&lt;tbody&gt;</code
+                    >
+                    y
+                    <code
+                      class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono"
+                      >&lt;tfoot&gt;</code
+                    >
+                    mejora la accesibilidad y permite a los navegadores
+                    imprimir encabezados de tabla en cada página cuando una
+                    tabla abarca múltiples páginas. Evita usar el atributo
+                    <code
+                      class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono"
+                      >border</code
+                    >
+                    y prefiere CSS para estilizar las tablas.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Navigation Footer -->
+          <div
+            class="mt-20 pt-10 border-t border-[#f2f2f2] flex items-center justify-between"
+          >
+            <a
+              class="group flex flex-col items-start text-left"
+              href="9-menu.html"
+            >
+              <span class="text-xs text-[#757575] mb-1">Anterior</span>
+              <div
+                class="flex items-center gap-2 font-bold text-primary group-hover:-translate-x-1 transition-transform"
+              >
+                <span class="material-symbols-outlined">arrow_back</span>
+                Menús
+              </div>
+            </a>
+          </div>
         </div>
-      </li>
+      </main>
 
-      <li>
-        <p>
-          &lt;thead&gt;, &lt;tbody&gt; y &lt;tfoot&gt;: Permiten organizar la
-          tabla en encabezado, cuerpo y pie.
-        </p>
-        <p>Mejoran la legibilidad y accesibilidad de las tablas.</p>
-
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <code>
-            &lt;table border="1"&gt; <br />
-            &nbsp;&nbsp;&lt;thead&gt; <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt; <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Producto&lt;/th&gt;
-            <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Precio&lt;/th&gt;
-            <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt; <br />
-            &nbsp;&nbsp;&lt;/thead&gt; <br />
-            &nbsp;&nbsp;&lt;tbody&gt; <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt; <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Laptop&lt;/td&gt;
-            <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;$1200&lt;/td&gt;
-            <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt; <br />
-            &nbsp;&nbsp;&lt;/tbody&gt; <br />
-            &nbsp;&nbsp;&lt;tfoot&gt; <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt; <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Total&lt;/td&gt;
-            <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;$1200&lt;/td&gt;
-            <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt; <br />
-            &nbsp;&nbsp;&lt;/tfoot&gt; <br />
-            &lt;/table&gt;
-          </code>
-        </div>
-
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          <table border="1">
-            <thead>
-              <tr>
-                <th>Producto</th>
-                <th>Precio</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Laptop</td>
-                <td>$1200</td>
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-                <td>Total</td>
-                <td>$1200</td>
-              </tr>
-            </tfoot>
-          </table>
-        </div>
-      </li>
-    </ul>
+      <!-- Right Side Table of Contents -->
+      <aside
+        class="hidden xl:block w-64 h-[calc(100vh-64px)] sticky top-16 p-8 overflow-y-auto"
+      >
+        <h5
+          class="text-xs font-bold uppercase tracking-wider text-[#757575] mb-4"
+        >
+          En esta página
+        </h5>
+        <ul class="space-y-3 text-sm">
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#table-tag"
+              >&lt;table&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#tr-tag"
+              >&lt;tr&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#th-tag"
+              >&lt;th&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#td-tag"
+              >&lt;td&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#structure-tags"
+              >Estructura de tabla</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#caption-tag"
+              >&lt;caption&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#atributos-tag"
+              >Atributos</a
+            >
+            <ul class="ml-4 mt-2 space-y-2">
+              <li>
+                <a class="text-[#999] hover:text-primary text-xs" href="#colspan-attr"
+                  >colspan</a
+                >
+              </li>
+              <li>
+                <a class="text-[#999] hover:text-primary text-xs" href="#rowspan-attr"
+                  >rowspan</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </aside>
+    </div>
   </body>
 </html>

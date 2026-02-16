@@ -1,302 +1,1068 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>HTML Docs - Etiquetas para formularios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#141414",
+              "background-light": "#f7f7f7",
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .sidebar-scroll::-webkit-scrollbar {
+        width: 4px;
+      }
+      .sidebar-scroll::-webkit-scrollbar-thumb {
+        background: #e5e5e5;
+        border-radius: 10px;
+      }
+      pre,
+      code {
+        font-family:
+          "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas",
+          "Liberation Mono", "Courier New", monospace;
+      }
+    </style>
   </head>
-  <body>
-    <h1 id="etiquetas-formularios"><em>etiquetas para formularios</em></h1>
-    <p>Las etiquetas más comunes para formularios son:</p>
 
-    <ul>
-      <li>
-        <p>
-          &lt;form&gt; &lt;/form&gt;: Define un formulario HTML para la
-          recopilación de datos del usuario.
-        </p>
-        <p>
-          Usa el atributo action que contiene una url/path para indicar a donde
-          debe ser enviada la información del formulario una vez se presione el
-          boton de enviar la información
-        </p>
-        <p>
-          Usa el atributo method para indicar el método HTTP que se debe
-          utilizar al enviar el formulario (GET o POST).
-        </p>
-        <p>
-          Usa el atributo enctype para especificar cómo se deben codificar los
-          datos del formulario al enviarlos al servidor.
-        </p>
-        <p>
-          Usa el atributo target para especificar dónde se debe mostrar la
-          respuesta del servidor después de enviar el formulario.
-        </p>
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <code
-            >&lt;form
-            <span style="color: red"
-              >action="/submit" method="POST" enctype="multipart/form-data"
-              target="_blank"</span
+  <body class="bg-white text-[#141414] antialiased font-display">
+    <!-- Top Navigation Bar -->
+    <header
+      class="sticky top-0 z-50 w-full border-b border-[#f2f2f2] bg-white/95 backdrop-blur-lg"
+    >
+      <div class="max-w-[1440px] mx-auto px-6 py-4">
+        <a class="flex items-center gap-3 w-fit" href="../index.html">
+          <div class="size-9 text-primary">
+            <svg
+              fill="none"
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
             >
-            &gt; <br />
-            &nbsp;&nbsp;...contenido del formulario... <br />
-            &lt;/form&gt;</code
-          >
-        </div>
-      </li>
+              <g clip-path="url(#clip0_6_330)">
+                <path
+                  clip-rule="evenodd"
+                  d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                ></path>
+              </g>
+              <defs>
+                <clipPath id="clip0_6_330">
+                  <rect fill="white" height="48" width="48"></rect>
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+          <span class="text-xl font-extrabold tracking-tight">HTML Docs</span>
+        </a>
+      </div>
+    </header>
 
-      <li>
-        <p>
-          &lt;label&gt; &lt;/label&gt;: Define una etiqueta para un elemento de
-          formulario.
-        </p>
-        <p>
-          Usa el atributo for para asociar la etiqueta con un elemento de
-          formulario específico.
-        </p>
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <code
-            >&lt;label
-            <span style="color: red">for="nombre"</span
-            >&gt;Nombre:&lt;/label&gt;</code
-          >
-        </div>
-      </li>
-
-      <li>
-        <p>
-          &lt;input&gt;: Define un campo de entrada para la recopilación de
-          datos del usuario.
-        </p>
-        <p>
-          Usa el atributo type para especificar el tipo de campo de entrada
-          (texto, contraseña, correo electrónico, etc.). Los distintos tipos de
-          son:
-          <a
-            href="https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements/input"
-            >MDN Web Docs</a
-          >
-        </p>
-        <p>
-          Usa el atributo id cuyo valor debe ser igual al suministrado en el
-          atributo for del label
-        </p>
-        <p>
-          Usa el atributo name para identificar el campo de entrada al enviar el
-          formulario.
-        </p>
-        <p>
-          Usa el atributo required para indicar que el campo es obligatorio.
-        </p>
-        <p>
-          Usa el atributo placeholder para proporcionar un texto de sugerencia
-          que se muestra en el campo de entrada.
-        </p>
-        <p>
-          Usa el atributo value para establecer un valor predeterminado para el
-          campo de entrada.
-        </p>
-        <p>
-          Usa el atributo autocomplete para habilitar o deshabilitar la función
-          de autocompletado del navegador.
-        </p>
-        <p>
-          Usa el atributo min y max para establecer límites en los valores
-          numéricos.
-        </p>
-        <p>
-          Usa el atributo step para especificar el incremento permitido para los
-          valores numéricos.
-        </p>
-        <p>
-          Usa el atributo pattern para establecer una expresión regular que el
-          valor del campo debe cumplir.
-        </p>
-        <p>
-          Usa el atributo title para proporcionar información adicional sobre el
-          campo de entrada.
-        </p>
-        <p>
-          Usa el atributo tabindex para especificar el orden en que los
-          elementos del formulario deben recibir el foco al navegar con la tecla
-          Tab.
-        </p>
-        <p>
-          Usa el atributo autofocus para indicar que el campo debe recibir el
-          foco automáticamente al cargar la página.
-        </p>
-        <p>
-          Usa el atributo form para asociar el campo de entrada con un
-          formulario específico.
-        </p>
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <code
-            >&lt;input
-            <span style="color: red"
-              >type="text" name="nombre" placeholder="Nombre" required</span
+    <div class="max-w-[1440px] mx-auto flex">
+      <!-- Sidebar Navigation -->
+      <aside
+        class="hidden md:flex flex-col w-72 h-[calc(100vh-64px)] sticky top-16 border-r border-[#f2f2f2] overflow-y-auto sidebar-scroll p-6"
+      >
+        <div class="space-y-8">
+          <!-- Maquetación -->
+          <div>
+            <h5
+              class="mb-4 text-xs font-bold uppercase tracking-wider text-[#757575]"
             >
-            &gt;</code
-          >
-        </div>
-      </li>
+              Maquetación
+            </h5>
+            <ul class="space-y-1">
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="1-maquetacion.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >dashboard</span
+                  >
+                  Maquetación
+                </a>
+              </li>
+            </ul>
+          </div>
 
-      <p>Ejemplo de un formulario con form, labels y inputs:</p>
-      <div class="code-box">
-        <div class="code-header">HTML</div>
-        <code
-          >&lt;form
-          <span style="color: red">action="/submit" method="POST"</span>
-          &gt; <br />
-          &nbsp;&nbsp;&lt;label
-          <span style="color: red">for="nombre"</span>&gt;Nombre:&lt;/label&gt;
-          <br />
-          &nbsp;&nbsp;&lt;input
-          <span style="color: red"
-            >type="text" id="nombre" name="nombre" placeholder="Nombre"
-            required</span
+          <!-- HTML Semántico -->
+          <div>
+            <h5
+              class="mb-4 text-xs font-bold uppercase tracking-wider text-[#757575]"
+            >
+              HTML Semántico
+            </h5>
+            <ul class="space-y-1">
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="2-anatomia.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >data_object</span
+                  >
+                  Anatomía del HTML
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="3-head.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >integration_instructions</span
+                  >
+                  Etiquetas del head
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="4-contenedor.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >web</span
+                  >
+                  Contenedor
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="5-texto.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >text_fields</span
+                  >
+                  Texto
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="6-listas.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >format_list_bulleted</span
+                  >
+                  Listas
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="7-multimedia.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >perm_media</span
+                  >
+                  Multimedia
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg bg-[#f2f2f2] font-semibold transition-colors text-sm"
+                  href="8-formularios.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >edit_note</span
+                  >
+                  Formularios
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="9-menu.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >menu</span
+                  >
+                  Menús
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#f2f2f2] transition-colors text-sm"
+                  href="10-tablas.html"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-[#757575]"
+                    >table_chart</span
+                  >
+                  Tablas
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content Pane -->
+      <main class="flex-1 min-w-0">
+        <div class="max-w-4xl mx-auto px-6 py-10 lg:px-12">
+          <!-- Breadcrumbs -->
+          <nav aria-label="Breadcrumb" class="flex items-center gap-2 mb-8 text-sm font-medium">
+            <a class="text-[#757575] hover:text-primary" href="../index.html"
+              >Docs</a
+            >
+            <span class="material-symbols-outlined text-xs text-[#757575]"
+              >chevron_right</span
+            >
+            <span class="text-primary">Formularios</span>
+          </nav>
+
+          <!-- Page Header -->
+          <section class="mb-12">
+            <h1
+              class="text-4xl font-extrabold tracking-tight text-[#141414] mb-4"
+            >
+              Etiquetas para formularios
+            </h1>
+            <p class="text-xl text-[#757575] leading-relaxed">
+              Las etiquetas más comunes para crear formularios HTML que permiten
+              la recopilación de datos del usuario.
+            </p>
+          </section>
+
+          <!-- Content -->
+          <article class="prose prose-slate max-w-none">
+            <!-- form tag -->
+            <h2 id="form-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;form&gt; &lt;/form&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Define un formulario HTML para la recopilación de datos del
+              usuario. Acepta los siguientes atributos:
+            </p>
+            <ul class="list-disc pl-6 mb-6 space-y-2 text-base leading-7 text-[#141414]">
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >action</code
+                >: URL o path a donde se envía la información del formulario al
+                presionar el botón de enviar.
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >method</code
+                >: método HTTP que se utiliza al enviar el formulario
+                (<code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >GET</code
+                >
+                o
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >POST</code
+                >).
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >enctype</code
+                >: especifica cómo se codifican los datos del formulario al
+                enviarlos al servidor. Valores comunes:
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >application/x-www-form-urlencoded</code
+                >
+                (por defecto),
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >multipart/form-data</code
+                >
+                (necesario para enviar archivos) y
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >text/plain</code
+                >.
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >target</code
+                >: especifica dónde se muestra la respuesta del servidor después
+                de enviar el formulario. Valores:
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >_self</code
+                >
+                (misma pestaña, por defecto),
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >_blank</code
+                >
+                (nueva pestaña),
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >_parent</code
+                >
+                y
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >_top</code
+                >.
+              </li>
+            </ul>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;form <span class="text-[#f87171]">action="/submit" method="POST" enctype="multipart/form-data" target="_blank"</span>&gt;
+  ...contenido del formulario...
+&lt;/form&gt;</code></pre>
+            </div>
+
+            <!-- label tag -->
+            <h2 id="label-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;label&gt; &lt;/label&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Define una etiqueta para un elemento de formulario. Usa el
+              atributo
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >for</code
+              >
+              para asociar la etiqueta con un elemento de formulario específico,
+              por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;label <span class="text-[#f87171]">for="nombre"</span>&gt;Nombre:&lt;/label&gt;</code></pre>
+            </div>
+
+            <!-- input tag -->
+            <h2 id="input-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;input&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Define un campo de entrada para la recopilación de datos del
+              usuario. Los distintos tipos se pueden consultar en
+              <a
+                class="text-primary underline hover:no-underline"
+                href="https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements/input"
+                target="_blank"
+                rel="noopener noreferrer"
+                >MDN Web Docs</a
+              >. Acepta los siguientes atributos:
+            </p>
+            <ul class="list-disc pl-6 mb-6 space-y-2 text-base leading-7 text-[#141414]">
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >type</code
+                >: tipo de campo de entrada (texto, contraseña, correo
+                electrónico, etc.).
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >id</code
+                >: su valor debe ser igual al suministrado en el atributo
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >for</code
+                >
+                del label.
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >name</code
+                >: identifica el campo de entrada al enviar el formulario.
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >required</code
+                >: indica que el campo es obligatorio.
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >placeholder</code
+                >: texto de sugerencia que se muestra en el campo.
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >value</code
+                >: valor predeterminado para el campo.
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >autocomplete</code
+                >: habilita o deshabilita el autocompletado del navegador.
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >min</code
+                >
+                y
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >max</code
+                >: límites en los valores numéricos.
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >step</code
+                >: incremento permitido para los valores numéricos.
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >pattern</code
+                >: expresión regular que el valor del campo debe cumplir.
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >autofocus</code
+                >: el campo recibe el foco automáticamente al cargar la página.
+              </li>
+            </ul>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;input <span class="text-[#f87171]">type="text" name="nombre" placeholder="Nombre" required</span> /&gt;</code></pre>
+            </div>
+
+            <h3 class="text-lg font-bold mt-8 mb-4">Tipos más comunes</h3>
+            <div class="overflow-x-auto mb-6">
+              <table class="w-full text-sm border border-[#e8e8e8] rounded-lg overflow-hidden">
+                <thead>
+                  <tr class="bg-[#f7f7f7]">
+                    <th class="text-left px-4 py-2.5 font-semibold border-b border-[#e8e8e8]">Tipo</th>
+                    <th class="text-left px-4 py-2.5 font-semibold border-b border-[#e8e8e8]">Descripción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="px-4 py-2 border-b border-[#e8e8e8]"><code class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono">text</code></td>
+                    <td class="px-4 py-2 border-b border-[#e8e8e8]">Texto de una sola línea</td>
+                  </tr>
+                  <tr class="bg-[#fafafa]">
+                    <td class="px-4 py-2 border-b border-[#e8e8e8]"><code class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono">email</code></td>
+                    <td class="px-4 py-2 border-b border-[#e8e8e8]">Correo electrónico (valida formato)</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2 border-b border-[#e8e8e8]"><code class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono">password</code></td>
+                    <td class="px-4 py-2 border-b border-[#e8e8e8]">Contraseña (oculta caracteres)</td>
+                  </tr>
+                  <tr class="bg-[#fafafa]">
+                    <td class="px-4 py-2 border-b border-[#e8e8e8]"><code class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono">number</code></td>
+                    <td class="px-4 py-2 border-b border-[#e8e8e8]">Valor numérico con controles de incremento</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2 border-b border-[#e8e8e8]"><code class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono">date</code></td>
+                    <td class="px-4 py-2 border-b border-[#e8e8e8]">Selector de fecha</td>
+                  </tr>
+                  <tr class="bg-[#fafafa]">
+                    <td class="px-4 py-2 border-b border-[#e8e8e8]"><code class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono">checkbox</code></td>
+                    <td class="px-4 py-2 border-b border-[#e8e8e8]">Casilla de verificación (selección múltiple)</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2 border-b border-[#e8e8e8]"><code class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono">radio</code></td>
+                    <td class="px-4 py-2 border-b border-[#e8e8e8]">Botón de opción (selección única)</td>
+                  </tr>
+                  <tr class="bg-[#fafafa]">
+                    <td class="px-4 py-2 border-b border-[#e8e8e8]"><code class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono">file</code></td>
+                    <td class="px-4 py-2 border-b border-[#e8e8e8]">Selector de archivos</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2"><code class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xs font-mono">submit</code></td>
+                    <td class="px-4 py-2">Botón para enviar el formulario</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- form example -->
+            <h2 id="form-example" class="text-2xl font-bold mt-12 mb-4">
+              Ejemplo completo de formulario
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Ejemplo de un formulario con
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;form&gt;</code
+              >,
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;label&gt;</code
+              >
+              e
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;input&gt;</code
+              >:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;form <span class="text-[#f87171]">action="/submit" method="POST"</span>&gt;
+  &lt;label <span class="text-[#f87171]">for="nombre"</span>&gt;Nombre:&lt;/label&gt;
+  &lt;input <span class="text-[#f87171]">type="text" id="nombre" name="nombre" placeholder="Nombre" required</span> /&gt;
+
+  &lt;label <span class="text-[#f87171]">for="email"</span>&gt;Email:&lt;/label&gt;
+  &lt;input <span class="text-[#f87171]">type="email" id="email" name="email" placeholder="Email" required</span> /&gt;
+
+  &lt;input <span class="text-[#f87171]">type="submit" value="Enviar"</span> /&gt;
+&lt;/form&gt;</code></pre>
+            </div>
+
+            <div class="border border-[#e8e8e8] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#f7f7f7] border-b border-[#e8e8e8]">
+                <span class="text-xs font-semibold text-[#757575]">Resultado</span>
+              </div>
+              <div class="p-6">
+                <form class="space-y-3">
+                  <div>
+                    <label class="block text-sm font-medium mb-1" for="nombre">Nombre:</label>
+                    <input
+                      class="border border-[#d4d4d4] rounded-lg px-3 py-2 text-sm w-full max-w-xs"
+                      type="text"
+                      id="nombre"
+                      name="nombre"
+                      placeholder="Nombre"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium mb-1" for="email">Email:</label>
+                    <input
+                      class="border border-[#d4d4d4] rounded-lg px-3 py-2 text-sm w-full max-w-xs"
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="Email"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <input
+                      class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold cursor-pointer hover:opacity-90 transition-opacity"
+                      type="submit"
+                      value="Enviar"
+                    />
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- fieldset tag -->
+            <h2 id="fieldset-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;fieldset&gt; &lt;/fieldset&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Funciona como contenedor de los inputs, colocando un borde
+              alrededor del grupo. Se utiliza junto con la etiqueta
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;legend&gt;</code
+              >
+              para definir un título para el grupo de campos, por ejemplo:
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;fieldset&gt;
+  <span class="text-[#f87171]">&lt;legend&gt;Elige los cursos a los que deseas asistir:&lt;/legend&gt;</span>
+
+  &lt;input type="checkbox" id="html" name="html" /&gt;
+  &lt;label for="html"&gt;HTML b&aacute;sico&lt;/label&gt;
+
+  &lt;input type="checkbox" id="css" name="css" /&gt;
+  &lt;label for="css"&gt;CSS avanzado&lt;/label&gt;
+
+  &lt;input type="checkbox" id="js" name="js" /&gt;
+  &lt;label for="js"&gt;JavaScript&lt;/label&gt;
+&lt;/fieldset&gt;</code></pre>
+            </div>
+
+            <div class="border border-[#e8e8e8] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#f7f7f7] border-b border-[#e8e8e8]">
+                <span class="text-xs font-semibold text-[#757575]">Resultado</span>
+              </div>
+              <div class="p-6">
+                <fieldset class="border border-[#d4d4d4] rounded-lg p-4">
+                  <legend class="text-sm font-semibold px-2">Elige los cursos a los que deseas asistir:</legend>
+                  <div class="space-y-2 mt-2">
+                    <div class="flex items-center gap-2">
+                      <input type="checkbox" id="html" name="html" />
+                      <label class="text-sm" for="html">HTML básico</label>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <input type="checkbox" id="css" name="css" />
+                      <label class="text-sm" for="css">CSS avanzado</label>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <input type="checkbox" id="js" name="js" />
+                      <label class="text-sm" for="js">JavaScript</label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+
+            <!-- textarea tag -->
+            <h2 id="textarea-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;textarea&gt; &lt;/textarea&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Define un área de texto para la entrada de texto multilínea.
+              Acepta los siguientes atributos:
+            </p>
+            <ul class="list-disc pl-6 mb-6 space-y-2 text-base leading-7 text-[#141414]">
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >name</code
+                >: identifica el área de texto al enviar el formulario.
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >rows</code
+                >: número de filas visibles en el área de texto.
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >cols</code
+                >: número de columnas visibles en el área de texto.
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >placeholder</code
+                >: texto de sugerencia que se muestra en el área de texto.
+              </li>
+            </ul>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;textarea <span class="text-[#f87171]">name="mensaje" rows="4" cols="50" placeholder="Escribe tu mensaje aquí..."</span>&gt;&lt;/textarea&gt;</code></pre>
+            </div>
+
+            <div class="border border-[#e8e8e8] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#f7f7f7] border-b border-[#e8e8e8]">
+                <span class="text-xs font-semibold text-[#757575]">Resultado</span>
+              </div>
+              <div class="p-6">
+                <textarea
+                  class="border border-[#d4d4d4] rounded-lg px-3 py-2 text-sm w-full max-w-md"
+                  name="mensaje"
+                  rows="4"
+                  placeholder="Escribe tu mensaje aquí..."
+                ></textarea>
+              </div>
+            </div>
+
+            <!-- select tag -->
+            <h2 id="select-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;select&gt; &lt;/select&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Define un menú desplegable (dropdown) con múltiples opciones. Se
+              utiliza junto con la etiqueta
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;option&gt;</code
+              >
+              para definir cada opción disponible, y
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;optgroup&gt;</code
+              >
+              para agrupar opciones relacionadas. Atributos importantes:
+            </p>
+            <ul class="list-disc pl-6 mb-6 space-y-2 text-base leading-7 text-[#141414]">
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >name</code
+                >: identifica el campo al enviar el formulario.
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >multiple</code
+                >: permite seleccionar múltiples opciones.
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >size</code
+                >: número de opciones visibles a la vez.
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >required</code
+                >: hace obligatoria la selección de una opción.
+              </li>
+            </ul>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;label for="pais"&gt;País:&lt;/label&gt;
+&lt;select <span class="text-[#f87171]">name="pais" id="pais" required</span>&gt;
+  <span class="text-[#f87171]">&lt;option value=""&gt;-- Selecciona un país --&lt;/option&gt;</span>
+  <span class="text-[#f87171]">&lt;optgroup label="América"&gt;</span>
+    &lt;option value="mx"&gt;México&lt;/option&gt;
+    &lt;option value="ar"&gt;Argentina&lt;/option&gt;
+  &lt;/optgroup&gt;
+  <span class="text-[#f87171]">&lt;optgroup label="Europa"&gt;</span>
+    &lt;option value="es"&gt;España&lt;/option&gt;
+    &lt;option value="fr"&gt;Francia&lt;/option&gt;
+  &lt;/optgroup&gt;
+&lt;/select&gt;</code></pre>
+            </div>
+
+            <div class="border border-[#e8e8e8] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#f7f7f7] border-b border-[#e8e8e8]">
+                <span class="text-xs font-semibold text-[#757575]">Resultado</span>
+              </div>
+              <div class="p-6">
+                <div>
+                  <label class="block text-sm font-medium mb-1" for="pais">País:</label>
+                  <select
+                    class="border border-[#d4d4d4] rounded-lg px-3 py-2 text-sm w-full max-w-xs"
+                    name="pais"
+                    id="pais"
+                    required
+                  >
+                    <option value="">-- Selecciona un país --</option>
+                    <optgroup label="América">
+                      <option value="mx">México</option>
+                      <option value="ar">Argentina</option>
+                    </optgroup>
+                    <optgroup label="Europa">
+                      <option value="es">España</option>
+                      <option value="fr">Francia</option>
+                    </optgroup>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- button tag -->
+            <h2 id="button-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;button&gt; &lt;/button&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Define un botón clicable. A diferencia de
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;input type="submit"&gt;</code
+              >, permite incluir contenido HTML como iconos, imágenes o spans.
+              Acepta los siguientes atributos:
+            </p>
+            <ul class="list-disc pl-6 mb-6 space-y-2 text-base leading-7 text-[#141414]">
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >type</code
+                >: tipo de botón (<code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >submit</code
+                >,
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >reset</code
+                >,
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >button</code
+                >).
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >name</code
+                >: identifica el botón al enviar el formulario.
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >value</code
+                >: valor enviado cuando se presiona el botón.
+              </li>
+              <li>
+                <code
+                  class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                  >disabled</code
+                >: deshabilita el botón.
+              </li>
+            </ul>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;button <span class="text-[#f87171]">type="submit"</span>&gt;Enviar formulario&lt;/button&gt;
+&lt;button <span class="text-[#f87171]">type="reset"</span>&gt;Limpiar&lt;/button&gt;
+&lt;button <span class="text-[#f87171]">type="button"</span>&gt;Acción personalizada&lt;/button&gt;</code></pre>
+            </div>
+
+            <div class="border border-[#e8e8e8] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#f7f7f7] border-b border-[#e8e8e8]">
+                <span class="text-xs font-semibold text-[#757575]">Resultado</span>
+              </div>
+              <div class="p-6 flex gap-3 flex-wrap">
+                <button
+                  class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold cursor-pointer hover:opacity-90 transition-opacity"
+                  type="submit"
+                >
+                  Enviar formulario
+                </button>
+                <button
+                  class="border border-[#d4d4d4] px-4 py-2 rounded-lg text-sm font-semibold cursor-pointer hover:bg-[#f7f7f7] transition-colors"
+                  type="reset"
+                >
+                  Limpiar
+                </button>
+                <button
+                  class="border border-[#d4d4d4] px-4 py-2 rounded-lg text-sm font-semibold cursor-pointer hover:bg-[#f7f7f7] transition-colors"
+                  type="button"
+                >
+                  Acción personalizada
+                </button>
+              </div>
+            </div>
+
+            <!-- datalist tag -->
+            <h2 id="datalist-tag" class="text-2xl font-bold mt-12 mb-4">
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-xl font-mono"
+                >&lt;datalist&gt; &lt;/datalist&gt;</code
+              >
+            </h2>
+            <p class="text-base leading-7 text-[#141414] mb-4">
+              Proporciona una lista de opciones predefinidas para un
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >&lt;input&gt;</code
+              >, creando un autocompletado. El usuario puede elegir una opción
+              de la lista o escribir un valor personalizado. Se vincula usando el
+              atributo
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >list</code
+              >
+              del input con el
+              <code
+                class="bg-[#e8e8e8] px-1.5 py-0.5 rounded text-sm font-mono"
+                >id</code
+              >
+              del datalist.
+            </p>
+            <div class="bg-[#1a1a1a] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#252525]">
+                <span class="text-xs font-semibold text-[#999]">HTML</span>
+              </div>
+              <pre class="p-4 text-sm leading-6 text-[#e0e0e0] overflow-x-auto"><code>&lt;label for="navegador"&gt;Elige tu navegador:&lt;/label&gt;
+&lt;input <span class="text-[#f87171]">type="text" id="navegador" name="navegador" list="navegadores"</span> /&gt;
+
+&lt;datalist <span class="text-[#f87171]">id="navegadores"</span>&gt;
+  &lt;option value="Chrome"&gt;
+  &lt;option value="Firefox"&gt;
+  &lt;option value="Safari"&gt;
+  &lt;option value="Edge"&gt;
+  &lt;option value="Opera"&gt;
+&lt;/datalist&gt;</code></pre>
+            </div>
+
+            <div class="border border-[#e8e8e8] rounded-xl overflow-hidden mb-6">
+              <div class="flex items-center px-4 py-2 bg-[#f7f7f7] border-b border-[#e8e8e8]">
+                <span class="text-xs font-semibold text-[#757575]">Resultado</span>
+              </div>
+              <div class="p-6">
+                <div>
+                  <label class="block text-sm font-medium mb-1" for="navegador">Elige tu navegador:</label>
+                  <input
+                    class="border border-[#d4d4d4] rounded-lg px-3 py-2 text-sm w-full max-w-xs"
+                    type="text"
+                    id="navegador"
+                    name="navegador"
+                    list="navegadores"
+                    placeholder="Escribe o selecciona..."
+                  />
+                  <datalist id="navegadores">
+                    <option value="Chrome">
+                    <option value="Firefox">
+                    <option value="Safari">
+                    <option value="Edge">
+                    <option value="Opera">
+                  </datalist>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Navigation Footer -->
+          <div
+            class="mt-20 pt-10 border-t border-[#f2f2f2] flex items-center justify-between"
           >
-          &gt; <br />
-          &nbsp;&nbsp;&lt;label
-          <span style="color: red">for="email"</span>&gt;Email:&lt;/label&gt;
-          <br />
-          &nbsp;&nbsp;&lt;input
-          <span style="color: red"
-            >type="email" id="email" name="email" placeholder="Email"
-            required</span
-          >
-          &gt; <br />
-          &nbsp;&nbsp;&lt;input
-          <span style="color: red">type="submit" value="Enviar"</span>
-          &gt; <br />
-          &lt;/form&gt;</code
+            <a
+              class="group flex flex-col items-start text-left"
+              href="7-multimedia.html"
+            >
+              <span class="text-xs text-[#757575] mb-1">Anterior</span>
+              <div
+                class="flex items-center gap-2 font-bold text-primary group-hover:-translate-x-1 transition-transform"
+              >
+                <span class="material-symbols-outlined">arrow_back</span>
+                Multimedia
+              </div>
+            </a>
+            <a
+              class="group flex flex-col items-end text-right"
+              href="9-menu.html"
+            >
+              <span class="text-xs text-[#757575] mb-1">Siguiente</span>
+              <div
+                class="flex items-center gap-2 font-bold text-primary group-hover:translate-x-1 transition-transform"
+              >
+                Menús
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </main>
+
+      <!-- Right Side Table of Contents -->
+      <aside
+        class="hidden xl:block w-64 h-[calc(100vh-64px)] sticky top-16 p-8 overflow-y-auto"
+      >
+        <h5
+          class="text-xs font-bold uppercase tracking-wider text-[#757575] mb-4"
         >
-      </div>
-
-      <div class="resultado-box">
-        <div class="resultado-header">Resultado</div>
-        <form action="/submit" method="POST">
-          <label for="nombre">Nombre:</label><br />
-          <input
-            type="text"
-            id="nombre"
-            name="nombre"
-            placeholder="Nombre"
-            required
-          /><br />
-          <label for="email">Email:</label><br />
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Email"
-            required
-          /><br />
-          <input type="submit" value="Enviar" />
-        </form>
-      </div>
-
-      <li>
-        <p>
-          &lt;fieldset&gt; &lt;/fieldset&gt;: Funciona como contenedor de los
-          inputs, esta coloca un borde en el contenedor.
-        </p>
-        <p>
-          Usa la etiqueta &lt;legend&gt; &lt;/legend&gt; para definir un título
-          para el grupo de campos.
-        </p>
-
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <code
-            >&lt;fieldset&gt; <br />
-
-            &nbsp;&nbsp;<span style="color: red"
-              >&lt;legend&gt;Choose classes to attend:&lt;/legend&gt;</span
+          En esta página
+        </h5>
+        <ul class="space-y-3 text-sm">
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#form-tag"
+              >&lt;form&gt;</a
             >
-            <br />
-            &nbsp;&nbsp;&lt;input type="checkbox" id="yoga" name="yoga" /&gt;
-            <br />
-            &nbsp;&nbsp;&lt;label for="yoga"&gt;Yoga (+$10)&lt;/label&gt;
-            <br />
-            &nbsp;&nbsp;&lt;input type="checkbox" id="coffee" name="coffee"
-            /&gt;
-            <br />
-            &nbsp;&nbsp;&lt;label for="coffee"&gt;Coffee roasting
-            (+$20)&lt;/label&gt;
-            <br />
-            &nbsp;&nbsp;&lt;input type="checkbox" id="balloon" name="balloon"
-            /&gt;
-            <br />
-            &nbsp;&nbsp;&lt;label for="balloon"&gt;Balloon animal art
-            (+$5)&lt;/label&gt; <br />
-            &lt;/fieldset&gt;</code
-          >
-        </div>
-
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          <fieldset>
-            <legend>Choose classes to attend:</legend>
-
-            <input type="checkbox" id="yoga" name="yoga" />
-            <label for="yoga">Yoga (+$10)</label>
-
-            <input type="checkbox" id="coffee" name="coffee" />
-            <label for="coffee">Coffee roasting (+$20)</label>
-
-            <input type="checkbox" id="balloon" name="balloon" />
-            <label for="balloon">Balloon animal art (+$5)</label>
-          </fieldset>
-        </div>
-      </li>
-
-      <li>
-        <p>
-          &lt;textarea&gt; &lt;/textarea&gt;: Define un área de texto para la
-          entrada de texto multilínea.
-        </p>
-        <p>
-          Usa el atributo name para identificar el área de texto al enviar el
-          formulario.
-        </p>
-        <p>
-          Usa el atributo rows para especificar el número de filas visibles en
-          el área de texto.
-        </p>
-        <p>
-          Usa el atributo cols para especificar el número de columnas visibles
-          en el área de texto.
-        </p>
-        <p>
-          Usa el atributo placeholder para proporcionar un texto de sugerencia
-          que se muestra en el área de texto.
-        </p>
-        <div class="code-box">
-          <div class="code-header">HTML</div>
-          <code
-            >&lt;textarea
-            <span style="color: red"
-              >name="mensaje" rows="4" cols="50" placeholder="Escribe tu mensaje
-              aquí..."</span
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#label-tag"
+              >&lt;label&gt;</a
             >
-            &gt;&lt;/textarea&gt;</code
-          >
-        </div>
-
-        <div class="resultado-box">
-          <div class="resultado-header">Resultado</div>
-          <textarea
-            name="mensaje"
-            rows="4"
-            cols="50"
-            placeholder="Escribe tu mensaje aquí..."
-          ></textarea>
-        </div>
-      </li>
-    </ul>
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#input-tag"
+              >&lt;input&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#form-example"
+              >Ejemplo completo</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#fieldset-tag"
+              >&lt;fieldset&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#textarea-tag"
+              >&lt;textarea&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#select-tag"
+              >&lt;select&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#button-tag"
+              >&lt;button&gt;</a
+            >
+          </li>
+          <li>
+            <a class="text-[#757575] hover:text-primary" href="#datalist-tag"
+              >&lt;datalist&gt;</a
+            >
+          </li>
+        </ul>
+      </aside>
+    </div>
   </body>
 </html>
